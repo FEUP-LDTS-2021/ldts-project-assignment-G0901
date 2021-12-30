@@ -7,10 +7,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 public class CarTest {
+    private Car car;
+
     @BeforeEach
     void setUp() {
         car = new Car(10, 20);
     }
+
     @Test
     public void testValues() {
         assertEquals(10, car.getX());
