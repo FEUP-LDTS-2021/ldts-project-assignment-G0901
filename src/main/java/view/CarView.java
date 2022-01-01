@@ -13,6 +13,8 @@ public class CarView extends CarModel {
     }
 
     public void draw(TextGraphics screen){
-
+        screen.setForegroundColor(TextColor.Factory.fromString("#7CFC00"));
+        screen.enableModifiers(SGR.BOLD);
+        screen.putString(getPosition().getX(), getPosition().getY(), "C" );
     }
 }
