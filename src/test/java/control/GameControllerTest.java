@@ -17,6 +17,16 @@ public class GameControllerTest {
         controller.processKey(key, model);
         controller.processKey(key, model);
         assertEquals(8, model.getPosition().getX());
+
+        com.googlecode.lanterna.input.KeyStroke key2 = new KeyStroke(KeyType.ArrowRight);
+        controller.processKey(key2, model);
+        controller.processKey(key2, model);
+        controller.processKey(key2, model);
+        assertEquals(11, model.getPosition().getX());
+
+
+
+
     }
 
 

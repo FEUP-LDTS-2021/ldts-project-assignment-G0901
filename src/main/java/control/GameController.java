@@ -12,8 +12,10 @@ public class GameController {
     }
 
     public void processKey(com.googlecode.lanterna.input.KeyStroke key, CarModel model) {
-
+        switch (key.getKeyType()) {
+            case ArrowLeft -> model.moveLeft();
+            case ArrowRight -> model.moveRight();
         }
+    }
 }
-
 
