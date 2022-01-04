@@ -8,8 +8,7 @@ import com.googlecode.lanterna.screen.Screen;
 import com.googlecode.lanterna.screen.TerminalScreen;
 import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
-import model.CarModel;
-import model.Position;
+import model.TrackModel;
 
 import java.io.IOException;
 
@@ -51,4 +50,5 @@ public class GameView {
     public TextGraphics getGraphics(){
         return graphics;
     }
+
 }
