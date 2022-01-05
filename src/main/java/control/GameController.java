@@ -17,12 +17,13 @@ public class GameController {
 
     public void run() throws IOException {
         car_model = new CarModel(new Position(1,2));
+        track_model = new TrackModel();
 
         view.initScreen();
         while (true) {
             car_view = new CarView(car_model);
-            track_view = new TrackView(track_model);
-            track_view.draw(view.getGraphics());
+            track_view = new TrackView();
+            track_view.draw(view.getGraphics(), track_model);
             car_view.draw(view.getGraphics());
             view.getScreen().refresh();
         }
