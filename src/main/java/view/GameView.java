@@ -14,7 +14,7 @@ import java.io.IOException;
 
 public class GameView {
     public static final int height = 40;
-    public static final int width = 20;
+    public static final int width = 80;
     public static final String background_colour = "#7CFC00";
 
     private Screen screen;
@@ -22,7 +22,7 @@ public class GameView {
 
     public void initScreen() {
         try {
-            DefaultTerminalFactory factory = new DefaultTerminalFactory().setInitialTerminalSize(new TerminalSize(height, width));
+            DefaultTerminalFactory factory = new DefaultTerminalFactory().setInitialTerminalSize(new TerminalSize(width, height));
             Terminal terminal = factory.createTerminal();
 
             screen = new TerminalScreen(terminal);
