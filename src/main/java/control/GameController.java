@@ -20,13 +20,13 @@ public class GameController {
   
   
     public void run() throws IOException {
-        car_model = new CarModel(new Position(20, 10));
+        car_model = new CarModel(new Position(40, 37));
         track_model = new TrackModel();
         car_view = new CarView(car_model);
         track_view = new TrackView();
 
         view.initScreen();
-      
+
         try {
             while (true) {
                 view.clear();
@@ -47,9 +47,8 @@ public class GameController {
         System.out.println(key);
 
         switch (key.getKeyType()) {
-            case ArrowLeft -> model.moveLeft();
+            case ArrowLeft -> model.moveLeft() ;
             case ArrowRight -> model.moveRight();
-
         }
     }
 }

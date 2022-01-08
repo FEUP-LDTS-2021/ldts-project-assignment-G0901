@@ -18,12 +18,12 @@ public class CarModel implements Model {
     }
 
     public void moveLeft(){
-        int x = position.getX() - 1;
+        int x = position.getX() - 13;
         position = new Position(x, position.getY());
     }
 
     public  void moveRight(){
-        int x = position.getX() + 1;
+        int x = position.getX() + 13;
         position = new Position(x, position.getY());
     }
 }

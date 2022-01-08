@@ -1,9 +1,8 @@
 package view;
 
-import com.googlecode.lanterna.SGR;
-import com.googlecode.lanterna.TerminalPosition;
-import com.googlecode.lanterna.TextColor;
+import com.googlecode.lanterna.*;
 import com.googlecode.lanterna.graphics.TextGraphics;
+import com.googlecode.lanterna.graphics.TextImage;
 import model.CarModel;
 
 public class CarView extends CarModel {
@@ -15,7 +14,8 @@ public class CarView extends CarModel {
     }
 
     public void draw(TextGraphics screen){
-        screen.setForegroundColor(TextColor.Factory.fromString("#F000FF"));
+        screen.setForegroundColor(TextColor.Factory.fromString("#f24616"));
+        screen.setBackgroundColor(TextColor.Factory.fromString("#8f8f8f"));
         screen.enableModifiers(SGR.BOLD);
         screen.putString(model.getPosition().getX(), model.getPosition().getY(), "X" );
     }

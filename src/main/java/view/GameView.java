@@ -8,7 +8,6 @@ import com.googlecode.lanterna.screen.Screen;
 import com.googlecode.lanterna.screen.TerminalScreen;
 import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
-import model.TrackModel;
 
 import java.io.IOException;
 
@@ -39,7 +38,6 @@ public class GameView {
 
     public void clear() throws IOException {
         screen.clear();
-        graphics.fillRectangle(new TerminalPosition(0, 20), new TerminalSize(width, height), ' ');
     }
 
     public Screen getScreen(){
