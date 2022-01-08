@@ -77,4 +77,8 @@ public class TrackModel implements Model {
     public void setRoadColor (String road_color) {
         this.road_color = road_color;
     }
+
+    public void move(int amount) {
+        this.distance += amount;
+    }
 }
