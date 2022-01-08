@@ -7,8 +7,8 @@ import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
 import model.TrackModel;
 
-import static java.lang.Math.pow;
-import static java.lang.Math.sin;
+import static java.lang.Math.*;
+
 
 public class TrackView {
         private int rows, columns;
@@ -54,7 +54,7 @@ public class TrackView {
         private void computeValues(int i, int j, TrackModel track) {
             perspective = (double)(i - rows / 2) / (rows / 2);
             road_width_view = (int)(0.1 * road_width + 0.8 * road_width * perspective);
-            int kerb_width = (int)(0.15 * road_width);
+            int kerb_width = (int)(0.35 * road_width_view);
             left_grass_x = (columns / 2 - road_width_view - kerb_width);
             left_kerb_x = (columns / 2 - road_width_view);
             right_kerb_x = (columns / 2 + road_width_view);
