@@ -39,8 +39,7 @@ public class GameView {
 
     public void clear() throws IOException {
         screen.clear();
-        graphics.setBackgroundColor(TextColor.Factory.fromString(background_colour));
-        graphics.fillRectangle(new TerminalPosition(0,0), new TerminalSize(width, height), ' ');
+        graphics.fillRectangle(new TerminalPosition(0, 20), new TerminalSize(width, height), ' ');
     }
 
     public Screen getScreen(){
