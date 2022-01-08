@@ -7,10 +7,8 @@ This project was developed by André Barbosa (up202007398@edu.fe.up.pt), Guilher
 
 ### IMPLEMENTED FEATURES
 
-- **Car Model** - A default car is shown.
-- **Track Model** - A default track is shown.
 - **Car Movement** - The car have 3 different positions to be on track, most-left, middle and most-right. 
-- **Track Movement** - The track moves simulating the progression of the car at a default speed.
+- **Track Displaying** - The track is displayed simulating the progression of the car at a default speed.
 [TrackMovement] (https://github.com/FEUP-LDTS-2021/ldts-project-assignment-G0901/tree/feature/docs/docs/src/track_movement.gif)
 
 ### PLANNED FEATURES
