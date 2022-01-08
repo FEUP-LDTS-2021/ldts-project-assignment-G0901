@@ -26,9 +26,9 @@ public class CarModelTest {
     public void testMovement() {
         car.moveRight();
         car.moveRight();
-        assertEquals(12, car.getPosition().getX());
+        assertEquals(34, car.getPosition().getX());
         car.moveLeft();
-        assertEquals(11, car.getPosition().getX());
+        assertEquals(22, car.getPosition().getX());
     }
 
 }
