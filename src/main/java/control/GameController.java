@@ -54,11 +54,11 @@ public class GameController {
 
         switch (key.getKeyType()) {
             case ArrowLeft:
-                if (model.getPosition().getX() > 28)
+                if (model.getPosition().getX() > model.getInitPosition().getX() - model.getMov())
                     model.moveLeft() ;
                 break;
             case ArrowRight:
-                if (model.getPosition().getX() < 52)
+                if (model.getPosition().getX() < model.getInitPosition().getX() + model.getMov())
                     model.moveRight();
                 break;
         }
