@@ -2,7 +2,7 @@
 
 Try to survive the longest on a fast paced circuit filled with dangerous obstacles.
 
-This project was developed by André Barbosa (up202007398@edu.fe.up.pt), Guilherme Almeida and [José Luís Rodrigues](www.github.com/jlcrodrigues) (up202008462@edu.fe.up.pt) for LDTS 2021/22.
+This project was developed by André Barbosa (up202007398@edu.fe.up.pt), Guilherme Almeida and [José Luís Rodrigues](https://github.com/jlcrodrigues) (up202008462@edu.fe.up.pt) for LDTS 2021/22.
 
 
 ## Implemented Features
