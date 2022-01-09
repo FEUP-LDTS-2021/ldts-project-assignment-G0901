@@ -3,7 +3,7 @@ ldts-project-assignment-g0901 created by GitHub Classroom
 
 ## To-Do list
 
-- [ ] Set up project
+- [X] Set up project
 - [ ] Create car (sprites included)
 - [ ] Car movement
 - [ ] Create track
