@@ -27,24 +27,30 @@ public class GameController {
 
         view.initScreen();
 
-        try {
-            while (true) {
-                //rendering - View is gonna be separated from the controller
-                view.clear();
-                track_view.draw(view.getGraphics(), track_model);
-                car_view.draw(view.getGraphics());
-                view.getScreen().refresh();
+        int FPS = 1;
+        int frameTime = 20 / FPS;
 
-                //logic - This code will be moved into separate controllers later on
-                track_model.move(1);
-                com.googlecode.lanterna.input.KeyStroke key = view.getScreen().pollInput();
-                processKey(key, car_model);
-                view.getScreen().refresh();
-            }
+        while (true)  {
+            long startTime = System.currentTimeMillis();
 
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+            //rendering - View is gonna be separated from the controller
+            view.clear();
+            track_view.draw(view.getGraphics(), track_model);
+            car_view.draw(view.getGraphics());
+            view.getScreen().refresh();
+
+            //logic - This code will be moved into separate controllers later on
+            track_model.move(1);
+            com.googlecode.lanterna.input.KeyStroke key = view.getScreen().pollInput();
+            processKey(key, car_model);
+            view.getScreen().refresh();
+            long elapsedTime = System.currentTimeMillis() - startTime;
+            long sleepTime = frameTime - elapsedTime;
+
+            try {
+                if (sleepTime > 0) Thread.sleep(sleepTime);
+            } catch (InterruptedException e) {}
+    }
     }
 
     public void processKey(com.googlecode.lanterna.input.KeyStroke key, CarModel model) {
