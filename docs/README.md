@@ -10,6 +10,11 @@ This project was developed by André Barbosa (up202007398@edu.fe.up.pt), [Guilhe
 ### Car Movement
  - The user can use the keys to move the car left and right between the availabe lanes. This way, the position of the car is limited to 3 places only.
 
+<p align="center">
+    <img width=450 src="src/car_movement.gif">
+</p>
+
+
 ### Track Displaying 
  - The track is displayed simulating the progression of the car at a default speed.
 
