@@ -1,22 +1,32 @@
-## LDTS_G0901 - <PROJECT NAME>
+# LDTS_G0901 - Racing Game
 
-In this game you can drive a car, avoiding to hit against some obstacles, and controlling its speed.
+Try to survive the longest on a fast paced circuit filled with dangerous obstacles.
 
-This project was developed by André Barbosa (up202007398@edu.fe.up.pt), Guilherme Almeida and José Luís Rodrigues for LDTS 2021/22
-
-
-### IMPLEMENTED FEATURES
-
-- **Car Movement** - The car have 3 different positions to be on track, most-left, middle and most-right. 
-- **Track Displaying** - The track is displayed simulating the progression of the car at a default speed.
-[TrackMovement] (https://github.com/FEUP-LDTS-2021/ldts-project-assignment-G0901/tree/feature/docs/docs/src/track_movement.gif)
-
-### PLANNED FEATURES
-- **Acceleration** - The track will move faster or slower according to users input.
-- **Obstacles** - There will be random obstacles updated on track while the car is moving.
+This project was developed by André Barbosa (up202007398@edu.fe.up.pt), Guilherme Almeida and [José Luís Rodrigues](www.github.com/jlcrodrigues) (up202008462@edu.fe.up.pt) for LDTS 2021/22.
 
 
-### DESIGN
+## Implemented Features
+
+### Car Movement
+ - The user can use the keys to move the car left and right between the availabe lanes. This way, the position of the car is limited to 3 places only.
+
+### Track Displaying 
+ - The track is displayed simulating the progression of the car at a default speed.
+
+<p align="center">
+    <img width=450 src="src/track_movement.gif">
+</p>
+
+## Planned Features
+
+### Acceleration
+- The track will move faster or slower according to users input.
+
+### Obstacles
+- There will be random obstacles updated on track while the car is moving.
+
+
+## Design
 
 #### GENERAL PATTERN ON THE PROGRAM
 
@@ -39,10 +49,10 @@ The use of the CMV Pattern in the current design allows the following benefits:
 - Have a place of code containing only objects and informations about them(Model), that can be used for any other kind of program.
 - Makes easier the Test Driven Development.
 
-#### KNOWN CODE SMELLS AND REFACTORING SUGGESTIONS
+<!--#### KNOWN CODE SMELLS AND REFACTORING SUGGESTIONS-->
 
 
-### TESTING
+<!--### TESTING-->
 
 
 ### SELF-EVALUATION
