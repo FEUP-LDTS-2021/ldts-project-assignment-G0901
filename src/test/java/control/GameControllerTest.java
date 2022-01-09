@@ -12,17 +12,17 @@ public class GameControllerTest {
     @Test
     public void CheckKeys()  {
         GameController controller = new GameController();
-        CarModel model = new CarModel(new Position(10,20));
+        CarModel model = new CarModel(new Position(30,20));
         com.googlecode.lanterna.input.KeyStroke key = new KeyStroke(KeyType.ArrowLeft);
         controller.processKey(key, model);
         controller.processKey(key, model);
-        assertEquals(8, model.getPosition().getX());
+        assertEquals(18, model.getPosition().getX());
 
         com.googlecode.lanterna.input.KeyStroke key2 = new KeyStroke(KeyType.ArrowRight);
         controller.processKey(key2, model);
         controller.processKey(key2, model);
         controller.processKey(key2, model);
-        assertEquals(11, model.getPosition().getX());
+        assertEquals(42, model.getPosition().getX());
 
 
 
