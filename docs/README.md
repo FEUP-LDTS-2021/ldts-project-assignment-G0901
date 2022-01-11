@@ -41,7 +41,7 @@ We had to find a way of organising all the different classes on the program.
 
 **The Pattern**
 
-We have applied the **MVC** (Model-view-controller) pattern. This pattern allowed us to separate all classes in 3 different groups, one for each part of the project.
+We have applied the **MVC** (Model-game.view-controller) pattern. This pattern allowed us to separate all classes in 3 different groups, one for each part of the project.
 
 **Implementation**
 

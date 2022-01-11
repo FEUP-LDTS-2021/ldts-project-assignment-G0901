@@ -1,10 +1,10 @@
-package view;
+package game.view;
 
 import com.googlecode.lanterna.SGR;
 import com.googlecode.lanterna.TerminalPosition;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
-import model.CarModel;
+import game.model.CarModel;
 
 public class CarView extends CarModel {
     CarModel model;

@@ -1,13 +1,11 @@
-package view;
+package game.view;
 
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
-import com.googlecode.lanterna.screen.Screen;
-import model.CarModel;
-import model.Position;
+import game.model.CarModel;
+import game.model.Position;
 import org.junit.jupiter.api.Test;
 
-import java.io.IOError;
 import java.io.IOException;
 
 import static org.mockito.Mockito.*;

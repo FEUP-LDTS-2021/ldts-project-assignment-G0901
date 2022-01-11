@@ -1,8 +1,6 @@
-package view;
+package game.gui;
 
-import com.googlecode.lanterna.TerminalPosition;
 import com.googlecode.lanterna.TerminalSize;
-import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
 import com.googlecode.lanterna.screen.Screen;
 import com.googlecode.lanterna.screen.TerminalScreen;
@@ -11,15 +9,21 @@ import com.googlecode.lanterna.terminal.Terminal;
 
 import java.io.IOException;
 
-public class GameView {
-    public static final int height = 40;
-    public static final int width = 80;
+public class GUI {
+    public static int height;
+    public static int width;
     public static final String background_colour = "#7CFC00";
 
     private Screen screen;
     private TextGraphics graphics;
 
-    public void initScreen() {
+    public GUI (int width, int height) {
+        this.width = width;
+        this.height = height;
+        initScreen();
+    }
+
+    private void initScreen() {
         try {
             DefaultTerminalFactory factory = new DefaultTerminalFactory().setInitialTerminalSize(new TerminalSize(width, height));
             Terminal terminal = factory.createTerminal();
@@ -38,6 +42,10 @@ public class GameView {
 
     public void clear() throws IOException {
         screen.clear();
+    }
+
+    public void refresh() throws IOException{
+        screen.refresh();
     }
 
     public Screen getScreen(){

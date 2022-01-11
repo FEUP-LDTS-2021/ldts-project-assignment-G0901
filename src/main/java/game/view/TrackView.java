@@ -1,11 +1,10 @@
-package view;
+package game.view;
 
-import com.googlecode.lanterna.SGR;
 import com.googlecode.lanterna.TerminalPosition;
 import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
-import model.TrackModel;
+import game.model.TrackModel;
 
 import static java.lang.Math.*;
 

@@ -1,15 +1,15 @@
-package control;
+package game.control;
 
 import com.googlecode.lanterna.input.KeyStroke;
 import com.googlecode.lanterna.input.KeyType;
-import model.CarModel;
-import model.Position;
+import game.model.CarModel;
+import game.model.Position;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class GameControllerTest {
-    @Test
+    /*@Test
     public void CheckKeys()  {
         GameController controller = new GameController();
         CarModel model = new CarModel(new Position(30,20));
@@ -27,7 +27,7 @@ public class GameControllerTest {
 
 
 
-    }
+    }*/
 
 
 }
