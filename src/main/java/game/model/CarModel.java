@@ -5,6 +5,12 @@ public class CarModel implements Model {
     Position position;
     int mov;
 
+    public CarModel() {
+        initPosition = new Position(40, 38);
+        this.position = initPosition;
+        mov = 12;
+    }
+
     public CarModel(Position position)
     {
         initPosition = position;

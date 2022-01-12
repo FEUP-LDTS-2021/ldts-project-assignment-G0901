@@ -18,8 +18,8 @@ public class CarViewTest {
         CarModel model = mock(CarModel.class);
         when(model.getPosition()).thenReturn(new Position(0, 0));
 
-        CarView view = new CarView(model);
-        view.draw(graphics);
+        CarView view = new CarView();
+        view.draw(graphics, model);
         verify(graphics, times(1)).setBackgroundColor(any(TextColor.class));
     }
 }

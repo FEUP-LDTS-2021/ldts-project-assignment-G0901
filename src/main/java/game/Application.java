@@ -1,7 +1,7 @@
 package game;
 
 import game.gui.GUI;
-import game.model.TrackModel;
+import game.model.GameModel;
 import game.states.GameState;
 import game.states.State;
 
@@ -12,7 +12,7 @@ public class Application {
     private GUI gui;
 
     public Application() {
-        this.state = new GameState(new TrackModel());
+        this.state = new GameState(new GameModel());
         this.gui = new GUI(80, 40);
     }
 

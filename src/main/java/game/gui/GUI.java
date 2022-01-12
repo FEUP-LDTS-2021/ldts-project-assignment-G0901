@@ -2,6 +2,8 @@ package game.gui;
 
 import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.graphics.TextGraphics;
+import com.googlecode.lanterna.input.KeyStroke;
+import com.googlecode.lanterna.input.KeyType;
 import com.googlecode.lanterna.screen.Screen;
 import com.googlecode.lanterna.screen.TerminalScreen;
 import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
@@ -10,6 +12,7 @@ import com.googlecode.lanterna.terminal.Terminal;
 import java.io.IOException;
 
 public class GUI {
+    public enum ACTION {NONE, QUIT, LEFT, RIGHT};
     public static int height;
     public static int width;
     public static final String background_colour = "#7CFC00";
@@ -38,6 +41,24 @@ public class GUI {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public ACTION getAction() throws IOException {
+        KeyStroke key_stroke = screen.pollInput();
+
+        if (key_stroke == null) return ACTION.NONE;
+
+        if (key_stroke.getKeyType() == KeyType.EOF) return ACTION.QUIT;
+
+        if (key_stroke.getKeyType() == KeyType.ArrowRight ||
+                (key_stroke.getKeyType() == KeyType.Character &&
+                        key_stroke.getCharacter() == 'd')) return ACTION.RIGHT;
+
+        if (key_stroke.getKeyType() == KeyType.ArrowLeft ||
+                (key_stroke.getKeyType() == KeyType.Character &&
+                        key_stroke.getCharacter() == 'a')) return ACTION.LEFT;
+
+        return ACTION.NONE;
     }
 
     public void clear() throws IOException {

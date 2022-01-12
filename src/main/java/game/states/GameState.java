@@ -1,25 +1,28 @@
 package game.states;
 
 import game.Application;
+import game.control.GameController;
 import game.control.TrackController;
 import game.gui.GUI;
+import game.model.GameModel;
 import game.model.TrackModel;
 import game.view.GameView;
 
 import java.io.IOException;
 
-public class GameState extends State<TrackModel> {
+public class GameState extends State<GameModel> {
 
-    public GameState(TrackModel model)
+    public GameState(GameModel model)
     {
         super(model);
         this.view = new GameView(model);
-        this.controller = new TrackController(model);
+        this.controller = new GameController(model);
     }
 
     @Override
     public void step(Application app, GUI gui) throws IOException {
-       controller.step(app);
-       view.draw(gui);
+        GUI.ACTION action = gui.getAction();
+        controller.step(app, action);
+        view.draw(gui);
     }
 }

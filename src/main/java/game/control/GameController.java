@@ -1,20 +1,29 @@
-    /*public void processKey(com.googlecode.lanterna.input.KeyStroke key, CarModel model) {
-        System.out.println(key);
+package game.control;
 
-        if (key == null) return;
+import game.Application;
+import game.control.Controller;
+import game.gui.GUI;
+import game.model.GameModel;
 
-        switch (key.getKeyType()) {
-            case ArrowLeft:
-                if (model.getPosition().getX() > model.getInitPosition().getX() - model.getMov())
-                    model.moveLeft() ;
-                break;
-            case ArrowRight:
-                if (model.getPosition().getX() < model.getInitPosition().getX() + model.getMov())
-                    model.moveRight();
-                break;
-        }
+import javax.sound.midi.Track;
+
+    /*
+public class GameController extends Controller<GameModel> {
+    private GameModel
+
+     */
+public class GameController extends Controller<GameModel> {
+    private TrackController track_controller;
+    private CarController car_controller;
+
+    public GameController(GameModel model) {
+        super(model);
+        track_controller = new TrackController(model.getTrackModel());
+        car_controller = new CarController(model.getCarModel());
     }
 
+    public void step(Application application, GUI.ACTION action) {
+        track_controller.step(application, action);
+        car_controller.step(application, action);
+    }
 }
-*/
-

@@ -1,15 +1,17 @@
-package model;
+package game.model;
 
 public class GameModel implements Model{
     CarModel carModel;
     TrackModel trackModel;
+
     public GameModel(CarModel car, TrackModel track){
         carModel = car;
         trackModel = track;
     }
 
     public GameModel() {
-
+        carModel = new CarModel();
+        trackModel = new TrackModel();
     }
 
     public CarModel getCarModel() {

@@ -1,6 +1,7 @@
 package game.control;
 
 import game.Application;
+import game.gui.GUI;
 
 public abstract class Controller<Model> {
     private Model model;
@@ -13,5 +14,5 @@ public abstract class Controller<Model> {
         return model;
     }
 
-    public abstract void step(Application application);
+    public abstract void step(Application application, GUI.ACTION action);
 }
