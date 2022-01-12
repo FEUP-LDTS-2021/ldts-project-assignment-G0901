@@ -1,6 +1,8 @@
 package model;
 
+import game.model.CarModel;
 import game.model.GameModel;
+import game.model.TrackModel;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
