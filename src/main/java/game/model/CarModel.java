@@ -6,7 +6,7 @@ public class CarModel implements Model {
     int mov;
 
     public CarModel() {
-        initPosition = new Position(40, 38);
+        initPosition = new Position(40, 37);
         this.position = initPosition;
         mov = 12;
     }

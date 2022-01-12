@@ -7,11 +7,10 @@ import game.model.GameModel;
 
 import javax.sound.midi.Track;
 
-    /*
+/*
 public class GameController extends Controller<GameModel> {
-    private GameModel
-
-     */
+private GameModel
+ */
 public class GameController extends Controller<GameModel> {
     private TrackController track_controller;
     private CarController car_controller;

@@ -1,4 +1,4 @@
-package model;
+package game.model;
 
 import game.model.CarModel;
 import game.model.GameModel;
