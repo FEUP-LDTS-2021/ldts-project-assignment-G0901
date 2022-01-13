@@ -2,7 +2,9 @@ package game;
 
 import game.gui.GUI;
 import game.model.game.GameModel;
+import game.model.menu.MenuModel;
 import game.states.GameState;
+import game.states.MenuState;
 import game.states.State;
 
 import java.io.IOException;
@@ -12,7 +14,7 @@ public class Application {
     private GUI gui;
 
     public Application() {
-        this.state = new GameState(new GameModel());
+        this.state = new MenuState(new MenuModel());
         this.gui = new GUI(80, 40);
     }
 

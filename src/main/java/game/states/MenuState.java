@@ -17,6 +17,8 @@ public class MenuState extends State<MenuModel> {
 
     @Override
     public void step(Application app, GUI gui) throws IOException {
-
+        GUI.ACTION action = gui.getAction();
+        controller.step(app, action);
+        view.draw(gui);
     }
 }
