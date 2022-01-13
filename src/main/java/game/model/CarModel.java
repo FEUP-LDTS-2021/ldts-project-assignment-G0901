@@ -1,9 +1,15 @@
-package model;
+package game.model;
 
 public class CarModel implements Model {
     Position initPosition;
     Position position;
     int mov;
+
+    public CarModel() {
+        initPosition = new Position(40, 37);
+        this.position = initPosition;
+        mov = 12;
+    }
 
     public CarModel(Position position)
     {
