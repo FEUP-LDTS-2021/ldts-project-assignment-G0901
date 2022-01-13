@@ -26,7 +26,7 @@ public class GUI {
         initScreen();
     }
 
-    private void initScreen() {
+    public void initScreen() {
         try {
             DefaultTerminalFactory factory = new DefaultTerminalFactory().setInitialTerminalSize(new TerminalSize(width, height));
             Terminal terminal = factory.createTerminal();

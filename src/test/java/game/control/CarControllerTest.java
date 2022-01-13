@@ -8,6 +8,7 @@ import game.model.CarModel;
 import game.model.GameModel;
 import game.model.Model;
 import game.model.Position;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
@@ -21,13 +22,16 @@ public class CarControllerTest {
     private Application app;
     private GUI gui;
 
-    @Test
-    public void step()  {
+    @BeforeEach
+    void setUp() {
         model = new CarModel();
         carController = new CarController(model);
         app = Mockito.mock(Application.class);
         gui = Mockito.mock(GUI.class);
+    }
 
+    @Test
+    void step()  {
         carController.step(app, GUI.ACTION.LEFT);
         assertEquals(28, model.getPosition().getX());
         carController.step(app, GUI.ACTION.RIGHT);

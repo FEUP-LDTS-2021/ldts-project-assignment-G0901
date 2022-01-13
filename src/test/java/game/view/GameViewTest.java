@@ -2,6 +2,7 @@ package game.view;
 
 import game.gui.GUI;
 import game.model.GameModel;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
@@ -14,23 +15,24 @@ public class GameViewTest {
     private CarView carView;
     private GUI gui;
 
+    @BeforeEach
+    void setUp() {
+        trackView = Mockito.mock(TrackView.class);
+        carView = Mockito.mock(CarView.class);
+        gui = Mockito.mock(GUI.class);
+
+        model = new GameModel();
+        view = new GameView(model);
+
+        view.track_view = trackView;
+        view.car_view = carView;
+    }
+
     @Test
-    public void drawElements() throws IOException {
-       trackView = Mockito.mock(TrackView.class);
-       carView = Mockito.mock(CarView.class);
-       gui = Mockito.mock(GUI.class);
-
-       model = new GameModel();
-       view = new GameView(model);
-
-       view.track_view = trackView;
-       view.car_view = carView;
-
+    void drawElements() throws IOException {
        view.drawElements(gui);
 
        Mockito.verify(trackView, Mockito.times(1)).draw(gui.getGraphics(), model.getTrackModel());
        Mockito.verify(carView, Mockito.times(1)).draw(gui.getGraphics(), model.getCarModel());
-
-
     }
 }

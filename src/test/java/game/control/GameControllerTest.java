@@ -3,6 +3,8 @@ package game.control;
 import game.Application;
 import game.gui.GUI;
 import game.model.GameModel;
+import org.junit.Before;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
@@ -16,8 +18,8 @@ public class GameControllerTest {
     private Application app;
     private GUI gui;
 
-    @Test
-    public void step() throws IOException {
+    @BeforeEach
+    void setUp() {
         trackController = Mockito.mock(TrackController.class);
         carController = Mockito.mock(CarController.class);
         app = Mockito.mock(Application.class);
@@ -28,7 +30,10 @@ public class GameControllerTest {
 
         controller.track_controller = trackController;
         controller.car_controller = carController;
+    }
 
+    @Test
+    void step() throws IOException {
         controller.step(app, gui.getAction());
 
         Mockito.verify(trackController, Mockito.times(1)).step(app, gui.getAction());
