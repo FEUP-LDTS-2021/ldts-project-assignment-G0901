@@ -14,7 +14,7 @@ public class Application {
     private GUI gui;
 
     public Application() {
-        this.state = new MenuState(new MenuModel());
+        this.state = new GameState(new GameModel());
         this.gui = new GUI(80, 40);
     }
 
