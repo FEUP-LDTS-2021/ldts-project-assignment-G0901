@@ -1,16 +1,10 @@
-package game.control;
+package game.control.game;
 
 import game.Application;
 import game.control.Controller;
 import game.gui.GUI;
-import game.model.GameModel;
+import game.model.game.GameModel;
 
-import javax.sound.midi.Track;
-
-/*
-public class GameController extends Controller<GameModel> {
-private GameModel
- */
 public class GameController extends Controller<GameModel> {
     private TrackController track_controller;
     private CarController car_controller;

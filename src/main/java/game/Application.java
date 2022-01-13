@@ -1,7 +1,7 @@
 package game;
 
 import game.gui.GUI;
-import game.model.GameModel;
+import game.model.game.GameModel;
 import game.states.GameState;
 import game.states.State;
 

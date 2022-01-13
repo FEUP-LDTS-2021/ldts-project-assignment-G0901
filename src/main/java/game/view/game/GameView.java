@@ -1,8 +1,8 @@
-package game.view;
+package game.view.game;
 
 import game.gui.GUI;
-import game.model.GameModel;
-import game.model.TrackModel;
+import game.model.game.GameModel;
+import game.view.View;
 
 import java.io.IOException;
 

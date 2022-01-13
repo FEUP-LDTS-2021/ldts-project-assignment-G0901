@@ -1,9 +1,9 @@
 package game.control;
 
 import game.Application;
+import game.control.game.TrackController;
 import game.gui.GUI;
-import game.model.Model;
-import game.model.TrackModel;
+import game.model.game.TrackModel;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 

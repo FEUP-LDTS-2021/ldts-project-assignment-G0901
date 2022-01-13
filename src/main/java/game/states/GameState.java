@@ -1,10 +1,10 @@
 package game.states;
 
 import game.Application;
-import game.control.GameController;
+import game.control.game.GameController;
 import game.gui.GUI;
-import game.model.GameModel;
-import game.view.GameView;
+import game.model.game.GameModel;
+import game.view.game.GameView;
 
 import java.io.IOException;
 

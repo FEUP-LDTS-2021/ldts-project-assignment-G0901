@@ -1,8 +1,9 @@
-package game.control;
+package game.control.game;
 
 import game.Application;
+import game.control.Controller;
 import game.gui.GUI;
-import game.model.TrackModel;
+import game.model.game.TrackModel;
 
 public class TrackController extends Controller<TrackModel> {
     public TrackController(TrackModel track_model) {

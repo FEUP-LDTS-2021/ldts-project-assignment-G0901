@@ -3,8 +3,6 @@ package game.states;
 import game.Application;
 import game.control.Controller;
 import game.gui.GUI;
-import game.view.GameView;
-import game.view.TrackView;
 import game.view.View;
 
 import java.io.IOException;

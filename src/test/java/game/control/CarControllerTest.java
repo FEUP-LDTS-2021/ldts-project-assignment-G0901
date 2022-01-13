@@ -1,17 +1,11 @@
 package game.control;
 
-import com.googlecode.lanterna.input.KeyStroke;
-import com.googlecode.lanterna.input.KeyType;
 import game.Application;
+import game.control.game.CarController;
 import game.gui.GUI;
-import game.model.CarModel;
-import game.model.GameModel;
-import game.model.Model;
-import game.model.Position;
+import game.model.game.CarModel;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-
-import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
