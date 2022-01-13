@@ -11,6 +11,7 @@ public class MenuModelTest {
 
     private String background_color = "#353535";
     private String text_color = "#D9D9D9";
+    private String title = "Game";
 
     @BeforeEach
     void setUp() {
@@ -29,5 +30,12 @@ public class MenuModelTest {
         String color = model.getTextColor();
 
         assertEquals(text_color, color);
+    }
+
+    @Test
+    void testTitle() {
+        String text = model.getTitle();
+
+        assertEquals(title, text);
     }
 }
