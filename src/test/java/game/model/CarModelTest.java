@@ -17,13 +17,13 @@ public class CarModelTest {
     }
 
     @Test
-    public void testValues() {
+    void testValues() {
         assertEquals(10, car.getPosition().getX());
         assertEquals(20, car.getPosition().getY());
     }
 
     @Test
-    public void testMovement() {
+     void testMovement() {
         car.moveRight();
         car.moveRight();
         assertEquals(34, car.getPosition().getX());

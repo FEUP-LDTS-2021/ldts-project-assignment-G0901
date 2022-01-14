@@ -17,8 +17,8 @@ public class GUI {
     public static int width;
     public static final String background_colour = "#7CFC00";
 
-    private Screen screen;
-    private TextGraphics graphics;
+    public Screen screen;
+    public TextGraphics graphics;
 
     public GUI (int width, int height) {
         this.width = width;
@@ -26,7 +26,7 @@ public class GUI {
         initScreen();
     }
 
-    private void initScreen() {
+    public void initScreen() {
         try {
             DefaultTerminalFactory factory = new DefaultTerminalFactory().setInitialTerminalSize(new TerminalSize(width, height));
             Terminal terminal = factory.createTerminal();

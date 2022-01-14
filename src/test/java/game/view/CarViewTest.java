@@ -4,6 +4,7 @@ import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
 import game.model.CarModel;
 import game.model.Position;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -11,14 +12,20 @@ import java.io.IOException;
 import static org.mockito.Mockito.*;
 
 public class CarViewTest {
+    private TextGraphics graphics;
+    private CarModel model;
+    private CarView view;
+
+    @BeforeEach
+    void setUp() {
+        graphics = mock(TextGraphics.class);
+        model = mock(CarModel.class);
+        when(model.getPosition()).thenReturn(new Position(0, 0));
+        view = new CarView();
+    }
 
     @Test
-    public void testCarView() throws IOException {
-        TextGraphics graphics = mock(TextGraphics.class);
-        CarModel model = mock(CarModel.class);
-        when(model.getPosition()).thenReturn(new Position(0, 0));
-
-        CarView view = new CarView();
+    void testCarView()  {
         view.draw(graphics, model);
         verify(graphics, times(1)).setBackgroundColor(any(TextColor.class));
     }

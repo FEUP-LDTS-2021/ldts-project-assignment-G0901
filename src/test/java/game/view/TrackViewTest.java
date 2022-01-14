@@ -4,6 +4,7 @@ import com.googlecode.lanterna.TerminalPosition;
 import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.graphics.TextGraphics;
 import game.model.TrackModel;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -12,14 +13,18 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
 public class TrackViewTest {
+    private TextGraphics graphics;
+    private TrackModel track;
+    private TrackView view;
+    private int width, height;
 
-    @Test
-    public void testTrackView() throws IOException
-    {
-        int width = 20, height = 20;
-        TextGraphics graphics = mock(TextGraphics.class);
+    @BeforeEach
+    void setUp() {
+        width = 20;
+        height = 20;
+        graphics = mock(TextGraphics.class);
         //TrackModel track = mock(TrackModel.class);
-        TrackModel track = new TrackModel();
+        track = new TrackModel();
 
         when(graphics.getSize()).thenReturn(new TerminalSize(width, height));
 
@@ -27,8 +32,12 @@ public class TrackViewTest {
         //when(track.getDistance()).thenReturn(0);
         //when(track.getTerrainColor()).thenReturn();
 
+        view = new TrackView();
+    }
 
-        TrackView view = new TrackView();
+    @Test
+    void testTrackView() throws IOException
+    {
         view.draw(graphics, track);
         verify(graphics, times(width * height)).fillRectangle(any(TerminalPosition.class), any(TerminalSize.class), anyChar());
     }

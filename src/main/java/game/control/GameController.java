@@ -12,8 +12,8 @@ public class GameController extends Controller<GameModel> {
 private GameModel
  */
 public class GameController extends Controller<GameModel> {
-    private TrackController track_controller;
-    private CarController car_controller;
+    public TrackController track_controller;
+    public CarController car_controller;
 
     public GameController(GameModel model) {
         super(model);
