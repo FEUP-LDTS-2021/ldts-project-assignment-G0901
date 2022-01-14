@@ -1,14 +1,14 @@
-package game.view;
+package game.view.game;
 
 import game.gui.GUI;
-import game.model.GameModel;
-import game.model.TrackModel;
+import game.model.game.GameModel;
+import game.view.View;
 
 import java.io.IOException;
 
 public class GameView extends View<GameModel> {
-    TrackView track_view; //TODO Change views into subclass
-    CarView car_view;
+    public TrackView track_view; //TODO Change views into subclass
+    public CarView car_view;
 
     public GameView(GameModel model) {
         super(model);

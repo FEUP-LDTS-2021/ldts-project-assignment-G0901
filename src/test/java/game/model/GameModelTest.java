@@ -1,8 +1,9 @@
 package game.model;
 
-import game.model.CarModel;
-import game.model.GameModel;
-import game.model.TrackModel;
+import game.model.game.CarModel;
+import game.model.game.GameModel;
+import game.model.game.TrackModel;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

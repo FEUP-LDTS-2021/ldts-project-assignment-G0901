@@ -1,20 +1,18 @@
 package game.states;
 
 import game.Application;
-import game.control.game.GameController;
+import game.control.menu.MenuController;
 import game.gui.GUI;
-import game.model.game.GameModel;
-import game.view.game.GameView;
+import game.model.menu.MenuModel;
+import game.view.menu.MenuView;
 
 import java.io.IOException;
 
-public class GameState extends State<GameModel> {
-
-    public GameState(GameModel model)
-    {
+public class MenuState extends State<MenuModel> {
+    public MenuState(MenuModel model) {
         super(model);
-        this.view = new GameView(model);
-        this.controller = new GameController(model);
+        view = new MenuView(model);
+        controller = new MenuController(model);
     }
 
     @Override
