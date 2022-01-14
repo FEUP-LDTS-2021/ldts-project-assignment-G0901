@@ -1,8 +1,9 @@
-package game.control;
+package game.control.game;
 
 import game.Application;
+import game.control.Controller;
 import game.gui.GUI;
-import game.model.CarModel;
+import game.model.game.CarModel;
 
 public class CarController extends Controller<CarModel> {
     public CarController(CarModel model) {

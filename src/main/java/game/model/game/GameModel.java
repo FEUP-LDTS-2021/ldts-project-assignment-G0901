@@ -1,6 +1,8 @@
-package game.model;
+package game.model.game;
 
-public class GameModel implements Model{
+import game.model.Model;
+
+public class GameModel implements Model {
     CarModel carModel;
     TrackModel trackModel;
 

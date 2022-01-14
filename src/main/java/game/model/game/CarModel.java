@@ -1,4 +1,7 @@
-package game.model;
+package game.model.game;
+
+import game.model.Model;
+import game.model.Position;
 
 public class CarModel implements Model {
     Position initPosition;

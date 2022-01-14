@@ -3,7 +3,9 @@ package game.view;
 import com.googlecode.lanterna.TerminalPosition;
 import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.graphics.TextGraphics;
-import game.model.TrackModel;
+import game.model.game.TrackModel;
+import game.view.game.TrackView;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

@@ -1,5 +1,6 @@
 package game.model;
 
+import game.model.game.CarModel;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

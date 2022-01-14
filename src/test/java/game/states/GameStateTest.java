@@ -1,10 +1,11 @@
 package game.states;
 
 import game.Application;
-import game.control.GameController;
+import game.control.game.GameController;
 import game.gui.GUI;
-import game.model.GameModel;
-import game.view.GameView;
+import game.model.game.GameModel;
+import game.view.game.GameView;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;

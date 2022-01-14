@@ -1,6 +1,8 @@
 package game.gui;
 
+import com.googlecode.lanterna.TerminalPosition;
 import com.googlecode.lanterna.TerminalSize;
+import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
 import com.googlecode.lanterna.input.KeyStroke;
 import com.googlecode.lanterna.input.KeyType;
@@ -59,6 +61,12 @@ public class GUI {
                         key_stroke.getCharacter() == 'a')) return ACTION.LEFT;
 
         return ACTION.NONE;
+    }
+
+    public void fillScreen(String color) throws IOException {
+        graphics.setBackgroundColor(TextColor.Factory.fromString(color));
+        graphics.fill(' ');
+        screen.refresh();
     }
 
     public void clear() throws IOException {

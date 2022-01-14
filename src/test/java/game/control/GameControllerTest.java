@@ -1,9 +1,12 @@
 package game.control;
 
 import game.Application;
+import game.control.game.CarController;
+import game.control.game.GameController;
+import game.control.game.TrackController;
 import game.gui.GUI;
-import game.model.GameModel;
-import org.junit.Before;
+import game.model.game.GameModel;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
