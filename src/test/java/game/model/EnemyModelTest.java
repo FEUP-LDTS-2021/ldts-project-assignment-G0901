@@ -22,7 +22,7 @@ public class EnemyModelTest {
     void TestValues(){
         assertEquals(38, enemy1.getPosition().getX());
         assertEquals(10, enemy1.getPosition().getY());
-        assertEquals(20, enemy1.getPosition().getY());
+        assertEquals(20, enemy2.getPosition().getY());
     }
 
     @Test
