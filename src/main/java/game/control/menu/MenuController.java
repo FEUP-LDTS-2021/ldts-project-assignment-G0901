@@ -22,6 +22,7 @@ public class MenuController extends Controller<MenuModel> {
                 break;
             case ESC:
                 app.setState(null);
+                break;
             case ENTER:
                if (getModel().whichSelected() == 0) app.setState(new GameState(new GameModel()));
                // TODO  finish conditions for rest of states (rules, about);
