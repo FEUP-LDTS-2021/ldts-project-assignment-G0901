@@ -1,11 +1,11 @@
 package game.view.game;
 
 import game.gui.GUI;
+import game.model.game.EnemyModel;
 import game.model.game.GameModel;
 import game.view.View;
 
 import java.io.IOException;
-import java.util.Vector;
 
 public class GameView extends View<GameModel> {
     public TrackView track_view; //TODO Change views into subclass
@@ -23,7 +23,12 @@ public class GameView extends View<GameModel> {
     public void drawElements(GUI gui) throws IOException {
         track_view.draw(gui.getGraphics(), model.getTrackModel());
         car_view.draw(gui.getGraphics(), model.getCarModel());
-        enemy_view.draw(gui.getGraphics(), model.getEnemyModel());
+        for (EnemyModel e: model.getEnemies())
+        {
+            if (e.getPosition().getY() > (gui.getGraphics().getSize().getRows() / 2))
+                enemy_view.draw(gui.getGraphics(), e);
+        }
+
         gui.refresh();
 
     }

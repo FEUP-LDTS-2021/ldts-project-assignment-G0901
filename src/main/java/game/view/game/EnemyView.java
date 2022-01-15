@@ -13,6 +13,6 @@ public class EnemyView extends EnemyModel {
     public void draw(TextGraphics screen, EnemyModel model){
         screen.setBackgroundColor(TextColor.Factory.fromString("#FFFFFF"));
         screen.enableModifiers(SGR.BOLD);
-        screen.fillTriangle(new TerminalPosition(model.getPosition().getX() - 1, model.getPosition().getY()), new TerminalPosition(model.getPosition().getX() + 1, model.getPosition().getY()), new TerminalPosition(model.getPosition().getX(), model.getPosition().getY()-1), ' ');
+        screen.fillTriangle(new TerminalPosition(model.getPosition().getX() - 1, model.getPosition().getY()), new TerminalPosition(model.getPosition().getX() + 1, model.getPosition().getY()), new TerminalPosition(model.getPosition().getX(), model.getPosition().getY()+1), ' ');
     }
 }

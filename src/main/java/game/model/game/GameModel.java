@@ -2,10 +2,13 @@ package game.model.game;
 
 import game.model.Model;
 
+import java.util.List;
+
 public class GameModel implements Model {
     CarModel carModel;
     TrackModel trackModel;
     EnemyModel enemyModel;
+    List<EnemyModel> enemies;
 
     public GameModel(CarModel car, TrackModel track, EnemyModel enemy){
         carModel = car;
@@ -17,6 +20,7 @@ public class GameModel implements Model {
         carModel = new CarModel();
         trackModel = new TrackModel();
         enemyModel = new EnemyModel();
+        enemies = enemyModel.createEnemies();
     }
 
     public CarModel getCarModel() {
@@ -40,4 +44,7 @@ public class GameModel implements Model {
     public void setEnemyModel(EnemyModel enemyModel) {
         this.enemyModel = enemyModel;
     }
+
+    public List<EnemyModel> getEnemies() {return enemies;}
+
 }
