@@ -39,6 +39,10 @@ public class Application {
                 if (sleepTime > 0) Thread.sleep(sleepTime);
             } catch (InterruptedException e) {}
         }
+
+        gui.getScreen().stopScreen();
+        System.exit(0);
+
     }
 
     public void setState(State state) {

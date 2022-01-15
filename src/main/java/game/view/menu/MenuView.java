@@ -22,7 +22,6 @@ public class MenuView extends View<MenuModel> {
     public void drawElements(GUI gui) throws IOException {
         TerminalSize size = gui.getGraphics().getSize();
 
-        gui.fillScreen(background_color);
         gui.getGraphics().setForegroundColor(TextColor.Factory.fromString(text_color));
 
         gui.getGraphics().putString(size.getColumns() / 2 - model.getTitle().length() / 2,
@@ -38,7 +37,7 @@ public class MenuView extends View<MenuModel> {
 
 
             gui.getGraphics().putString(size.getColumns() / 2 - model.getItem(i).length() / 2,
-                    (size.getRows() / 2) + (size.getRows() / 7 * i) - model.getItem(i).length() / 2, model.getItem(i));
+                    ((size.getRows() / 2) + ((size.getRows() / 2) / model.getNumberItems() * i)) - model.getItem(i).length() / 2, model.getItem(i));
         }
 
         gui.refresh();
