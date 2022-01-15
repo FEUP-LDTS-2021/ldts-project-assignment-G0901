@@ -4,42 +4,33 @@ import game.model.Model;
 import game.model.Position;
 
 public class CarModel implements Model {
-    Position initPosition;
-    Position position;
-    int mov;
+    int lane;
+    int y;
 
     public CarModel() {
-        initPosition = new Position(40, 37);
-        this.position = initPosition;
-        mov = 12;
+        this.lane = 0;
+        this.y = 70;
     }
 
-    public CarModel(Position position)
+    public CarModel(int lane, int y)
     {
-        initPosition = position;
-        this.position = position;
-        mov = 12;
+        this.lane = lane;
+        this.y = y;
     }
 
-    public Position getInitPosition() {return initPosition;}
-
-    public Position getPosition() {
-        return position;
+    public int getLane() {
+        return lane;
     }
 
-    public int getMov() {return mov;}
-
-    public void setPosition(Position position){
-        this.position = position;
+    public int getY() {
+        return y;
     }
 
     public void moveLeft(){
-        int x = position.getX() - mov;
-        position = new Position(x, position.getY());
+        lane -= 1;
     }
 
-    public  void moveRight(){
-        int x = position.getX() + mov;
-        position = new Position(x, position.getY());
+    public void moveRight(){
+        lane += 1;
     }
 }

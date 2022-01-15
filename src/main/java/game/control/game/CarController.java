@@ -13,11 +13,11 @@ public class CarController extends Controller<CarModel> {
     public void step(Application application, GUI.ACTION action)
     {
         if (action == GUI.ACTION.LEFT)
-            if (getModel().getPosition().getX() > getModel().getInitPosition().getX() - getModel().getMov())
-                getModel().moveLeft() ;
+            if (getModel().getLane() > -1)
+                getModel().moveLeft();
         if (action == GUI.ACTION.RIGHT)
-            if (getModel().getPosition().getX() < getModel().getInitPosition().getX() + getModel().getMov())
-                getModel().moveRight() ;
+            if (getModel().getLane() < 1)
+                getModel().moveRight();
     }
 
 }

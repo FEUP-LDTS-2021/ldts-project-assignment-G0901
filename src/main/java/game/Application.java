@@ -15,7 +15,7 @@ public class Application {
 
     public Application() {
         this.state = new GameState(new GameModel());
-        this.gui = new GUI(80, 40);
+        this.gui = new GUI(180, 80);
     }
 
     public static void main(String[] args) throws IOException {

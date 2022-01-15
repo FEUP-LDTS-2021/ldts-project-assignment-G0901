@@ -22,7 +22,7 @@ public class CarViewTest {
     void setUp() {
         graphics = mock(TextGraphics.class);
         model = mock(CarModel.class);
-        when(model.getPosition()).thenReturn(new Position(0, 0));
+        when(model.getLane()).thenReturn(0);
         view = new CarView();
     }
 

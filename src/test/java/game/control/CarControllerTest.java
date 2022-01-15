@@ -28,10 +28,10 @@ public class CarControllerTest {
     @Test
     void step()  {
         carController.step(app, GUI.ACTION.LEFT);
-        assertEquals(28, model.getPosition().getX());
+        assertEquals(-1, model.getLane());
         carController.step(app, GUI.ACTION.RIGHT);
         carController.step(app, GUI.ACTION.RIGHT);
-        assertEquals(52, model.getPosition().getX());
+        assertEquals(1, model.getLane());
     }
 
 }

@@ -13,23 +13,21 @@ public class CarModelTest {
 
     @BeforeEach
     void setUp() {
-        position = new Position(10, 20);
-        car = new CarModel(position);
+        car = new CarModel(0, 40);
     }
 
     @Test
     void testValues() {
-        assertEquals(10, car.getPosition().getX());
-        assertEquals(20, car.getPosition().getY());
+        assertEquals(0, car.getLane());
+        assertEquals(40, car.getY());
     }
 
     @Test
      void testMovement() {
         car.moveRight();
-        car.moveRight();
-        assertEquals(34, car.getPosition().getX());
+        assertEquals(1, car.getLane());
         car.moveLeft();
-        assertEquals(22, car.getPosition().getX());
+        assertEquals(0, car.getLane());
     }
 
 }

@@ -20,11 +20,12 @@ public class TrackView {
         private String kerb_color;
 
         public TrackView() {
-            road_width = 30;
+            road_width = 50;
             offset = 20;
         }
 
         public void draw(TextGraphics screen, TrackModel track) {
+            road_width = (int)(screen.getSize().getColumns() * 0.7);
             rows = screen.getSize().getRows();
             columns = screen.getSize().getColumns();
             for (int i = 0; i < rows; i++) {
@@ -48,6 +49,7 @@ public class TrackView {
                     screen.fillRectangle(new TerminalPosition(j, i), new TerminalSize(1, 1), ' ');
                 }
             }
+            screen.putString(0, 0, "Start the Game");
         }
 
         private void computeValues(int i, int j, TrackModel track) {
