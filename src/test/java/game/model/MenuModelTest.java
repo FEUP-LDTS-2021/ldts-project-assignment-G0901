@@ -4,33 +4,62 @@ import game.model.menu.MenuModel;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class MenuModelTest {
     private MenuModel model;
 
-    private String background_color = "#353535";
-    private String text_color = "#D9D9D9";
     private String title = "Game";
 
     @BeforeEach
     void setUp() {
         model = new MenuModel();
+        model.current_item = 0;
     }
 
     @Test
-    void testBackground() {
-        String color = model.getBackgroundColor();
+    void nexItem() {
+        model.nextItem();
+        assertEquals(1, model.current_item);
 
-        assertEquals(background_color, color);
+        model.current_item = model.getNumberItems();
+        model.nextItem();
+        assertEquals(0, model.current_item);
     }
 
     @Test
-    void testText() {
-        String color = model.getTextColor();
-
-        assertEquals(text_color, color);
+    void previousItem() {
+        model.previousItem();
+        assertEquals(model.getNumberItems() - 1, model.current_item);
     }
+
+    @Test
+    void isSelected() {
+        assertTrue(model.isSelected(0));
+        model.nextItem();
+        assertFalse(model.isSelected(0));
+    }
+
+    @Test
+    void whichSelected() {
+        assertEquals(0, model.whichSelected());
+        model.nextItem();
+        assertEquals(1, model.whichSelected());
+    }
+
+    @Test
+    void numberItems() {
+        assertEquals(model.items.length, model.getNumberItems());
+    }
+
+    @Test
+    void getItem() {
+        assertEquals(model.items[1], model.getItem(1));
+    }
+
+
+
 
     @Test
     void testTitle() {
