@@ -2,9 +2,7 @@ package game;
 
 import game.gui.GUI;
 import game.model.game.GameModel;
-import game.model.menu.MenuModel;
 import game.states.GameState;
-import game.states.MenuState;
 import game.states.State;
 
 import java.io.IOException;
@@ -25,7 +23,7 @@ public class Application {
 
     private void run() throws IOException {
         int FPS = 1;
-        int frameTime = 20 / FPS;
+        int frameTime = 50 / FPS;
 
         while (this.state != null)  {
             long startTime = System.currentTimeMillis();
