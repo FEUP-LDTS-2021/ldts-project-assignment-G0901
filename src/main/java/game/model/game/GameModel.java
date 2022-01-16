@@ -21,7 +21,7 @@ public class GameModel implements Model {
     public GameModel(int width, int height) {
         this.width = width;
         this.height = height;
-        carModel = new CarModel(0, (int)(height * 0.90));
+        carModel = new CarModel(0, (int)(height * 0.95));
         trackModel = new TrackModel();
         enemies = new ArrayList<CarModel>();
     }
@@ -52,6 +52,10 @@ public class GameModel implements Model {
 
     public void setTrackModel(TrackModel trackModel) {
         this.trackModel = trackModel;
+    }
+
+    public void moveTrack() {
+        this.trackModel.move(this.velocity);
     }
 
     public List<CarModel> getEnemies() {return enemies;}
