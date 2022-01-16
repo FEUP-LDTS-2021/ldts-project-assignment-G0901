@@ -18,6 +18,6 @@ public class CarController extends Controller<CarModel> {
         if (action == GUI.ACTION.RIGHT)
             if (getModel().getPosition().getX() < getModel().getInitPosition().getX() + getModel().getMov())
                 getModel().moveRight() ;
-    }
 
+    }
 }

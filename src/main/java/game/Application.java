@@ -14,7 +14,8 @@ public class Application {
     private GUI gui;
 
     public Application() {
-        this.state = new GameState(new GameModel());
+        this.state = new MenuState(new MenuModel());
+//        this.state = new GameState(new GameModel());
         this.gui = new GUI(80, 40);
     }
 
@@ -38,6 +39,10 @@ public class Application {
                 if (sleepTime > 0) Thread.sleep(sleepTime);
             } catch (InterruptedException e) {}
         }
+
+        gui.getScreen().stopScreen();
+        System.exit(0);
+
     }
 
     public void setState(State state) {

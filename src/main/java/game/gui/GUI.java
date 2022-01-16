@@ -14,7 +14,7 @@ import com.googlecode.lanterna.terminal.Terminal;
 import java.io.IOException;
 
 public class GUI {
-    public enum ACTION {NONE, QUIT, LEFT, RIGHT};
+    public enum ACTION {NONE, QUIT, LEFT, RIGHT, UP, DOWN, ESC, ENTER};
     public static int height;
     public static int width;
     public static final String background_colour = "#7CFC00";
@@ -59,6 +59,20 @@ public class GUI {
         if (key_stroke.getKeyType() == KeyType.ArrowLeft ||
                 (key_stroke.getKeyType() == KeyType.Character &&
                         key_stroke.getCharacter() == 'a')) return ACTION.LEFT;
+
+        if (key_stroke.getKeyType() == KeyType.ArrowUp ||
+                (key_stroke.getKeyType() == KeyType.Character &&
+                        key_stroke.getCharacter() == 'w')) return ACTION.UP;
+
+        if (key_stroke.getKeyType() == KeyType.ArrowDown ||
+                (key_stroke.getKeyType() == KeyType.Character &&
+                        key_stroke.getCharacter() == 's')) return ACTION.DOWN;
+
+        if (key_stroke.getKeyType() == KeyType.Escape ||
+                (key_stroke.getKeyType() == KeyType.Character &&
+                        key_stroke.getCharacter() == 'q')) return ACTION.ESC;
+
+        if (key_stroke.getKeyType() == KeyType.Enter) return ACTION.ENTER;
 
         return ACTION.NONE;
     }
