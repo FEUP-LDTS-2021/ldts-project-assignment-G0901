@@ -37,6 +37,6 @@ public class GameViewTest {
        view.drawElements(gui);
 
        Mockito.verify(trackView, Mockito.times(1)).draw(gui.getGraphics(), model.getTrackModel());
-       Mockito.verify(carView, Mockito.times(1)).draw(gui.getGraphics(), model.getCarModel());
+       Mockito.verify(carView, Mockito.times(1)).drawElements(gui);
     }
 }

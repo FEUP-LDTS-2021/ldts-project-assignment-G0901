@@ -4,6 +4,7 @@ import game.gui.GUI;
 import game.model.game.GameModel;
 import game.view.View;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class GameView extends View<GameModel> {
@@ -13,13 +14,13 @@ public class GameView extends View<GameModel> {
     public GameView(GameModel model) {
         super(model);
         this.track_view = new TrackView();
-        this.car_view = new CarView();
+        this.car_view = new CarView(model.getCarModel());
     }
 
     @Override
     public void drawElements(GUI gui) throws IOException {
         track_view.draw(gui.getGraphics(), model.getTrackModel());
-        car_view.draw(gui.getGraphics(), model.getCarModel());
+        car_view.drawElements(gui);
         gui.refresh();
 
     }
