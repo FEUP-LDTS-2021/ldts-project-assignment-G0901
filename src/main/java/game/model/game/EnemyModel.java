@@ -32,13 +32,13 @@ public class EnemyModel {
 
     public Position setPosition(Position position) {return this.position = position;}
 
-    public void getCloserY(int speed)
+    public void moveEnemyY(int speed)
     {
         int y = position.getY() + speed;
         position = new Position(position.getX(), y);
     }
 
-    public void getCloserX() {
+    public void moveEnemyX() {
         if (lane == 0) position = new Position(position.getX() - 1, position.getY());
         if (lane == 2) position = new Position(position.getX() + 1, position.getY());
     }
