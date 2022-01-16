@@ -3,26 +3,38 @@ package game.model.menu;
 import game.model.Model;
 
 public class MenuModel implements Model {
+    public final String[] items;
     private String title;
 
-    private String background_color;
-    private String text_color;
+    public int current_item = 0;
 
     public MenuModel() {
+        this.items = new String[]{"Start", "Rules", "About", "Quit"};
         title = "Game";
-        background_color = "#353535";
-        text_color = "#D9D9D9";
     }
 
     public String getTitle() {
         return title;
     }
 
-    public String getBackgroundColor() {
-        return background_color;
+
+    public void nextItem() {
+        current_item += 1;
+        if (current_item > getNumberItems() - 1)
+            current_item = 0;
     }
 
-    public String getTextColor() {
-        return text_color;
+    public void previousItem() {
+        current_item -= 1;
+        if (current_item < 0)
+            current_item = getNumberItems() - 1;
     }
+
+    public boolean isSelected(int item) {return current_item == item;}
+
+    public int whichSelected() {return current_item;}
+
+    public int getNumberItems() {return items.length;}
+
+    public String getItem(int i) {return items[i];}
 }

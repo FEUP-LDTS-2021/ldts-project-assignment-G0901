@@ -19,5 +19,4 @@ public class CarController extends Controller<CarModel> {
             if (getModel().getLane() < 1)
                 getModel().moveRight();
     }
-
 }

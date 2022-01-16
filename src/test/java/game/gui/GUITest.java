@@ -33,6 +33,18 @@ public class GUITest {
 
         Mockito.when(screen.pollInput()).thenReturn(new KeyStroke(KeyType.EOF));
         assertEquals(GUI.ACTION.QUIT, gui.getAction());
+
+        Mockito.when(screen.pollInput()).thenReturn(new KeyStroke(KeyType.ArrowUp));
+        assertEquals(GUI.ACTION.UP, gui.getAction());
+
+        Mockito.when(screen.pollInput()).thenReturn(new KeyStroke(KeyType.ArrowDown));
+        assertEquals(GUI.ACTION.DOWN, gui.getAction());
+
+        Mockito.when(screen.pollInput()).thenReturn(new KeyStroke(KeyType.Escape));
+        assertEquals(GUI.ACTION.ESC, gui.getAction());
+
+        Mockito.when(screen.pollInput()).thenReturn(new KeyStroke(KeyType.Enter));
+        assertEquals(GUI.ACTION.ENTER, gui.getAction());
     }
 
     @Test
