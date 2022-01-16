@@ -6,6 +6,7 @@ import game.gui.GUI;
 import game.model.game.CarModel;
 import game.model.game.GameModel;
 
+import java.util.List;
 import java.util.Random;
 
 public class EnemyController extends Controller<GameModel>  {
@@ -22,17 +23,23 @@ public class EnemyController extends Controller<GameModel>  {
     }
 
     private void generateEnemies() {
-        Random random = new Random();
-        int lane = random.nextInt(2 + 1) - 1;
-        if (getModel().getEnemies().isEmpty()) {
-            getModel().addEnemy(new CarModel(lane, getModel().getHeight() / 2));
+        List<CarModel> enemies = getModel().getEnemies();
+        if (enemies.isEmpty()) {
+            addEnemy();
         }
         else {
-            if (getModel().getEnemies().get(0).getY() > getModel().getHeight() &&
-            getModel().getEnemies().size() < 2) {
-                getModel().getEnemies().remove(0);
-                getModel().addEnemy(new CarModel(lane, getModel().getHeight() / 2));
+            if (enemies.get(enemies.size() - 1).getY() > getModel().getHeight()) {
+                addEnemy();
             }
         }
+        //remove older
+        if (enemies.get(0).getY() > getModel().getHeight() * 1.5)
+            enemies.remove(0);
+    }
+
+    private void addEnemy() {
+        Random random = new Random();
+        int lane = random.nextInt(2 + 1) - 1;
+        getModel().addEnemy(new CarModel(lane, getModel().getHeight() / 2));
     }
 }
