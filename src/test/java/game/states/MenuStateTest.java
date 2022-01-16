@@ -1,4 +1,4 @@
-package game.states;
+/*package game.states;
 
 import game.Application;
 import game.control.menu.MenuController;
@@ -43,4 +43,4 @@ public class MenuStateTest {
         Mockito.verify(controller, Mockito.times(1)).step(app, gui.getAction());
         Mockito.verify(view, Mockito.times(1)).draw(gui);
     }
-}
+}*/

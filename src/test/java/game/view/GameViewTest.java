@@ -1,4 +1,4 @@
-package game.view;
+/*package game.view;
 
 import game.gui.GUI;
 import game.model.game.GameModel;
@@ -39,4 +39,4 @@ public class GameViewTest {
        Mockito.verify(trackView, Mockito.times(1)).draw(gui.getGraphics(), model.getTrackModel());
        Mockito.verify(carView, Mockito.times(1)).drawElements(gui);
     }
-}
+}*/

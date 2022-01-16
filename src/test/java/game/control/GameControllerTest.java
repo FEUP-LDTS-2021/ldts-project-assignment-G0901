@@ -2,6 +2,7 @@ package game.control;
 
 import game.Application;
 import game.control.game.CarController;
+import game.control.game.EnemyController;
 import game.control.game.GameController;
 import game.control.game.TrackController;
 import game.gui.GUI;
@@ -17,7 +18,8 @@ public class GameControllerTest {
     private GameController controller;
     private TrackController trackController;
     private CarController carController;
-    private GameModel model;
+    private EnemyController enemyController;
+    private GameModel game_model;
     private Application app;
     private GUI gui;
 
@@ -25,14 +27,16 @@ public class GameControllerTest {
     void setUp() {
         trackController = Mockito.mock(TrackController.class);
         carController = Mockito.mock(CarController.class);
+        enemyController = Mockito.mock(EnemyController.class);
         app = Mockito.mock(Application.class);
         gui = Mockito.mock(GUI.class);
 
-        model = new GameModel();
-        controller = new GameController(model);
+        game_model = Mockito.mock(GameModel.class);
+        controller = new GameController(game_model);
 
         controller.track_controller = trackController;
         controller.car_controller = carController;
+        controller.enemy_controller = enemyController;
     }
 
     @Test
@@ -41,6 +45,7 @@ public class GameControllerTest {
 
         Mockito.verify(trackController, Mockito.times(1)).step(app, gui.getAction());
         Mockito.verify(carController, Mockito.times(1)).step(app, gui.getAction());
+        Mockito.verify(enemyController, Mockito.times(1)).step(app,gui.getAction());
 
     }
 }
