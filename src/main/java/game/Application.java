@@ -16,7 +16,8 @@ public class Application {
     private GUI gui;
 
     public Application() {
-        this.state = new GameState(new GameModel(width, height));
+        this.state = new MenuState(new MenuModel(width, height));
+//        this.state = new GameState(new GameModel(width, height));
         this.gui = new GUI(width, height);
     }
 
@@ -26,7 +27,7 @@ public class Application {
 
     private void run() throws IOException {
         int FPS = 1;
-        int frameTime = 50 / FPS;
+        int frameTime = 20 / FPS;
 
         while (this.state != null)  {
             long startTime = System.currentTimeMillis();
