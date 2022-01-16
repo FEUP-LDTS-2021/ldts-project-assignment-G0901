@@ -1,4 +1,4 @@
-/*package game.states;
+package game.states;
 
 import game.Application;
 import game.control.menu.MenuController;
@@ -28,7 +28,7 @@ public class MenuStateTest {
         controller = Mockito.mock(MenuController.class);
         view = Mockito.mock(MenuView.class);
 
-        model = new MenuModel();
+        model = new MenuModel(40,40);
         state = new MenuState(model);
 
         state.view = view;
@@ -43,4 +43,4 @@ public class MenuStateTest {
         Mockito.verify(controller, Mockito.times(1)).step(app, gui.getAction());
         Mockito.verify(view, Mockito.times(1)).draw(gui);
     }
-}*/
+}

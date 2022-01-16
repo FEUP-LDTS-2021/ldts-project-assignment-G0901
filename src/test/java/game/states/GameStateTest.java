@@ -1,4 +1,4 @@
-/*package game.states;
+package game.states;
 
 import game.Application;
 import game.control.game.GameController;
@@ -28,7 +28,7 @@ public class GameStateTest {
         gameController = Mockito.mock(GameController.class);
         gameView = Mockito.mock(GameView.class);
 
-        model = new GameModel();
+        model = Mockito.mock(GameModel.class);
         gameState = new GameState(model);
 
         gameState.view = gameView;
@@ -43,4 +43,4 @@ public class GameStateTest {
         Mockito.verify(gameController, Mockito.times(1)).step(app, gui.getAction());
         Mockito.verify(gameView, Mockito.times(1)).draw(gui);
     }
-}*/
+}

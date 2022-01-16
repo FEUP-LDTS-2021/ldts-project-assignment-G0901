@@ -1,4 +1,4 @@
-/*package game.view;
+package game.view;
 
 import game.gui.GUI;
 import game.model.game.GameModel;
@@ -25,7 +25,7 @@ public class GameViewTest {
         carView = Mockito.mock(CarView.class);
         gui = Mockito.mock(GUI.class);
 
-        model = new GameModel();
+        model = new GameModel(40,40);
         view = new GameView(model);
 
         view.track_view = trackView;
@@ -36,7 +36,7 @@ public class GameViewTest {
     void drawElements() throws IOException {
        view.drawElements(gui);
 
-       Mockito.verify(trackView, Mockito.times(1)).draw(gui.getGraphics(), model.getTrackModel());
+       Mockito.verify(trackView, Mockito.times(1)).drawElements(gui);
        Mockito.verify(carView, Mockito.times(1)).drawElements(gui);
     }
-}*/
+}

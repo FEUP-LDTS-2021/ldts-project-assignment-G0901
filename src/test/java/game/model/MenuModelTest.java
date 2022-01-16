@@ -1,4 +1,4 @@
-/*package game.model;
+package game.model;
 
 import game.model.menu.MenuModel;
 import org.junit.jupiter.api.BeforeEach;
@@ -14,7 +14,7 @@ public class MenuModelTest {
 
     @BeforeEach
     void setUp() {
-        model = new MenuModel();
+        model = new MenuModel(40,40);
         model.current_item = 0;
     }
 
@@ -68,4 +68,3 @@ public class MenuModelTest {
         assertEquals(title, text);
     }
 }
-*/
