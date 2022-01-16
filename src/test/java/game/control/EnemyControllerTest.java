@@ -14,20 +14,17 @@ import org.mockito.Mockito;
 import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.*;
 
 public class EnemyControllerTest {
     private EnemyController enemyController;
-    private CarModel enemy_model;
     private GameModel game_model;
-    private TrackModel track_model;
     private Application app;
     private GUI gui;
 
     @BeforeEach
     void setUp() {
-        enemy_model = new CarModel(0,70);
-        track_model = mock(TrackModel.class);
+        game_model = mock(GameModel.class);
         enemyController = new EnemyController(game_model);
         app = mock(Application.class);
         gui = mock(GUI.class);
@@ -36,10 +33,7 @@ public class EnemyControllerTest {
     @Test
     void step() throws IOException {
         enemyController.step(app, gui.getAction());
-        assertEquals(69, enemy_model.getY());
-        enemyController.step(app, gui.getAction());
-        enemyController.step(app, gui.getAction());
-        assertEquals(67, enemy_model.getY());
+        verify(game_model,times(2)).getEnemies();
     }
 
 }

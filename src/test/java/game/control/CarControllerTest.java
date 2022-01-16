@@ -12,7 +12,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.*;
 
 public class CarControllerTest {
     private CarController carController;
@@ -24,7 +24,7 @@ public class CarControllerTest {
 
     @BeforeEach
     void setUp() {
-        car_model = new CarModel(0, 50);
+        car_model = mock(CarModel.class);
         track_model = mock(TrackModel.class);
         game_model = new GameModel(car_model,track_model);
         carController = new CarController(game_model);
@@ -35,10 +35,9 @@ public class CarControllerTest {
     @Test
     void step()  {
         carController.step(app, GUI.ACTION.LEFT);
-        assertEquals(-1, car_model.getLane());
+        verify(car_model,times(1)).moveLeft();
         carController.step(app, GUI.ACTION.RIGHT);
-        carController.step(app, GUI.ACTION.RIGHT);
-        assertEquals(1, car_model.getLane());
+        verify(car_model,times(1)).moveRight();
     }
 
 }

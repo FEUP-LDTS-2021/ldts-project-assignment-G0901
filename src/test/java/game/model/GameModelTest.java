@@ -33,11 +33,9 @@ public class GameModelTest {
     void testSetGet(){
         game_by_size.setCarModel(car);
         game_by_size.setTrackModel(track);
-        game_by_elements.addEnemy(enemy);
         assertEquals(car,game_by_size.getCarModel());
         assertEquals(track,game_by_size.getTrackModel());
-        assertEquals(true,game_by_elements.getEnemies().contains(enemy));
-        assertEquals((int)(80 * 0.90),game_by_size.getCarModel().getY());
+
     }
 
 }

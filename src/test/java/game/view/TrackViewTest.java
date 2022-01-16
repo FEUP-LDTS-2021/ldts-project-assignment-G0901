@@ -27,7 +27,8 @@ public class TrackViewTest {
         width = 20;
         height = 20;
         graphics = mock(TextGraphics.class);
-        gui = mock(GUI.class);
+        gui = new GUI(width,height);
+        gui.graphics = graphics;
         //TrackModel track = mock(TrackModel.class);
         track = new TrackModel();
 

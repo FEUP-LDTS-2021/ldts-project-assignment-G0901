@@ -31,7 +31,7 @@ public class CarModelTest {
         assertEquals(1, car.getLane());
         car.moveLeft();
         car.moveLeft();
-        assertEquals(0, car.getLane());
+        assertEquals(-1, car.getLane());
         enemy.moveY(velocity);
         assertEquals(21,enemy.getY());
     }

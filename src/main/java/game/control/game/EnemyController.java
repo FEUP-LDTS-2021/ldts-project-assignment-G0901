@@ -31,10 +31,10 @@ public class EnemyController extends Controller<GameModel>  {
             if (enemies.get(enemies.size() - 1).getY() > getModel().getHeight()) {
                 addEnemy();
             }
+            //remove older
+            if (enemies.get(0).getY() > getModel().getHeight() * 1.5)
+                enemies.remove(0);
         }
-        //remove older
-        if (enemies.get(0).getY() > getModel().getHeight() * 1.5)
-            enemies.remove(0);
     }
 
     private void addEnemy() {
