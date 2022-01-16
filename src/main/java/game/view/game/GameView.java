@@ -13,13 +13,13 @@ public class GameView extends View<GameModel> {
 
     public GameView(GameModel model) {
         super(model);
-        this.track_view = new TrackView();
+        this.track_view = new TrackView(model.getTrackModel());
         this.car_view = new CarView(model.getCarModel());
     }
 
     @Override
     public void drawElements(GUI gui) throws IOException {
-        track_view.draw(gui.getGraphics(), model.getTrackModel());
+        track_view.drawElements(gui);
         car_view.drawElements(gui);
         gui.refresh();
 
