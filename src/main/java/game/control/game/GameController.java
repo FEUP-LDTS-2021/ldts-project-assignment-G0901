@@ -12,9 +12,9 @@ public class GameController extends Controller<GameModel> {
 
     public GameController(GameModel model) {
         super(model);
-        track_controller = new TrackController(model.getTrackModel());
-        car_controller = new CarController(model.getCarModel());
-        enemy_controller = new EnemyController(model.getEnemyModel(), model);
+        track_controller = new TrackController(model);
+        car_controller = new CarController(model);
+        enemy_controller = new EnemyController(model);
     }
 
     public void step(Application application, GUI.ACTION action) {

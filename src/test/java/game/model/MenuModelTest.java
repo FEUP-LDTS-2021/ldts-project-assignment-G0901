@@ -14,7 +14,7 @@ public class MenuModelTest {
 
     @BeforeEach
     void setUp() {
-        model = new MenuModel();
+        model = new MenuModel(40,40);
         model.current_item = 0;
     }
 

@@ -6,9 +6,13 @@ public class MenuModel implements Model {
     public final String[] items;
     private String title;
 
+    private int width, height;
+
     public int current_item = 0;
 
-    public MenuModel() {
+    public MenuModel(int width, int height) {
+        this.width = width;
+        this.height = height;
         this.items = new String[]{"Start", "Rules", "About", "Quit"};
         title = "Game";
     }
@@ -17,6 +21,13 @@ public class MenuModel implements Model {
         return title;
     }
 
+    public int getWidth() {
+        return width;
+    }
+
+    public int getHeight() {
+        return height;
+    }
 
     public void nextItem() {
         current_item += 1;

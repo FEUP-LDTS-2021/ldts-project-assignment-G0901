@@ -28,7 +28,7 @@ public class MenuStateTest {
         controller = Mockito.mock(MenuController.class);
         view = Mockito.mock(MenuView.class);
 
-        model = new MenuModel();
+        model = new MenuModel(40,40);
         state = new MenuState(model);
 
         state.view = view;

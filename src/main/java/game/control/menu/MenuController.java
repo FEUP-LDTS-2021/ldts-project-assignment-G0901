@@ -24,7 +24,8 @@ public class MenuController extends Controller<MenuModel> {
                 app.setState(null);
                 break;
             case ENTER:
-               if (getModel().whichSelected() == 0) app.setState(new GameState(new GameModel()));
+               if (getModel().whichSelected() == 0)
+                   app.setState(new GameState(new GameModel(getModel().getWidth(), getModel().getHeight())));
                if (getModel().whichSelected() == 3) app.setState(null);
                // TODO  finish conditions for rest of states (rules, about);
                 break;

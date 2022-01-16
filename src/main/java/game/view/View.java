@@ -18,8 +18,13 @@ public abstract class View<Model> {
 
     public View(Model model) {
         this.model = model;
+        loadColors();
+    }
+
+    public void loadColors() {
         colors.put('B', "#000000");
         colors.put('Y', "#FFFF00");
+        colors.put('R', "#ff2800");
     }
 
     public void draw(GUI gui) throws IOException{
