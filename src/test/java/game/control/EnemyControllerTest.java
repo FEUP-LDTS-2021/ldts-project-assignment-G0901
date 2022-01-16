@@ -2,7 +2,6 @@ package game.control;
 
 import game.Application;
 import game.control.game.EnemyController;
-import game.model.game.EnemyModel;
 import game.gui.GUI;
 
 import org.junit.jupiter.api.BeforeEach;

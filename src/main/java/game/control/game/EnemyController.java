@@ -1,28 +1,38 @@
 package game.control.game;
 
-import com.googlecode.lanterna.TerminalSize;
 import game.Application;
 import game.control.Controller;
 import game.gui.GUI;
-import game.model.game.EnemyModel;
+import game.model.game.CarModel;
 import game.model.game.GameModel;
 
-public class EnemyController extends Controller<EnemyModel>  {
-    GameModel game_model;
-    TerminalSize size;
+import java.util.Random;
 
-    public EnemyController(EnemyModel model, GameModel game_model) {
+public class EnemyController extends Controller<GameModel>  {
+
+    public EnemyController(GameModel model) {
         super(model);
-        this.game_model = game_model;
     }
 
     public void step(Application application, GUI.ACTION action){
-
-        for (EnemyModel e: game_model.getEnemies()) {
-            if (e.getPosition().getY() > 20)
-                e.moveEnemyX();
-            e.moveEnemyY(1);
+        generateEnemies();
+        for (CarModel enemy: getModel().getEnemies()) {
+            enemy.moveY(getModel().getVelocity());
         }
+    }
 
-    } //TO D0 create speed structure
+    private void generateEnemies() {
+        Random random = new Random();
+        int lane = random.nextInt(2 + 1) - 1;
+        if (getModel().getEnemies().isEmpty()) {
+            getModel().addEnemy(new CarModel(lane, getModel().getHeight() / 2));
+        }
+        else {
+            if (getModel().getEnemies().get(0).getY() > getModel().getHeight() &&
+            getModel().getEnemies().size() < 2) {
+                getModel().getEnemies().remove(0);
+                getModel().addEnemy(new CarModel(lane, getModel().getHeight() / 2));
+            }
+        }
+    }
 }

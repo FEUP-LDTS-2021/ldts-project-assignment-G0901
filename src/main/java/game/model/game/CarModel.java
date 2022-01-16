@@ -18,6 +18,10 @@ public class CarModel implements Model {
         this.y = y;
     }
 
+    public void moveY(int velocity) {
+        this.y += velocity;
+    }
+
     public int getLane() {
         return lane;
     }

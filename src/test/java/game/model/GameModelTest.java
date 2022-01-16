@@ -1,7 +1,6 @@
 package game.model;
 
 import game.model.game.CarModel;
-import game.model.game.EnemyModel;
 import game.model.game.GameModel;
 import game.model.game.TrackModel;
 

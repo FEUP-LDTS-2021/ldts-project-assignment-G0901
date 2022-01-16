@@ -2,25 +2,36 @@ package game.model.game;
 
 import game.model.Model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class GameModel implements Model {
     CarModel carModel;
     TrackModel trackModel;
-    EnemyModel enemyModel;
-    List<EnemyModel> enemies;
+    List<CarModel> enemies;
 
-    public GameModel(CarModel car, TrackModel track, EnemyModel enemy){
+    int velocity = 1;
+    int width, height;
+
+    public GameModel(CarModel car, TrackModel track){
         carModel = car;
         trackModel = track;
-        enemyModel = enemy;
     }
 
-    public GameModel() {
-        carModel = new CarModel();
+    public GameModel(int width, int height) {
+        this.width = width;
+        this.height = height;
+        carModel = new CarModel(0, (int)(height * 0.90));
         trackModel = new TrackModel();
-        enemyModel = new EnemyModel();
-        enemies = enemyModel.createEnemies();
+        enemies = new ArrayList<CarModel>();
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public int getHeight() {
+        return height;
     }
 
     public CarModel getCarModel() {
@@ -31,7 +42,9 @@ public class GameModel implements Model {
         return trackModel;
     }
 
-    public EnemyModel getEnemyModel() {return enemyModel; }
+    public int getVelocity() {
+        return velocity;
+    }
 
     public void setCarModel(CarModel carModel) {
         this.carModel = carModel;
@@ -41,10 +54,10 @@ public class GameModel implements Model {
         this.trackModel = trackModel;
     }
 
-    public void setEnemyModel(EnemyModel enemyModel) {
-        this.enemyModel = enemyModel;
-    }
+    public List<CarModel> getEnemies() {return enemies;}
 
-    public List<EnemyModel> getEnemies() {return enemies;}
+    public void addEnemy(CarModel enemy) {
+        enemies.add(enemy);
+    }
 
 }
