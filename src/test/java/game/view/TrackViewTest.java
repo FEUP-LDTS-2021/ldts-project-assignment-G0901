@@ -3,6 +3,7 @@ package game.view;
 import com.googlecode.lanterna.TerminalPosition;
 import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.graphics.TextGraphics;
+import game.gui.GUI;
 import game.model.game.TrackModel;
 import game.view.game.TrackView;
 
@@ -15,6 +16,7 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
 public class TrackViewTest {
+    private GUI gui;
     private TextGraphics graphics;
     private TrackModel track;
     private TrackView view;
@@ -25,6 +27,7 @@ public class TrackViewTest {
         width = 20;
         height = 20;
         graphics = mock(TextGraphics.class);
+        gui = mock(GUI.class);
         //TrackModel track = mock(TrackModel.class);
         track = new TrackModel();
 
@@ -34,13 +37,13 @@ public class TrackViewTest {
         //when(track.getDistance()).thenReturn(0);
         //when(track.getTerrainColor()).thenReturn();
 
-        view = new TrackView();
+        view = new TrackView(track);
     }
 
     @Test
     void testTrackView() throws IOException
     {
-        view.draw(graphics, track);
+        view.drawElements(gui);
         verify(graphics, times(width * height)).fillRectangle(any(TerminalPosition.class), any(TerminalSize.class), anyChar());
     }
 }

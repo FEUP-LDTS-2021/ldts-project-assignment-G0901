@@ -5,6 +5,7 @@ import game.model.game.EnemyModel;
 import game.model.game.GameModel;
 import game.view.View;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class GameView extends View<GameModel> {
@@ -14,21 +15,20 @@ public class GameView extends View<GameModel> {
 
     public GameView(GameModel model) {
         super(model);
-        this.track_view = new TrackView();
-        this.car_view = new CarView();
+        this.track_view = new TrackView(model.getTrackModel());
+        this.car_view = new CarView(model.getCarModel());
         this.enemy_view = new EnemyView();
     }
 
     @Override
     public void drawElements(GUI gui) throws IOException {
-        track_view.draw(gui.getGraphics(), model.getTrackModel());
-        car_view.draw(gui.getGraphics(), model.getCarModel());
+        track_view.drawElements(gui);
+        car_view.drawElements(gui);
         for (EnemyModel e: model.getEnemies())
         {
             if (e.getPosition().getY() > (gui.getGraphics().getSize().getRows() / 2))
                 enemy_view.draw(gui.getGraphics(), e);
         }
-
         gui.refresh();
 
     }
