@@ -3,6 +3,7 @@ package game.states;
 import game.Application;
 import game.control.game.GameController;
 import game.gui.GUI;
+import game.model.game.CarModel;
 import game.model.game.GameModel;
 import game.view.game.GameView;
 
@@ -11,6 +12,8 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
 import java.io.IOException;
+
+import static org.mockito.Mockito.when;
 
 
 public class GameStateTest {
@@ -29,6 +32,8 @@ public class GameStateTest {
         gameView = Mockito.mock(GameView.class);
 
         model = Mockito.mock(GameModel.class);
+        when(model.getCarModel()).thenReturn(Mockito.mock(CarModel.class));
+
         gameState = new GameState(model);
 
         gameState.view = gameView;

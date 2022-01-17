@@ -6,6 +6,7 @@ import game.model.Position;
 public class CarModel implements Model {
     int lane;
     int y;
+    int height;
 
     public CarModel() {
         this.lane = 0;
@@ -28,6 +29,14 @@ public class CarModel implements Model {
 
     public int getY() {
         return y;
+    }
+
+    public int getHeight() {
+        return  height;
+    }
+
+    public void setHeight(int height) {
+        this.height = height;
     }
 
     public void moveLeft(){
