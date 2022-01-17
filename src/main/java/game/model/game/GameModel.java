@@ -24,6 +24,7 @@ public class GameModel implements Model {
         this.size = size;
         carModel = new CarModel(0, (int)(size.getRows() * 0.90));
         trackModel = new TrackModel();
+        trackModel.loadTrack("Monza");
         enemies = new ArrayList<CarModel>();
     }
 
