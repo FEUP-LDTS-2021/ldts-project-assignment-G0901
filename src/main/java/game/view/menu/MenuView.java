@@ -1,45 +1,65 @@
 package game.view.menu;
 
+import com.googlecode.lanterna.TerminalPosition;
 import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.TextColor;
-import com.googlecode.lanterna.graphics.TextGraphics;
 import game.gui.GUI;
 import game.model.menu.MenuModel;
 import game.view.View;
 
 import java.io.IOException;
+import java.util.LinkedList;
+import java.util.List;
 
 public class MenuView extends View<MenuModel> {
     public String background_color = "#353535";
-    private String text_color = "#D9D9D9";
+    private String item_color = "#D9D9D9";
+    private String title_color = "#293241";
     private String selected_color = "#d44ede";
+
+    private int number_of_items;
+    private int row;
+
+    private List<String> title;
+    private List<String> item;
+    private List<List<String>> item_list = new LinkedList<>();
 
     public MenuView(MenuModel model) {
         super(model);
+        number_of_items = model.getNumberItems();
+        title = loadSprite(model.getTitle());
+        loadItemsSprites(item_list, model.getItems());
     }
+
 
     @Override
     public void drawElements(GUI gui) throws IOException {
         TerminalSize size = gui.getGraphics().getSize();
 
-        gui.getGraphics().setForegroundColor(TextColor.Factory.fromString(text_color));
+        gui.getGraphics().setBackgroundColor(TextColor.Factory.fromString(background_color));
+        gui.getGraphics().fillRectangle(new TerminalPosition(0, 0), new TerminalSize(size.getColumns(), size.getRows()), ' ');
 
-        gui.getGraphics().putString(size.getColumns() / 2 - model.getTitle().length() / 2,
-                size.getRows() / 4 - model.getTitle().length() / 2, model.getTitle());
+        drawMenu(title, title_color, gui, size.getRows() / 5, false);
 
-
-        for (int i = 0; i < model.getNumberItems(); i++){
-            gui.getGraphics().setForegroundColor(TextColor.Factory.fromString(text_color));
-
+        for (int i = 0; i < number_of_items; i++) {
+            item = item_list.get(i);
+            row = calculateRow(size, i);
 
             if (model.isSelected(i))
-                gui.getGraphics().setForegroundColor(TextColor.Factory.fromString(selected_color));
-
-
-            gui.getGraphics().putString(size.getColumns() / 2 - model.getItem(i).length() / 2,
-                    ((size.getRows() / 2) + ((size.getRows() / 2) / model.getNumberItems() * i)) - model.getItem(i).length() / 2, model.getItem(i));
+                drawMenu(item, selected_color, gui, row, true);
+            else drawMenu(item, item_color, gui, row, false);
         }
-
         gui.refresh();
     }
+
+    private int calculateRow(TerminalSize size, int i) {
+       return size.getRows() / 2 + ((size.getRows() / 2) / number_of_items * i);
+    }
+
+    public void loadItemsSprites(List<List<String>> itemsList, String[] items) {
+        for (int i = 0; i < items.length; i++) {
+            itemsList.add(loadSprite(items[i]));
+        }
+    }
 }
+

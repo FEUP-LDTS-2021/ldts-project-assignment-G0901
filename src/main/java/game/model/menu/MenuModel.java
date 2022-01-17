@@ -6,16 +6,16 @@ import game.model.Size;
 
 public class MenuModel implements Model {
     public final String[] items;
-    private String title;
-
-    private TerminalSize size;
-
-    public int current_item = 0;
+    public String title;
+    public TerminalSize size;
+    public int current_item;
 
     public MenuModel(TerminalSize size) {
         this.size = size;
-        this.items = new String[]{"Start", "Rules", "About", "Quit"};
-        title = "Game";
+        this.items = new String[]{"start.txt", "rules.txt", "about.txt", "quit.txt"};
+        current_item = 0;
+        title = "title.txt";
+
     }
 
     public String getTitle() {
@@ -24,6 +24,10 @@ public class MenuModel implements Model {
 
     public TerminalSize getSize() {
         return size;
+    }
+
+    public String[] getItems() {
+        return items;
     }
 
     public void nextItem() {
