@@ -1,20 +1,19 @@
-package game.model.menu;
+package game.model.game_over;
 
 import com.googlecode.lanterna.TerminalSize;
 import game.model.Model;
 
-public class MenuModel implements Model {
+public class GameOverModel implements Model {
     public final String[] items;
     public String title;
     public TerminalSize size;
     public int current_item;
 
-    public MenuModel(TerminalSize size) {
+    public GameOverModel(TerminalSize size) {
         this.size = size;
-        this.items = new String[]{"menu/start.txt", "menu/rules.txt", "menu/about.txt", "menu/quit.txt"};
+        this.items = new String[]{"game_over/restart.txt", "game_over/menu.txt"};
         current_item = 0;
-        title = "menu/title.txt";
-
+        title = "game_over/game_over.txt";
     }
 
     public String getTitle() {
@@ -41,11 +40,20 @@ public class MenuModel implements Model {
             current_item = getNumberItems() - 1;
     }
 
-    public boolean isSelected(int item) {return current_item == item;}
+    public boolean isSelected(int item) {
+        return current_item == item;
+    }
 
-    public int whichSelected() {return current_item;}
+    public int whichSelected() {
+        return current_item;
+    }
 
-    public int getNumberItems() {return items.length;}
+    public int getNumberItems() {
+        return items.length;
+    }
 
-    public String getItem(int i) {return items[i];}
+    public String getItem(int i) {
+        return items[i];
+
+    }
 }

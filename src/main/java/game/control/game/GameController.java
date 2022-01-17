@@ -5,6 +5,8 @@ import game.control.Controller;
 import game.gui.GUI;
 import game.model.game.CarModel;
 import game.model.game.GameModel;
+import game.model.game_over.GameOverModel;
+import game.states.GameOverState;
 
 public class GameController extends Controller<GameModel> {
     public TrackController track_controller;
@@ -19,18 +21,18 @@ public class GameController extends Controller<GameModel> {
     }
 
     public void step(Application application, GUI.ACTION action) {
-        handleCollisions();
+        handleCollisions(application);
 
         track_controller.step(application, action);
         car_controller.step(application, action);
         enemy_controller.step(application, action);
     }
 
-    private void handleCollisions() {
+    private void handleCollisions(Application application) {
         CarModel player = getModel().getCarModel();
         for (CarModel enemy : getModel().getEnemies()) {
             if (checkCollision(player, enemy)) {
-                System.out.println("HIT");
+                application.setState(new GameOverState(new GameOverModel(getModel().getSize())));
             }
         }
     }

@@ -53,13 +53,11 @@ public abstract class View<Model> {
 
     protected void drawMenu(List<String> sprite, String color, GUI gui, int row, boolean selected)
     {
-        int column;
+        int column = gui.getGraphics().getSize().getColumns() / 2 - sprite.get(0).length() / 2;
         int count = 0;
         gui.graphics.setForegroundColor(TextColor.Factory.fromString(color));
         for (int i = 0; i < sprite.size(); i++)
         {
-            column = gui.getGraphics().getSize().getColumns() / 2 - sprite.get(i).length() / 2;
-
             if (selected)
                 gui.getGraphics().putString(column, row + count, sprite.get(i), SGR.BLINK);
             else gui.getGraphics().putString(column, row + count, sprite.get(i), SGR.BOLD);
