@@ -23,11 +23,14 @@ public class GameController extends Controller<GameModel> {
     public void step(Application application, GUI.ACTION action) {
         handleCollisions(application);
 
+
+
         track_controller.step(application, action);
         car_controller.step(application, action);
         enemy_controller.step(application, action);
     }
 
+  
     private void handleCollisions(Application application) {
         CarModel player = getModel().getCarModel();
         for (CarModel enemy : getModel().getEnemies()) {
