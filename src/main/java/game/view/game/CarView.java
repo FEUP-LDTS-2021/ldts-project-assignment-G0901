@@ -14,12 +14,13 @@ public class CarView extends View<CarModel> {
     public CarView(CarModel model) {
         super(model);
         car = loadSprite("car1.txt");
+        model.setHeight(car.size());
     }
 
     @Override
     public void drawElements(GUI gui) throws IOException {
         getPosition(gui);
-        drawSprite(gui.getGraphics(), car, 'R', x_pos, model.getY() - car.size());
+        drawSprite(gui.getGraphics(), car, 'R', x_pos, model.getY());
     }
 
     private void getPosition(GUI gui) {
