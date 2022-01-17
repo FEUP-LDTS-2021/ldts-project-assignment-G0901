@@ -20,18 +20,18 @@ public class TrackViewTest {
     private TextGraphics graphics;
     private TrackModel track;
     private TrackView view;
-    private int width, height;
+    private TerminalSize size;
 
     @BeforeEach
     void setUp() {
-        width = 20;
-        height = 20;
+        size = new TerminalSize(20,20);
         graphics = mock(TextGraphics.class);
-        gui = mock(GUI.class);
+        gui = new GUI(size);
+        gui.graphics = graphics;
         //TrackModel track = mock(TrackModel.class);
         track = new TrackModel();
 
-        when(graphics.getSize()).thenReturn(new TerminalSize(width, height));
+        when(graphics.getSize()).thenReturn(size);
 
         //when(track.getBackgroundColor()).thenReturn("test");
         //when(track.getDistance()).thenReturn(0);
@@ -44,7 +44,8 @@ public class TrackViewTest {
     void testTrackView() throws IOException
     {
         view.drawElements(gui);
+
         gui.graphics = graphics;
-        verify(graphics, times(width * height)).fillRectangle(any(TerminalPosition.class), any(TerminalSize.class), anyChar());
+        verify(graphics, times(size.getColumns() * size.getRows())).fillRectangle(any(TerminalPosition.class), any(TerminalSize.class), anyChar());
     }
 }

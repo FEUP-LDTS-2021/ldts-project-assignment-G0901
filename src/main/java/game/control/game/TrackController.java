@@ -13,7 +13,7 @@ public class TrackController extends Controller<GameModel> {
 
     public void step(Application application, GUI.ACTION action)
     {
-        getModel().getTrackModel().move(getModel().getVelocity());
+        getModel().moveTrack();
     }
 
 }

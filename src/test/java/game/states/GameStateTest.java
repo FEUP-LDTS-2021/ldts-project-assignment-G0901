@@ -28,7 +28,7 @@ public class GameStateTest {
         gameController = Mockito.mock(GameController.class);
         gameView = Mockito.mock(GameView.class);
 
-        model = new GameModel();
+        model = Mockito.mock(GameModel.class);
         gameState = new GameState(model);
 
         gameState.view = gameView;

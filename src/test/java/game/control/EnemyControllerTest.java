@@ -1,9 +1,13 @@
 package game.control;
 
+import com.googlecode.lanterna.TerminalSize;
 import game.Application;
 import game.control.game.EnemyController;
 import game.gui.GUI;
 
+import game.model.game.CarModel;
+import game.model.game.GameModel;
+import game.model.game.TrackModel;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -11,28 +15,27 @@ import org.mockito.Mockito;
 import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.*;
 
 public class EnemyControllerTest {
     private EnemyController enemyController;
-    private EnemyModel model;
+    private GameModel game_model;
     private Application app;
     private GUI gui;
 
     @BeforeEach
     void setUp() {
-        model = new EnemyModel();
-        enemyController = new EnemyController(model);
-        app = Mockito.mock(Application.class);
-        gui = Mockito.mock(GUI.class);
+        game_model = mock(GameModel.class);
+        enemyController = new EnemyController(game_model);
+        when(game_model.getSize()).thenReturn(new TerminalSize(180,80));
+        app = mock(Application.class);
+        gui = mock(GUI.class);
     }
 
     @Test
-    void step()  throws IOException {
+    void step() throws IOException {
         enemyController.step(app, gui.getAction());
-        assertEquals(21, model.getPosition().getY());
-        enemyController.step(app, gui.getAction());
-        enemyController.step(app, gui.getAction());
-        assertEquals(23, model.getPosition().getY());
+        verify(game_model,times(2)).getEnemies();
     }
 
 }

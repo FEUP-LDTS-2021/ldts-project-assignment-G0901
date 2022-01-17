@@ -1,5 +1,6 @@
 package game.view;
 
+import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
 import game.gui.GUI;
@@ -11,6 +12,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
+import java.util.List;
 
 import static org.mockito.Mockito.*;
 
@@ -20,8 +22,8 @@ public class CarViewTest {
     private CarView view;
 
     @BeforeEach
-    void setUp() {
-        gui = mock(GUI.class);
+    void setUp() throws IOException{
+        gui = new GUI(new TerminalSize(40,40));
         model = mock(CarModel.class);
         when(model.getLane()).thenReturn(0);
         view = new CarView(model);
@@ -29,7 +31,7 @@ public class CarViewTest {
 
     @Test
     void testCarView() throws IOException {
-        view.draw(gui);
-        verify(gui.graphics, times(1)).setBackgroundColor(any(TextColor.class));
+        view.drawElements(gui);
+        verify(model, times(2)).getY();
     }
 }

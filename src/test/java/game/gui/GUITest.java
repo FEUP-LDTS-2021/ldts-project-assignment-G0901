@@ -1,5 +1,6 @@
 package game.gui;
 
+import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.input.KeyStroke;
 import com.googlecode.lanterna.input.KeyType;
 import com.googlecode.lanterna.screen.Screen;
@@ -18,7 +19,7 @@ public class GUITest {
 
     @BeforeEach
     void setUp() throws IOException {
-       gui = new GUI(40, 40);
+       gui = new GUI(new TerminalSize(40,40));
        screen = Mockito.mock(Screen.class);
        gui.screen = screen;
     }

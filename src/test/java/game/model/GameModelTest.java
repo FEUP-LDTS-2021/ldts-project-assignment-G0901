@@ -1,5 +1,6 @@
 package game.model;
 
+import com.googlecode.lanterna.TerminalSize;
 import game.model.game.CarModel;
 import game.model.game.GameModel;
 import game.model.game.TrackModel;
@@ -11,27 +12,28 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.mock;
 
 public class GameModelTest {
-    private GameModel game;
+    private GameModel game_by_size;
+    private GameModel game_by_elements;
     private CarModel car;
     private TrackModel track;
-    private EnemyModel enemy;
+    private CarModel enemy;
 
     @BeforeEach
     void setUp() {
         car = mock(CarModel.class);
         track = mock(TrackModel.class);
-        enemy = mock(EnemyModel.class);
-        game = new GameModel();
+        enemy = mock(CarModel.class);
+        game_by_size = new GameModel(new TerminalSize(180,80));
+        game_by_elements = new GameModel(car,track);
     }
 
     @Test
     void testSetGet(){
-        game.setCarModel(car);
-        game.setTrackModel(track);
-        game.setEnemyModel(enemy);
-        assertEquals(car,game.getCarModel());
-        assertEquals(track,game.getTrackModel());
-        assertEquals(enemy,game.getEnemyModel());
+        game_by_size.setCarModel(car);
+        game_by_size.setTrackModel(track);
+        assertEquals(car,game_by_size.getCarModel());
+        assertEquals(track,game_by_size.getTrackModel());
+
     }
 
 }

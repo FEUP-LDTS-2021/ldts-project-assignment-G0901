@@ -1,24 +1,22 @@
 package game;
 
+import com.googlecode.lanterna.TerminalSize;
 import game.gui.GUI;
-import game.model.game.GameModel;
 import game.model.menu.MenuModel;
-import game.states.GameState;
 import game.states.MenuState;
 import game.states.State;
 
 import java.io.IOException;
 
 public class Application {
-    private int width = 180;
-    private int height = 80;
+    private TerminalSize size = new TerminalSize(180,80);
     private State state;
     private GUI gui;
 
     public Application() {
-        this.state = new MenuState(new MenuModel(width, height));
-//        this.state = new GameState(new GameModel(width, height));
-        this.gui = new GUI(width, height);
+//        this.state = new GameState(new GameModel(size));
+        this.state = new MenuState(new MenuModel(size));
+        this.gui = new GUI(size);
     }
 
     public static void main(String[] args) throws IOException {

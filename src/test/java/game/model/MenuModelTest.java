@@ -1,5 +1,6 @@
 package game.model;
 
+import com.googlecode.lanterna.TerminalSize;
 import game.model.menu.MenuModel;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -14,7 +15,7 @@ public class MenuModelTest {
 
     @BeforeEach
     void setUp() {
-        model = new MenuModel();
+        model = new MenuModel(new TerminalSize(40,40));
         model.current_item = 0;
     }
 

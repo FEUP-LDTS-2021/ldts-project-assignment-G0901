@@ -12,6 +12,7 @@ import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
 import com.googlecode.lanterna.terminal.swing.AWTTerminalFontConfiguration;
 import com.googlecode.lanterna.terminal.swing.AWTTerminalFrame;
+import game.model.Size;
 
 import java.awt.*;
 import java.awt.event.WindowAdapter;
@@ -23,16 +24,14 @@ import java.net.URL;
 
 public class GUI {
     public enum ACTION {NONE, QUIT, LEFT, RIGHT, UP, DOWN, ESC, ENTER};
-    public static int height;
-    public static int width;
+    public static TerminalSize size;
     public static final String background_colour = "#7CFC00";
 
     public Screen screen;
     public TextGraphics graphics;
 
-    public GUI (int width, int height) {
-        this.width = width;
-        this.height = height;
+    public GUI (TerminalSize size) {
+        this.size = size;
         initScreen();
     }
 
@@ -45,7 +44,7 @@ public class GUI {
             GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
             ge.registerFont(font);
 
-            DefaultTerminalFactory factory = new DefaultTerminalFactory().setInitialTerminalSize(new TerminalSize(width, height));
+            DefaultTerminalFactory factory = new DefaultTerminalFactory().setInitialTerminalSize(size);
 
             Font loadedFont = font.deriveFont(Font.PLAIN, 8);
             AWTTerminalFontConfiguration fontConfig = AWTTerminalFontConfiguration.newInstance(loadedFont);

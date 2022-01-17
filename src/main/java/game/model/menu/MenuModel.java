@@ -1,32 +1,30 @@
 package game.model.menu;
 
+import com.googlecode.lanterna.TerminalSize;
 import game.model.Model;
+import game.model.Size;
 
 public class MenuModel implements Model {
     public final String[] items;
     public String title = "title.txt";
 
 
-    private int width, height;
+    private TerminalSize size;
 
     public int current_item = 0;
 
-    public MenuModel(int width, int height) {
-        this.width = width;
-        this.height = height;
+    public MenuModel(TerminalSize size) {
+        this.size = size;
         this.items = new String[]{"start.txt", "rules.txt", "about.txt", "quit.txt"};
+
     }
 
     public String getTitle() {
         return title;
     }
 
-    public int getWidth() {
-        return width;
-    }
-
-    public int getHeight() {
-        return height;
+    public TerminalSize getSize() {
+        return size;
     }
 
     public String[] getItems() {
