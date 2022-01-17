@@ -1,18 +1,18 @@
 package game.model.menu;
 
 import game.model.Model;
+import game.model.Size;
 
 public class MenuModel implements Model {
     public final String[] items;
     private String title;
 
-    private int width, height;
+    private Size size;
 
     public int current_item = 0;
 
-    public MenuModel(int width, int height) {
-        this.width = width;
-        this.height = height;
+    public MenuModel(Size size) {
+        this.size = size;
         this.items = new String[]{"Start", "Rules", "About", "Quit"};
         title = "Game";
     }
@@ -21,12 +21,8 @@ public class MenuModel implements Model {
         return title;
     }
 
-    public int getWidth() {
-        return width;
-    }
-
-    public int getHeight() {
-        return height;
+    public Size getSize() {
+        return size;
     }
 
     public void nextItem() {

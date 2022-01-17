@@ -1,6 +1,7 @@
 package game;
 
 import game.gui.GUI;
+import game.model.Size;
 import game.model.game.GameModel;
 import game.model.menu.MenuModel;
 import game.states.GameState;
@@ -10,14 +11,13 @@ import game.states.State;
 import java.io.IOException;
 
 public class Application {
-    private int width = 180;
-    private int height = 80;
+    private Size size = new Size(180,80);
     private State state;
     private GUI gui;
 
     public Application() {
-        this.state = new GameState(new GameModel(width, height));
-        this.gui = new GUI(width, height);
+        this.state = new GameState(new GameModel(size));
+        this.gui = new GUI(size);
     }
 
     public static void main(String[] args) throws IOException {

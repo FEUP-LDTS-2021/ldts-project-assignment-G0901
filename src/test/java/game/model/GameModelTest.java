@@ -16,16 +16,13 @@ public class GameModelTest {
     private CarModel car;
     private TrackModel track;
     private CarModel enemy;
-    private int width, height;
 
     @BeforeEach
     void setUp() {
-        width = 180;
-        height = 80;
         car = mock(CarModel.class);
         track = mock(TrackModel.class);
         enemy = mock(CarModel.class);
-        game_by_size = new GameModel(width,height);
+        game_by_size = new GameModel(new Size(180,80));
         game_by_elements = new GameModel(car,track);
     }
 
