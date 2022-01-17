@@ -21,6 +21,7 @@ public class CarView extends View<CarModel> {
         cars.add(loadSprite("car/car1.txt"));
         cars.add(loadSprite("car/car2.txt"));
         cars.add(loadSprite("car/car3.txt"));
+        cars.add(loadSprite("car/car4.txt"));
     }
 
     @Override

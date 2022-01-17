@@ -12,7 +12,7 @@ public class GameModel implements Model {
     TrackModel trackModel;
     List<CarModel> enemies;
 
-    int velocity = 1;
+    int velocity = 4;
     TerminalSize size;
 
     public GameModel(CarModel car, TrackModel track){
