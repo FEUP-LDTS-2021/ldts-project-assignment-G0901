@@ -6,16 +6,15 @@ import game.model.Size;
 
 public class MenuModel implements Model {
     public final String[] items;
-    public String title = "title.txt";
-
-
-    private TerminalSize size;
-
-    public int current_item = 0;
+    public String title;
+    public TerminalSize size;
+    public int current_item;
 
     public MenuModel(TerminalSize size) {
         this.size = size;
         this.items = new String[]{"start.txt", "rules.txt", "about.txt", "quit.txt"};
+        current_item = 0;
+        title = "title.txt";
 
     }
 

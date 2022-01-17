@@ -56,7 +56,7 @@ public class MenuView extends View<MenuModel> {
        return size.getRows() / 2 + ((size.getRows() / 2) / number_of_items * i);
     }
 
-    private void loadItemsSprites(List<List<String>> itemsList, String[] items) {
+    public void loadItemsSprites(List<List<String>> itemsList, String[] items) {
         for (int i = 0; i < items.length; i++) {
             itemsList.add(loadSprite(items[i]));
         }
