@@ -44,6 +44,7 @@ public class TrackViewTest {
     void testTrackView() throws IOException
     {
         view.drawElements(gui);
+        gui.graphics = graphics;
         verify(graphics, times(width * height)).fillRectangle(any(TerminalPosition.class), any(TerminalSize.class), anyChar());
     }
 }

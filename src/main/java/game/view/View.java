@@ -1,5 +1,6 @@
 package game.view;
 
+import com.googlecode.lanterna.SGR;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
 import game.gui.GUI;
@@ -42,6 +43,23 @@ public abstract class View<Model> {
                     screen.putString(x + j, y + i, " ");
                 }
             }
+        }
+    }
+
+    protected void drawMenu(List<String> sprite, String color, GUI gui, int row, boolean selected)
+    {
+        int column;
+        int count = 0;
+        gui.graphics.setForegroundColor(TextColor.Factory.fromString(color));
+        for (int i = 0; i < sprite.size(); i++)
+        {
+            column = gui.getGraphics().getSize().getColumns() / 2 - sprite.get(i).length() / 2;
+
+            if (selected)
+                gui.getGraphics().putString(column, row + count, sprite.get(i), SGR.BLINK);
+            else gui.getGraphics().putString(column, row + count, sprite.get(i), SGR.BOLD);
+
+            count += 1;
         }
     }
 

@@ -4,7 +4,8 @@ import game.model.Model;
 
 public class MenuModel implements Model {
     public final String[] items;
-    private String title;
+    public String title = "title.txt";
+
 
     private int width, height;
 
@@ -13,8 +14,7 @@ public class MenuModel implements Model {
     public MenuModel(int width, int height) {
         this.width = width;
         this.height = height;
-        this.items = new String[]{"Start", "Rules", "About", "Quit"};
-        title = "Game";
+        this.items = new String[]{"start.txt", "rules.txt", "about.txt", "quit.txt"};
     }
 
     public String getTitle() {
@@ -27,6 +27,10 @@ public class MenuModel implements Model {
 
     public int getHeight() {
         return height;
+    }
+
+    public String[] getItems() {
+        return items;
     }
 
     public void nextItem() {
