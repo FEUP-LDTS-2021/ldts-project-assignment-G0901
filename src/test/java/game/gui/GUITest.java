@@ -1,9 +1,9 @@
 package game.gui;
 
+import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.input.KeyStroke;
 import com.googlecode.lanterna.input.KeyType;
 import com.googlecode.lanterna.screen.Screen;
-import game.model.Size;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -19,7 +19,7 @@ public class GUITest {
 
     @BeforeEach
     void setUp() throws IOException {
-       gui = new GUI(new Size(40,40));
+       gui = new GUI(new TerminalSize(40,40));
        screen = Mockito.mock(Screen.class);
        gui.screen = screen;
     }

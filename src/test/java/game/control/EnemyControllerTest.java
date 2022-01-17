@@ -1,10 +1,10 @@
 package game.control;
 
+import com.googlecode.lanterna.TerminalSize;
 import game.Application;
 import game.control.game.EnemyController;
 import game.gui.GUI;
 
-import game.model.Size;
 import game.model.game.CarModel;
 import game.model.game.GameModel;
 import game.model.game.TrackModel;
@@ -27,7 +27,7 @@ public class EnemyControllerTest {
     void setUp() {
         game_model = mock(GameModel.class);
         enemyController = new EnemyController(game_model);
-        when(game_model.getSize()).thenReturn(new Size(180,80));
+        when(game_model.getSize()).thenReturn(new TerminalSize(180,80));
         app = mock(Application.class);
         gui = mock(GUI.class);
     }

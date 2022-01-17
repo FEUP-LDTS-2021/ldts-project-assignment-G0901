@@ -1,9 +1,9 @@
 package game.view;
 
+import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
 import game.gui.GUI;
-import game.model.Size;
 import game.model.game.CarModel;
 import game.model.Position;
 import game.view.game.CarView;
@@ -23,7 +23,7 @@ public class CarViewTest {
 
     @BeforeEach
     void setUp() throws IOException{
-        gui = new GUI(new Size(40,40));
+        gui = new GUI(new TerminalSize(40,40));
         model = mock(CarModel.class);
         when(model.getLane()).thenReturn(0);
         view = new CarView(model);

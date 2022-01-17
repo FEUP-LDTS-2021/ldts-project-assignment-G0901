@@ -1,5 +1,6 @@
 package game.model;
 
+import com.googlecode.lanterna.TerminalSize;
 import game.model.game.CarModel;
 import game.model.game.GameModel;
 import game.model.game.TrackModel;
@@ -22,7 +23,7 @@ public class GameModelTest {
         car = mock(CarModel.class);
         track = mock(TrackModel.class);
         enemy = mock(CarModel.class);
-        game_by_size = new GameModel(new Size(180,80));
+        game_by_size = new GameModel(new TerminalSize(180,80));
         game_by_elements = new GameModel(car,track);
     }
 
