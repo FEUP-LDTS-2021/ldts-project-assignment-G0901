@@ -20,11 +20,11 @@ public class GameModel implements Model {
         trackModel = track;
     }
 
-    public GameModel(TerminalSize size) {
+    public GameModel(TerminalSize size, String track) {
         this.size = size;
         carModel = new CarModel(0, (int)(size.getRows() * 0.90));
         trackModel = new TrackModel();
-        trackModel.loadTrack("Monza");
+        trackModel.loadTrack(track);
         enemies = new ArrayList<CarModel>();
     }
 

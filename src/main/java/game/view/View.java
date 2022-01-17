@@ -24,6 +24,8 @@ public abstract class View<Model> {
         colors.put('B', "#000000");
         colors.put('Y', "#FFFF00");
         colors.put('R', "#ff2800");
+        colors.put('G', "#008c45");
+        colors.put('W', "#ffffff");
     }
 
     public void draw(GUI gui) throws IOException{
