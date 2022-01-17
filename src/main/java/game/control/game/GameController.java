@@ -36,7 +36,6 @@ public class GameController extends Controller<GameModel> {
     }
 
     public Boolean checkCollision(CarModel player, CarModel enemy) {
-        System.out.println(player.getHeight());
         if (player.getLane() == enemy.getLane()) {
             return (player.getY() <= enemy.getY() + enemy.getHeight() &&
                     enemy.getY() <= player.getY() + player.getHeight());
