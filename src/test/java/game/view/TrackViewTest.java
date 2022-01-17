@@ -4,7 +4,6 @@ import com.googlecode.lanterna.TerminalPosition;
 import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.graphics.TextGraphics;
 import game.gui.GUI;
-import game.model.Size;
 import game.model.game.TrackModel;
 import game.view.game.TrackView;
 
@@ -21,18 +20,18 @@ public class TrackViewTest {
     private TextGraphics graphics;
     private TrackModel track;
     private TrackView view;
-    private Size size;
+    private TerminalSize size;
 
     @BeforeEach
     void setUp() {
-        size = new Size(20,20);
+        size = new TerminalSize(20,20);
         graphics = mock(TextGraphics.class);
         gui = new GUI(size);
         gui.graphics = graphics;
         //TrackModel track = mock(TrackModel.class);
         track = new TrackModel();
 
-        when(graphics.getSize()).thenReturn(new TerminalSize(size.getWidth(), size.getHeight()));
+        when(graphics.getSize()).thenReturn(size);
 
         //when(track.getBackgroundColor()).thenReturn("test");
         //when(track.getDistance()).thenReturn(0);
@@ -45,6 +44,6 @@ public class TrackViewTest {
     void testTrackView() throws IOException
     {
         view.drawElements(gui);
-        verify(graphics, times(size.getWidth() * size.getHeight())).fillRectangle(any(TerminalPosition.class), any(TerminalSize.class), anyChar());
+        verify(graphics, times(size.getColumns() * size.getRows())).fillRectangle(any(TerminalPosition.class), any(TerminalSize.class), anyChar());
     }
 }

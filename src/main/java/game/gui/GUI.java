@@ -24,13 +24,13 @@ import java.net.URL;
 
 public class GUI {
     public enum ACTION {NONE, QUIT, LEFT, RIGHT, UP, DOWN, ESC, ENTER};
-    public static Size size;
+    public static TerminalSize size;
     public static final String background_colour = "#7CFC00";
 
     public Screen screen;
     public TextGraphics graphics;
 
-    public GUI (Size size) {
+    public GUI (TerminalSize size) {
         this.size = size;
         initScreen();
     }
@@ -44,7 +44,7 @@ public class GUI {
             GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
             ge.registerFont(font);
 
-            DefaultTerminalFactory factory = new DefaultTerminalFactory().setInitialTerminalSize(new TerminalSize(size.getWidth(), size.getHeight()));
+            DefaultTerminalFactory factory = new DefaultTerminalFactory().setInitialTerminalSize(size);
 
             Font loadedFont = font.deriveFont(Font.PLAIN, 8);
             AWTTerminalFontConfiguration fontConfig = AWTTerminalFontConfiguration.newInstance(loadedFont);

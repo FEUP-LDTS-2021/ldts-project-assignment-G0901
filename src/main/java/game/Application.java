@@ -1,7 +1,7 @@
 package game;
 
+import com.googlecode.lanterna.TerminalSize;
 import game.gui.GUI;
-import game.model.Size;
 import game.model.game.GameModel;
 import game.model.menu.MenuModel;
 import game.states.GameState;
@@ -11,7 +11,7 @@ import game.states.State;
 import java.io.IOException;
 
 public class Application {
-    private Size size = new Size(180,80);
+    private TerminalSize size = new TerminalSize(180,80);
     private State state;
     private GUI gui;
 

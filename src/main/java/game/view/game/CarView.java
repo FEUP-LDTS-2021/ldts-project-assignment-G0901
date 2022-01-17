@@ -1,4 +1,5 @@
 package game.view.game;
+import com.googlecode.lanterna.TerminalSize;
 import game.gui.GUI;
 import game.model.Size;
 import game.model.game.CarModel;
@@ -29,18 +30,17 @@ public class CarView extends View<CarModel> {
     }
 
     private void getPosition(GUI gui) {
-        Size size = new Size(gui.getGraphics().getSize().getColumns(),gui.getGraphics().getSize().getRows());
+        TerminalSize size = new TerminalSize(gui.getGraphics().getSize().getColumns(),gui.getGraphics().getSize().getRows());
 
-        perspective = (double)(model.getY() - size.getHeight() / 2) / (size.getHeight() / 2);
-        System.out.println(perspective);
-        double lane_distance = size.getWidth() * 0.3 * perspective;
+        perspective = (double)(model.getY() - size.getRows() / 2) / (size.getRows() / 2);
+        double lane_distance = size.getColumns() * 0.3 * perspective;
 
         int i = (int)(perspective * cars.size());
         i = Math.min(i, cars.size() - 1);
         car = cars.get(i);
         model.setHeight(car.size());
 
-        x_pos = (int)(size.getWidth() / 2 - getSize(car) / 2);
+        x_pos = (int)(size.getColumns() / 2 - getSize(car) / 2);
         x_pos += model.getLane() * (int)(0.1 * lane_distance + 0.8 * lane_distance);
     }
 }

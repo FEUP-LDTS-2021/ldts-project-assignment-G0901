@@ -1,9 +1,9 @@
 package game.states;
 
+import com.googlecode.lanterna.TerminalSize;
 import game.Application;
 import game.control.menu.MenuController;
 import game.gui.GUI;
-import game.model.Size;
 import game.model.menu.MenuModel;
 import game.states.MenuState;
 import game.view.menu.MenuView;
@@ -29,7 +29,7 @@ public class MenuStateTest {
         controller = Mockito.mock(MenuController.class);
         view = Mockito.mock(MenuView.class);
 
-        model = new MenuModel(new Size(40,40));
+        model = new MenuModel(new TerminalSize(40,40));
         state = new MenuState(model);
 
         state.view = view;

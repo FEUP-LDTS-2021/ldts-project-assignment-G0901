@@ -1,5 +1,6 @@
 package game.model.menu;
 
+import com.googlecode.lanterna.TerminalSize;
 import game.model.Model;
 import game.model.Size;
 
@@ -7,11 +8,11 @@ public class MenuModel implements Model {
     public final String[] items;
     private String title;
 
-    private Size size;
+    private TerminalSize size;
 
     public int current_item = 0;
 
-    public MenuModel(Size size) {
+    public MenuModel(TerminalSize size) {
         this.size = size;
         this.items = new String[]{"Start", "Rules", "About", "Quit"};
         title = "Game";
@@ -21,7 +22,7 @@ public class MenuModel implements Model {
         return title;
     }
 
-    public Size getSize() {
+    public TerminalSize getSize() {
         return size;
     }
 

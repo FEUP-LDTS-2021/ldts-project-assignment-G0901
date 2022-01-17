@@ -1,7 +1,7 @@
 package game.view;
 
+import com.googlecode.lanterna.TerminalSize;
 import game.gui.GUI;
-import game.model.Size;
 import game.model.game.GameModel;
 import game.view.game.CarView;
 import game.view.game.GameView;
@@ -26,7 +26,7 @@ public class GameViewTest {
         carView = Mockito.mock(CarView.class);
         gui = Mockito.mock(GUI.class);
 
-        model = new GameModel(new Size(40,40));
+        model = new GameModel(new TerminalSize(40,40));
         view = new GameView(model);
 
         view.track_view = trackView;

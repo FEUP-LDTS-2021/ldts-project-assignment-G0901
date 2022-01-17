@@ -1,5 +1,6 @@
 package game.model.game;
 
+import com.googlecode.lanterna.TerminalSize;
 import game.model.Model;
 import game.model.Size;
 
@@ -12,21 +13,21 @@ public class GameModel implements Model {
     List<CarModel> enemies;
 
     int velocity = 1;
-    Size size;
+    TerminalSize size;
 
     public GameModel(CarModel car, TrackModel track){
         carModel = car;
         trackModel = track;
     }
 
-    public GameModel(Size size) {
+    public GameModel(TerminalSize size) {
         this.size = size;
-        carModel = new CarModel(0, (int)(size.getHeight() * 0.90));
+        carModel = new CarModel(0, (int)(size.getRows() * 0.90));
         trackModel = new TrackModel();
         enemies = new ArrayList<CarModel>();
     }
 
-    public Size getSize() { return size; }
+    public TerminalSize getSize() { return size; }
 
     public CarModel getCarModel() {
         return carModel;
