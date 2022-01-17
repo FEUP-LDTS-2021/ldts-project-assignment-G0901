@@ -26,7 +26,7 @@ public class GameViewTest {
         carView = Mockito.mock(CarView.class);
         gui = Mockito.mock(GUI.class);
 
-        model = new GameModel(new TerminalSize(40,40));
+        model = new GameModel(new TerminalSize(40,40), "test");
         view = new GameView(model);
 
         view.track_view = trackView;
