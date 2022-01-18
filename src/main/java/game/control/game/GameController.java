@@ -28,21 +28,22 @@ public class GameController extends Controller<GameModel> {
         if (action == GUI.ACTION.ESC)
             application.setState(new MenuState(new MenuModel(getModel().getSize())));
 
+        handleScore();
         handleCollisions(application);
-
-
 
         track_controller.step(application, action);
         car_controller.step(application, action);
         enemy_controller.step(application, action);
     }
 
-  
+
     private void handleCollisions(Application application) {
         CarModel player = getModel().getCarModel();
         for (CarModel enemy : getModel().getEnemies()) {
             if (checkCollision(player, enemy)) {
-                application.setState(new GameOverState(new GameOverModel(getModel().getSize(),getModel().getTrack())));
+                GameOverModel game_over = new GameOverModel(getModel().getSize(), getModel().getTrack());
+                game_over.setScore(getModel().getScore());
+                application.setState(new GameOverState(game_over));
             }
         }
     }
@@ -54,4 +55,17 @@ public class GameController extends Controller<GameModel> {
         }
         return false;
     }
+
+    public void handleScore() {
+        CarModel player = getModel().getCarModel();
+        for (CarModel enemy : getModel().getEnemies()) {
+            if (checkScore(player, enemy))
+                getModel().setScore(getModel().getScore() + 10);
+        }
+    }
+
+    public Boolean checkScore(CarModel player, CarModel enemy) {
+        return enemy.getY() > player.getY() + player.getHeight() && enemy.getY() < getModel().getSize().getRows() + 1;
+    }
+
 }

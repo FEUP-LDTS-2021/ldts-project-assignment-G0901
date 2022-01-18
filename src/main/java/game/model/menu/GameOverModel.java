@@ -6,7 +6,9 @@ public class GameOverModel {
     public final String[] items;
     public String title;
     public TerminalSize size;
+    public String score_string;
     public int current_item;
+    public int score;
     String track;
 
     public GameOverModel(TerminalSize size, String track) {
@@ -14,12 +16,16 @@ public class GameOverModel {
         this.track = track;
         this.items = new String[]{"game_over/restart.txt", "game_over/menu.txt"};
         current_item = 0;
+
         title = "game_over/game_over.txt";
+        score_string = "game_over/score.txt";
     }
 
     public String getTitle() {
         return title;
     }
+
+    public String getScore_string() {return score_string;}
 
     public TerminalSize getSize() {
         return size;
@@ -30,6 +36,10 @@ public class GameOverModel {
     }
 
     public String getTrack() { return track; }
+
+    public int getScore() {return score;}
+
+    public void setScore(int score) {this.score = score;}
 
     public void nextItem() {
         current_item += 1;
