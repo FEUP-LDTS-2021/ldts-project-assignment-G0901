@@ -1,13 +1,13 @@
-package game.control.game_over;
+package game.control.menu;
 
 import game.Application;
 import game.control.Controller;
 import game.gui.GUI;
 import game.model.game.GameModel;
 import game.model.menu.MenuModel;
-import game.model.game_over.GameOverModel;
-import game.states.GameState;
-import game.states.MenuState;
+import game.model.menu.GameOverModel;
+import game.states.game.GameState;
+import game.states.menu.MenuState;
 
 public class GameOverController extends Controller<GameOverModel> {
     public GameOverController(GameOverModel model) {
@@ -23,8 +23,10 @@ public class GameOverController extends Controller<GameOverModel> {
                 getModel().nextItem();
                 break;
             case ESC:
-                app.setState(null);
+                app.setState(new MenuState(new MenuModel(getModel().getSize())));
                 break;
+            case QUIT:
+                app.setState(null);
             case ENTER:
                 if (getModel().whichSelected() == 0) {
                     app.setState(new GameState(new GameModel(getModel().getSize(),getModel().getTrack())));

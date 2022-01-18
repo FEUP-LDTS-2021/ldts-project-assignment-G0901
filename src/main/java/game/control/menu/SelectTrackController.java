@@ -6,8 +6,8 @@ import game.gui.GUI;
 import game.model.game.GameModel;
 import game.model.menu.MenuModel;
 import game.model.menu.SelectTrackModel;
-import game.states.GameState;
-import game.states.MenuState;
+import game.states.game.GameState;
+import game.states.menu.MenuState;
 
 public class SelectTrackController extends Controller<SelectTrackModel> {
     public SelectTrackController(SelectTrackModel model) {
@@ -24,5 +24,7 @@ public class SelectTrackController extends Controller<SelectTrackModel> {
                     getModel().getCurrentTrack())));
         if (action == GUI.ACTION.ESC)
             app.setState(new MenuState(new MenuModel(getModel().getSize())));
+        if (action == GUI.ACTION.QUIT)
+            app.setState(null);
     }
 }

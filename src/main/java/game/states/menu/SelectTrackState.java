@@ -1,9 +1,10 @@
-package game.states;
+package game.states.menu;
 
 import game.Application;
 import game.control.menu.SelectTrackController;
 import game.gui.GUI;
 import game.model.menu.SelectTrackModel;
+import game.states.State;
 import game.view.menu.SelectTrackView;
 
 import java.io.IOException;

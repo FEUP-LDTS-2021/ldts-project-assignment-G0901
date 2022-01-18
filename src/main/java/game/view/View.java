@@ -12,21 +12,14 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.*;
 
-public abstract class View<Model> {
+public abstract class View<Model> implements GenericColors {
     protected Model model;
-    Map<Character, String> colors = new HashMap<>();
 
     public View(Model model) {
         this.model = model;
-        loadColors();
     }
 
     public void loadColors() {
-        colors.put('B', "#000000");
-        colors.put('Y', "#FFFF00");
-        colors.put('R', "#ff2800");
-        colors.put('G', "#008c45");
-        colors.put('W', "#ffffff");
     }
 
     public void draw(GUI gui) throws IOException{
@@ -56,6 +49,7 @@ public abstract class View<Model> {
     {
         int column = gui.getGraphics().getSize().getColumns() / 2 - sprite.get(0).length() / 2;
         int count = 0;
+        gui.getGraphics().enableModifiers(SGR.BOLD);
         gui.graphics.setForegroundColor(TextColor.Factory.fromString(color));
         for (int i = 0; i < sprite.size(); i++)
         {
@@ -65,6 +59,7 @@ public abstract class View<Model> {
 
             count += 1;
         }
+        gui.getGraphics().disableModifiers(SGR.BOLD);
     }
 
     protected int getSize(List<String> sprite) {

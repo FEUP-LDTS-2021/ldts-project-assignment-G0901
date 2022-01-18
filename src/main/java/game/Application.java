@@ -3,10 +3,7 @@ package game;
 import com.googlecode.lanterna.TerminalSize;
 import game.gui.GUI;
 import game.model.menu.MenuModel;
-import game.model.menu.SelectTrackModel;
-import game.states.GameState;
-import game.states.MenuState;
-import game.states.SelectTrackState;
+import game.states.menu.MenuState;
 import game.states.State;
 
 import java.io.IOException;

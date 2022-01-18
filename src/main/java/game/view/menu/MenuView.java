@@ -13,11 +13,6 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class MenuView extends View<MenuModel> {
-    public String background_color = "#353535";
-    private String item_color = "#D9D9D9";
-    private String title_color = "#293241";
-    private String selected_color = "#d44ede";
-
     private int number_of_items;
     private int row;
 

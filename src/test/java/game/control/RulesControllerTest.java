@@ -1,11 +1,10 @@
 package game.control;
 
-import com.googlecode.lanterna.TerminalSize;
 import game.Application;
-import game.control.rules.RulesController;
+import game.control.menu.RulesController;
 import game.gui.GUI;
-import game.model.rules.RulesModel;
-import game.states.MenuState;
+import game.model.menu.RulesModel;
+import game.states.menu.MenuState;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;

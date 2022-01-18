@@ -5,8 +5,10 @@ import game.control.Controller;
 import game.gui.GUI;
 import game.model.game.CarModel;
 import game.model.game.GameModel;
-import game.model.game_over.GameOverModel;
-import game.states.GameOverState;
+import game.model.menu.GameOverModel;
+import game.model.menu.MenuModel;
+import game.states.menu.GameOverState;
+import game.states.menu.MenuState;
 
 public class GameController extends Controller<GameModel> {
     public TrackController track_controller;
@@ -21,6 +23,11 @@ public class GameController extends Controller<GameModel> {
     }
 
     public void step(Application application, GUI.ACTION action) {
+        if (action == GUI.ACTION.QUIT)
+            application.setState(null);
+        if (action == GUI.ACTION.ESC)
+            application.setState(new MenuState(new MenuModel(getModel().getSize())));
+
         handleCollisions(application);
 
 

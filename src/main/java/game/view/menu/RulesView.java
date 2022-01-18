@@ -1,25 +1,20 @@
-package game.view.rules;
+package game.view.menu;
 
 import com.googlecode.lanterna.TerminalPosition;
 import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.TextColor;
 import game.gui.GUI;
-import game.model.rules.RulesModel;
+import game.model.menu.RulesModel;
 import game.view.View;
 
 import java.io.IOException;
 import java.util.List;
 
 public class RulesView extends View<RulesModel> {
-    public String background_color =  "#353535";
-    public String title_color = "#293241";
-    private String item_color = "#D9D9D9";
-
     private List<String> title;
     private List<String> keys;
     private List<String> description;
     private List<String> proceed;
-
 
     public RulesView(RulesModel model) {
        super(model);

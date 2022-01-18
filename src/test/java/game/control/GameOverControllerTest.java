@@ -2,11 +2,11 @@ package game.control;
 
 import com.googlecode.lanterna.TerminalSize;
 import game.Application;
-import game.control.game_over.GameOverController;
+import game.control.menu.GameOverController;
 import game.gui.GUI;
-import game.model.game_over.GameOverModel;
-import game.states.GameState;
-import game.states.MenuState;
+import game.model.menu.GameOverModel;
+import game.states.game.GameState;
+import game.states.menu.MenuState;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;

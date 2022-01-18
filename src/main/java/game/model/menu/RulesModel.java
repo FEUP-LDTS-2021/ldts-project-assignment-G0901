@@ -1,4 +1,4 @@
-package game.model.rules;
+package game.model.menu;
 
 import com.googlecode.lanterna.TerminalSize;
 

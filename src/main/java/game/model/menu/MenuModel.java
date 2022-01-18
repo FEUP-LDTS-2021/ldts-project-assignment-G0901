@@ -1,9 +1,8 @@
 package game.model.menu;
 
 import com.googlecode.lanterna.TerminalSize;
-import game.model.Model;
 
-public class MenuModel implements Model {
+public class MenuModel {
     public final String[] items;
     public String title;
     public TerminalSize size;
