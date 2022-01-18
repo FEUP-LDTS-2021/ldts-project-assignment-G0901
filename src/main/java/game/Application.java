@@ -2,7 +2,6 @@ package game;
 
 import com.googlecode.lanterna.TerminalSize;
 import game.gui.GUI;
-import game.model.game.GameModel;
 import game.model.menu.MenuModel;
 import game.model.menu.SelectTrackModel;
 import game.states.GameState;
@@ -20,6 +19,7 @@ public class Application {
     public Application() {
         this.state = new MenuState(new MenuModel(size));
         //this.state = new SelectTrackState(new SelectTrackModel(size));
+        //his.state = new GameState(new GameModel(size));
         this.gui = new GUI(size);
     }
 
@@ -29,7 +29,7 @@ public class Application {
 
     private void run() throws IOException {
         int FPS = 1;
-        int frameTime = 50 / FPS;
+        int frameTime = 60 / FPS;
 
         while (this.state != null)  {
             long startTime = System.currentTimeMillis();
@@ -52,4 +52,6 @@ public class Application {
     public void setState(State state) {
         this.state = state;
     }
+
+
 }

@@ -11,8 +11,6 @@ import static org.junit.jupiter.api.Assertions.*;
 public class MenuModelTest {
     private MenuModel model;
 
-    private String title = "Game";
-
     @BeforeEach
     void setUp() {
         model = new MenuModel(new TerminalSize(40,40));
@@ -59,13 +57,16 @@ public class MenuModelTest {
         assertEquals(model.items[1], model.getItem(1));
     }
 
+    @Test
+    void getTitle() {
+        String text = model.title;
 
-
+        assertEquals(text, model.getTitle());
+    }
 
     @Test
-    void testTitle() {
-        String text = model.getTitle();
-
-        assertEquals(title, text);
+    void getSize() {
+        TerminalSize size_test = model.size;
+        assertEquals(size_test, model.getSize());
     }
 }

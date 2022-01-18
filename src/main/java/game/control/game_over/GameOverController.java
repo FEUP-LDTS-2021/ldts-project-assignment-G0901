@@ -1,21 +1,21 @@
-package game.control.menu;
+package game.control.game_over;
 
 import game.Application;
 import game.control.Controller;
 import game.gui.GUI;
 import game.model.game.GameModel;
 import game.model.menu.MenuModel;
-import game.model.menu.SelectTrackModel;
+import game.model.game_over.GameOverModel;
 import game.states.GameState;
-import game.states.SelectTrackState;
+import game.states.MenuState;
 
-public class MenuController extends Controller<MenuModel> {
-    public MenuController(MenuModel model) {
+public class GameOverController extends Controller<GameOverModel> {
+    public GameOverController(GameOverModel model) {
         super(model);
     }
 
     public void step(Application app, GUI.ACTION action) {
-        switch (action){
+        switch (action) {
             case UP:
                 getModel().previousItem();
                 break;
@@ -26,14 +26,13 @@ public class MenuController extends Controller<MenuModel> {
                 app.setState(null);
                 break;
             case ENTER:
-               if (getModel().whichSelected() == 0)
-                   app.setState(new SelectTrackState(new SelectTrackModel(getModel().getSize())));
-               else if (getModel().whichSelected() == 3) app.setState(null);
-               // TODO  finish conditions for rest of states (rules, about);
+                if (getModel().whichSelected() == 0) {
+                    app.setState(new GameState(new GameModel(getModel().getSize())));
+                }
+                else if (getModel().whichSelected() == 1)
+                    app.setState(new MenuState(new MenuModel(getModel().getSize())));
                 break;
         }
-
-
 
     }
 }
