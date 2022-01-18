@@ -4,7 +4,6 @@ import com.googlecode.lanterna.SGR;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
 import game.gui.GUI;
-import game.model.game.CarModel;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -26,6 +25,8 @@ public abstract class View<Model> {
         colors.put('B', "#000000");
         colors.put('Y', "#FFFF00");
         colors.put('R', "#ff2800");
+        colors.put('G', "#008c45");
+        colors.put('W', "#ffffff");
     }
 
     public void draw(GUI gui) throws IOException{

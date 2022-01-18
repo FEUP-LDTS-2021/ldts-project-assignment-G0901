@@ -8,6 +8,9 @@ import game.model.menu.MenuModel;
 import game.model.rules.RulesModel;
 import game.states.GameState;
 import game.states.RulesState;
+import game.model.menu.SelectTrackModel;
+import game.states.SelectTrackState;
+
 
 public class MenuController extends Controller<MenuModel> {
     public MenuController(MenuModel model) {
@@ -27,7 +30,7 @@ public class MenuController extends Controller<MenuModel> {
                 break;
             case ENTER:
                if (getModel().whichSelected() == 0)
-                   app.setState(new GameState(new GameModel(getModel().getSize())));
+                   app.setState(new SelectTrackState(new SelectTrackModel(getModel().getSize())));
                else if (getModel().whichSelected() == 1) {
                    app.setState(new RulesState(new RulesModel(getModel().getSize())));
                }
