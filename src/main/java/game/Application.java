@@ -3,7 +3,10 @@ package game;
 import com.googlecode.lanterna.TerminalSize;
 import game.gui.GUI;
 import game.model.menu.MenuModel;
+import game.model.menu.SelectTrackModel;
+import game.states.GameState;
 import game.states.MenuState;
+import game.states.SelectTrackState;
 import game.states.State;
 
 import java.io.IOException;
@@ -14,8 +17,9 @@ public class Application {
     private GUI gui;
 
     public Application() {
-//        this.state = new GameState(new GameModel(size));
         this.state = new MenuState(new MenuModel(size));
+        //this.state = new SelectTrackState(new SelectTrackModel(size));
+        //his.state = new GameState(new GameModel(size));
         this.gui = new GUI(size);
     }
 

@@ -2,11 +2,17 @@ package game.model.game;
 
 import game.model.Model;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class TrackModel implements Model {
     private int distance;
+    private String title;
     private String background_color;
     private String terrain_color1;
     private String terrain_color2;
@@ -17,6 +23,7 @@ public class TrackModel implements Model {
     public TrackModel()
     {
         distance = 0;
+        title = "Track";
         background_color = "#03fce8";
         terrain_color1 = "#04de0f";
         terrain_color2 = "#05ad0e";
@@ -25,15 +32,25 @@ public class TrackModel implements Model {
         road_color = "#8f8f8f";
     }
 
-    public TrackModel(String background_color, String terrain_color1, String terrain_color2, String kerb_color1, String kerb_color2, String road_color)
-    {
-        distance = 0;
-        this.background_color = background_color;
-        this.terrain_color1 = terrain_color1;
-        this.terrain_color2 = terrain_color2;
-        this.kerb_color1 = kerb_color1;
-        this.kerb_color2 = kerb_color2;
-        this.road_color = road_color;
+    public void loadTrack(String file_path) {
+        file_path = "Track/" + file_path + ".txt";
+        URL resource = getClass().getClassLoader().getResource(file_path);
+        Scanner scanner = null;
+        try {
+            scanner = new Scanner(new File(resource.toURI()));
+
+            title = scanner.nextLine();
+            background_color = scanner.nextLine();
+            terrain_color1 = scanner.nextLine();
+            terrain_color2 = scanner.nextLine();
+            kerb_color1 = scanner.nextLine();
+            kerb_color2 = scanner.nextLine();
+            road_color = scanner.nextLine();
+
+            scanner.close();
+        } catch (FileNotFoundException | URISyntaxException e) {
+            e.printStackTrace();
+        }
     }
 
     public int getDistance() {
