@@ -4,11 +4,8 @@ import com.googlecode.lanterna.TerminalPosition;
 import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.TextColor;
 import game.gui.GUI;
-import game.model.game.GameModel;
-import game.model.game.TrackModel;
 import game.model.menu.MenuModel;
 import game.view.View;
-import game.view.game.GameView;
 import game.view.game.TrackView;
 
 import java.io.IOException;
@@ -39,7 +36,7 @@ public class MenuView extends View<MenuModel> {
 
     @Override
     public void drawElements(GUI gui) throws IOException {
-        TerminalSize size = gui.getGraphics().getSize();
+        TerminalSize size = model.getSize();
 
         gui.getGraphics().setBackgroundColor(TextColor.Factory.fromString(background_color));
         gui.getGraphics().fillRectangle(new TerminalPosition(0, 0), new TerminalSize(size.getColumns(), size.getRows()), ' ');
