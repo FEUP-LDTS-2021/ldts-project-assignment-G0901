@@ -1,9 +1,21 @@
 # LDTS_G0901 - Racing Game
 
-Try to survive the longest on a fast paced circuit filled with dangerous obstacles.
+**Try to survive the longest on a fast paced circuit filled with dangerous obstacles.** 
+The game has a series of tracks with increasing difficulty in which the player needs to avoid the coming cars to stay alive.
 
 This project was developed by André Barbosa (up202007398@edu.fe.up.pt), [Guilherme Almeida](https://github.com/theguilhermealmeida) (up202008866@edu.fe.up.pt) and [José Luís Rodrigues](https://github.com/jlcrodrigues) (up202008462@edu.fe.up.pt) for LDTS 2021/22.
 
+## Table of Contents
+ * [Implemented Features](#implemented-features)
+ * [Planned Features](#planned-features)
+ * [Design](#design)
+    * [Architecture](#architecture)
+    * [State](#state)
+    * [Factory](#factory)
+    * [Template](#template)
+ * [Code Smells and Refactors](#code-smells-and-refactors)
+ * [Testing](#testing)
+ * [Self Evaluation](#self-evaluation)
 
 ## Implemented Features
 
@@ -33,34 +45,62 @@ This project was developed by André Barbosa (up202007398@edu.fe.up.pt), [Guilhe
 
 ## Design
 
-#### GENERAL PATTERN ON THE PROGRAM
+### Architecture
 
-**Problem in Context**
+#### Problem in Context
 
 We had to find a way of organising all the different classes on the program.
 
-**The Pattern**
+#### The Pattern
 
 We have applied the **MVC** (Model-game.view-controller) pattern. This pattern allowed us to separate all classes in 3 different groups, one for each part of the project.
 
-**Implementation**
+#### Implementation
 
 We don't have UML representation yet.
 
-**Consequences**
+#### Consequences
 
-The use of the CMV Pattern in the current design allows the following benefits:
+The use of the MVC Pattern in the current design allows the following benefits:
 
 - Have a place of code containing only objects and informations about them(Model), that can be used for any other kind of program.
 - Makes easier the Test Driven Development.
 
-<!--#### KNOWN CODE SMELLS AND REFACTORING SUGGESTIONS-->
+### State
 
+#### Problem in Context
 
-<!--### TESTING-->
+#### The Pattern
 
+#### Implementation
 
-### SELF-EVALUATION
+#### Consequences
+
+### Factory
+
+#### Problem in Context
+
+#### The Pattern
+
+#### Implementation
+
+#### Consequences
+
+### Template
+
+#### Problem in Context
+
+#### The Pattern
+
+#### Implementation
+
+#### Consequences
+
+## Code Smells and Refactors
+
+## Testing
+
+## Self Evaluation
 
 - André Barbosa: 10%
 - José Luís Rodrigues: 45%
