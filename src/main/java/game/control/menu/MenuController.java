@@ -5,6 +5,8 @@ import game.control.Controller;
 import game.gui.GUI;
 import game.model.game.GameModel;
 import game.model.menu.MenuModel;
+import game.model.rules.RulesModel;
+import game.states.RulesState;
 import game.model.menu.SelectTrackModel;
 import game.states.GameState;
 import game.states.SelectTrackState;
@@ -28,12 +30,12 @@ public class MenuController extends Controller<MenuModel> {
             case ENTER:
                if (getModel().whichSelected() == 0)
                    app.setState(new SelectTrackState(new SelectTrackModel(getModel().getSize())));
-               else if (getModel().whichSelected() == 3) app.setState(null);
-               // TODO  finish conditions for rest of states (rules, about);
+               else if (getModel().whichSelected() == 1) {
+                   app.setState(new RulesState(new RulesModel(getModel().getSize())));
+               }
+               else if (getModel().whichSelected() == 3)
+                   app.setState(null);
                 break;
         }
-
-
-
     }
 }
