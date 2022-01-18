@@ -13,6 +13,7 @@ public class GameModel implements Model {
     List<CarModel> enemies;
     String track;
     int velocity = 4;
+    int score;
     TerminalSize size;
 
     public GameModel(TerminalSize size, String track) {
@@ -22,6 +23,7 @@ public class GameModel implements Model {
         trackModel = new TrackModel();
         trackModel.loadTrack(track);
         enemies = new ArrayList<CarModel>();
+        score = 0;
     }
 
     public TerminalSize getSize() { return size; }
@@ -42,6 +44,8 @@ public class GameModel implements Model {
         return velocity;
     }
 
+    public int getScore() {return score;}
+
     public void setCarModel(CarModel carModel) {
         this.carModel = carModel;
     }
@@ -49,6 +53,8 @@ public class GameModel implements Model {
     public void setTrackModel(TrackModel trackModel) {
         this.trackModel = trackModel;
     }
+
+    public void setScore(int score) {this.score = score;}
 
     public void moveTrack() {
         this.trackModel.move(this.velocity);

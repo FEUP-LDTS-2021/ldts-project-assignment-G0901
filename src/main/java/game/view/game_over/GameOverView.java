@@ -14,6 +14,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class GameOverView extends View<GameOverModel> {
+    public String score;
     public String background_color = "#353535";
     private String item_color = "#D9D9D9";
     private String title_color = "#293241";
@@ -23,6 +24,7 @@ public class GameOverView extends View<GameOverModel> {
     private int row;
 
     private List<String> title;
+    private List<String> score_file;
     private List<String> item;
     private List<List<String>> item_list = new LinkedList<>();
 
@@ -32,8 +34,10 @@ public class GameOverView extends View<GameOverModel> {
         super(model);
         number_of_items = model.getNumberItems();
         title = loadSprite(model.getTitle());
+        score_file = loadSprite(model.getScore_string());
         loadItemsSprites(item_list, model.getItems());
         track_view = new TrackView(new TrackModel());
+        score = String.valueOf(model.getScore());
     }
 
 
@@ -45,7 +49,9 @@ public class GameOverView extends View<GameOverModel> {
         gui.getGraphics().setBackgroundColor(TextColor.Factory.fromString(background_color));
         gui.getGraphics().fillRectangle(new TerminalPosition(0, 0), new TerminalSize(size.getColumns(), size.getRows()), ' ');
 
-    drawMenu(title, title_color, gui, size.getRows() / 5, false);
+        drawMenu(title, title_color, gui, size.getRows() / 5, false);
+        drawMenu(score_file, item_color, gui, size.getRows() / 2, false);
+        gui.graphics.putString(size.getColumns() / 2, (int) (size.getRows() * 0.60F), score);
 
         for (int i = 0; i < number_of_items; i++) {
         item = item_list.get(i);
@@ -59,7 +65,7 @@ public class GameOverView extends View<GameOverModel> {
 }
 
     private int calculateRow(TerminalSize size, int i) {
-        return size.getRows() / 2 + ((size.getRows() / 2) / number_of_items * i);
+        return (int) (size.getRows() * 0.75F + (size.getRows() / 10) * i);
     }
 
     public void loadItemsSprites(List<List<String>> itemsList, String[] items) {
