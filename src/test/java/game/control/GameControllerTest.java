@@ -1,5 +1,6 @@
 package game.control;
 
+import com.googlecode.lanterna.TerminalSize;
 import game.Application;
 import game.control.game.CarController;
 import game.control.game.EnemyController;
@@ -67,6 +68,15 @@ public class GameControllerTest {
         when(car.getY()).thenReturn(10);
     }
 
+    void setUpScore() {
+        car = Mockito.mock(CarModel.class);
+        enemy = Mockito.mock(CarModel.class);
+
+        when(car.getHeight()).thenReturn(10);
+        when(car.getY()).thenReturn(10);
+        when(game_model.getSize()).thenReturn(new TerminalSize(40, 40));
+    }
+
     @Test
     void testCollision1() {
         setUpCollision();
@@ -105,5 +115,25 @@ public class GameControllerTest {
         Boolean collision = controller.checkCollision(car, enemy);
 
         assertFalse(collision);
+    }
+
+    @Test
+    void testScore1() {
+        setUpScore();
+        when(enemy.getY()).thenReturn(20);
+
+        Boolean score = controller.checkScore(car, enemy);
+
+        assertFalse(score);
+    }
+
+    @Test
+    void testScore2() {
+        setUpScore();
+        when(enemy.getY()).thenReturn(21);
+
+        Boolean score = controller.checkScore(car, enemy);
+
+        assertTrue(score);
     }
 }
