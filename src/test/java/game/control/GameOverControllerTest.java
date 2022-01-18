@@ -1,15 +1,19 @@
 package game.control;
 
+import com.googlecode.lanterna.TerminalSize;
 import game.Application;
 import game.control.game_over.GameOverController;
 import game.gui.GUI;
 import game.model.game_over.GameOverModel;
 import game.states.GameState;
+import game.states.MenuState;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
 import java.io.IOException;
+
+import static org.mockito.ArgumentMatchers.any;
 
 public class GameOverControllerTest {
     private GameOverController controller;
@@ -43,6 +47,16 @@ public class GameOverControllerTest {
         Mockito.when(gui.getAction()).thenReturn(GUI.ACTION.ESC);
         controller.step(app, gui.getAction());
         Mockito.verify(app, Mockito.times(1)).setState(null);
+
+        Mockito.when(gui.getAction()).thenReturn(GUI.ACTION.ENTER);
+        Mockito.when(model.whichSelected()).thenReturn(0);
+        Mockito.when(model.getSize()).thenReturn(new TerminalSize(40, 40));
+        controller.step(app, gui.getAction());
+        Mockito.verify(app, Mockito.times(1)).setState(any(GameState.class));
+
+        Mockito.when(model.whichSelected()).thenReturn(1);
+        controller.step(app, gui.getAction());
+        Mockito.verify(app, Mockito.times(1)).setState(any(MenuState.class));
 
     }
 

@@ -6,6 +6,8 @@ import game.gui.GUI;
 import game.model.game.GameModel;
 import game.model.menu.MenuModel;
 import game.model.rules.RulesModel;
+import game.states.RulesState;
+import game.model.menu.SelectTrackModel;
 import game.states.GameState;
 import game.states.RulesState;
 import game.model.menu.SelectTrackModel;
@@ -38,8 +40,5 @@ public class MenuController extends Controller<MenuModel> {
                    app.setState(null);
                 break;
         }
-
-
-
     }
 }
