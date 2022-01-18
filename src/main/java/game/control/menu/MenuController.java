@@ -9,7 +9,10 @@ import game.model.rules.RulesModel;
 import game.states.RulesState;
 import game.model.menu.SelectTrackModel;
 import game.states.GameState;
+import game.states.RulesState;
+import game.model.menu.SelectTrackModel;
 import game.states.SelectTrackState;
+
 
 public class MenuController extends Controller<MenuModel> {
     public MenuController(MenuModel model) {
