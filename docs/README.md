@@ -70,11 +70,28 @@ The use of the MVC Pattern in the current design allows the following benefits:
 
 #### Problem in Context
 
+The games needs to iterate through the different menu tabs and the game itself. Before the game starts, the track selection is prompted and after the game is over it changes to a different Game Over tab.
+This way, we need a way to manage which image is being displayed and how the game can behave accordingly.
+
+<p align="center">
+    <img width=450 src="src/states_design.png">
+</p>
+
 #### The Pattern
+
+The **State** pattern allows us to separate the state specific behaviour into different classes. This way, the main Application has a reference to the current state but doesn't have to worry about each state's implementation.
 
 #### Implementation
 
+<p align="center">
+    <img width=450 src="src/states_uml.png">
+</p>
+
 #### Consequences
+
+ * Easily add new states without changing the existing ones.
+ * No need for flags or conditionals with numerous branches.
+ * Allows a strict separations of specific code into different classes.
 
 ### Factory
 
