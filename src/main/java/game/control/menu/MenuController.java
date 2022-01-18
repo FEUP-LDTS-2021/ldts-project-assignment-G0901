@@ -5,7 +5,9 @@ import game.control.Controller;
 import game.gui.GUI;
 import game.model.game.GameModel;
 import game.model.menu.MenuModel;
+import game.model.rules.RulesModel;
 import game.states.GameState;
+import game.states.RulesState;
 
 public class MenuController extends Controller<MenuModel> {
     public MenuController(MenuModel model) {
@@ -26,8 +28,11 @@ public class MenuController extends Controller<MenuModel> {
             case ENTER:
                if (getModel().whichSelected() == 0)
                    app.setState(new GameState(new GameModel(getModel().getSize())));
-               else if (getModel().whichSelected() == 3) app.setState(null);
-               // TODO  finish conditions for rest of states (rules, about);
+               else if (getModel().whichSelected() == 1) {
+                   app.setState(new RulesState(new RulesModel(getModel().getSize())));
+               }
+               else if (getModel().whichSelected() == 3)
+                   app.setState(null);
                 break;
         }
 
