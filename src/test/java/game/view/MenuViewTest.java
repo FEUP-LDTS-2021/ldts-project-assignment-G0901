@@ -52,5 +52,6 @@ public class MenuViewTest {
     @Test
     public void drawElements() throws IOException {
        menu_view.drawElements(gui);
+       verify(gui,times(1)).refresh();
     }
 }

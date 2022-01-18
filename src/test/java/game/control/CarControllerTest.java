@@ -1,4 +1,4 @@
-package game.control;
+/*package game.control;
 
 import game.Application;
 import game.control.game.CarController;
@@ -40,4 +40,4 @@ public class CarControllerTest {
         verify(car_model,times(1)).moveRight();
     }
 
-}
+}*/

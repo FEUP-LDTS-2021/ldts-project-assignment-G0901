@@ -2,15 +2,18 @@ package game.model.game_over;
 
 import com.googlecode.lanterna.TerminalSize;
 import game.model.Model;
+import game.model.game.TrackModel;
 
 public class GameOverModel implements Model {
     public final String[] items;
     public String title;
     public TerminalSize size;
     public int current_item;
+    String track;
 
-    public GameOverModel(TerminalSize size) {
+    public GameOverModel(TerminalSize size, String track) {
         this.size = size;
+        this.track = track;
         this.items = new String[]{"game_over/restart.txt", "game_over/menu.txt"};
         current_item = 0;
         title = "game_over/game_over.txt";
@@ -27,6 +30,8 @@ public class GameOverModel implements Model {
     public String[] getItems() {
         return items;
     }
+
+    public String getTrack() { return track; }
 
     public void nextItem() {
         current_item += 1;

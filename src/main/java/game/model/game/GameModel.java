@@ -11,17 +11,13 @@ public class GameModel implements Model {
     CarModel carModel;
     TrackModel trackModel;
     List<CarModel> enemies;
-
+    String track;
     int velocity = 4;
     TerminalSize size;
 
-    public GameModel(CarModel car, TrackModel track){
-        carModel = car;
-        trackModel = track;
-    }
-
     public GameModel(TerminalSize size, String track) {
         this.size = size;
+        this.track = track;
         carModel = new CarModel(0, (int)(size.getRows() * 0.90));
         trackModel = new TrackModel();
         trackModel.loadTrack(track);
@@ -36,6 +32,10 @@ public class GameModel implements Model {
 
     public TrackModel getTrackModel() {
         return trackModel;
+    }
+
+    public String getTrack() {
+        return track;
     }
 
     public int getVelocity() {

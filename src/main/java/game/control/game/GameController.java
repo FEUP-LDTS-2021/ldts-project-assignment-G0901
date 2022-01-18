@@ -35,7 +35,7 @@ public class GameController extends Controller<GameModel> {
         CarModel player = getModel().getCarModel();
         for (CarModel enemy : getModel().getEnemies()) {
             if (checkCollision(player, enemy)) {
-                application.setState(new GameOverState(new GameOverModel(getModel().getSize())));
+                application.setState(new GameOverState(new GameOverModel(getModel().getSize(),getModel().getTrack())));
             }
         }
     }

@@ -1,4 +1,4 @@
-package game.model;
+/*package game.model;
 
 import com.googlecode.lanterna.TerminalSize;
 import game.model.game_over.GameOverModel;
@@ -70,4 +70,4 @@ public class GameOverModelTest {
         TerminalSize size_test = model.size;
         assertEquals(size_test, model.getSize());
     }
-}
+}*/

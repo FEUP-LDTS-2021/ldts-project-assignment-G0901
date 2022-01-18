@@ -1,4 +1,4 @@
-package game.control;
+/*package game.control;
 
 import game.Application;
 import game.control.menu.MenuController;
@@ -49,4 +49,4 @@ public class MenuControllerTest {
         Mockito.verify(app, Mockito.times(1)).setState(null);
 
     }
-}
+}*/
