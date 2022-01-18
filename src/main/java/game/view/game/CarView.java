@@ -1,7 +1,6 @@
 package game.view.game;
 import com.googlecode.lanterna.TerminalSize;
 import game.gui.GUI;
-import game.model.Size;
 import game.model.game.CarModel;
 import game.view.View;
 
@@ -21,6 +20,7 @@ public class CarView extends View<CarModel> {
         cars.add(loadSprite("car/car1.txt"));
         cars.add(loadSprite("car/car2.txt"));
         cars.add(loadSprite("car/car3.txt"));
+        cars.add(loadSprite("car/car4.txt"));
     }
 
     @Override
@@ -37,6 +37,7 @@ public class CarView extends View<CarModel> {
 
         int i = (int)(perspective * cars.size());
         i = Math.min(i, cars.size() - 1);
+        i = Math.max(i, 0);
         car = cars.get(i);
         model.setHeight(car.size());
 

@@ -12,7 +12,7 @@ public class GameModel implements Model {
     TrackModel trackModel;
     List<CarModel> enemies;
 
-    int velocity = 1;
+    int velocity = 4;
     TerminalSize size;
 
     public GameModel(CarModel car, TrackModel track){
@@ -20,10 +20,11 @@ public class GameModel implements Model {
         trackModel = track;
     }
 
-    public GameModel(TerminalSize size) {
+    public GameModel(TerminalSize size, String track) {
         this.size = size;
         carModel = new CarModel(0, (int)(size.getRows() * 0.90));
         trackModel = new TrackModel();
+        trackModel.loadTrack(track);
         enemies = new ArrayList<CarModel>();
     }
 

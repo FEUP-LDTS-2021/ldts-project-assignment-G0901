@@ -29,7 +29,7 @@ public class TrackModelTest {
 
     @Test
     void testSetters() {
-        track = new TrackModel(background_color, terrain_color1, terrain_color2, kerb_color1, kerb_color2, road_color);
+        track = new TrackModel();
         track.setBackgroundColor("abc");
         track.setTerrainColor("abc", "def");
         track.setKerbColor("abc", "def");
