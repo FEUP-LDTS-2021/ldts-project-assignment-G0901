@@ -1,10 +1,11 @@
-package game.states;
+package game.states.menu;
 
 import game.Application;
-import game.control.game_over.GameOverController;
+import game.control.menu.GameOverController;
 import game.gui.GUI;
-import game.model.game_over.GameOverModel;
-import game.view.game_over.GameOverView;
+import game.model.menu.GameOverModel;
+import game.states.State;
+import game.view.menu.GameOverView;
 
 import java.io.IOException;
 

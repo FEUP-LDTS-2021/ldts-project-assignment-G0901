@@ -1,15 +1,11 @@
 package game.control;
 
-import com.googlecode.lanterna.TerminalSize;
 import game.Application;
 import game.control.menu.SelectTrackController;
 import game.gui.GUI;
-import game.model.Model;
-import game.model.game.GameModel;
 import game.model.menu.SelectTrackModel;
-import game.states.GameState;
-import game.states.MenuState;
-import game.states.State;
+import game.states.game.GameState;
+import game.states.menu.MenuState;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;

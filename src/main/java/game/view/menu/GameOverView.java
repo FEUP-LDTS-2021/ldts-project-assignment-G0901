@@ -1,11 +1,11 @@
-package game.view.game_over;
+package game.view.menu;
 
 import com.googlecode.lanterna.TerminalPosition;
 import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.TextColor;
 import game.gui.GUI;
 import game.model.game.TrackModel;
-import game.model.game_over.GameOverModel;
+import game.model.menu.GameOverModel;
 import game.view.View;
 import game.view.game.TrackView;
 
@@ -15,11 +15,6 @@ import java.util.List;
 
 public class GameOverView extends View<GameOverModel> {
     public String score;
-    public String background_color = "#353535";
-    private String item_color = "#D9D9D9";
-    private String title_color = "#293241";
-    private String selected_color = "#d44ede";
-
     private int number_of_items;
     private int row;
 

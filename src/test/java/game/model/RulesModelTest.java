@@ -1,7 +1,7 @@
 package game.model;
 
 import com.googlecode.lanterna.TerminalSize;
-import game.model.rules.RulesModel;
+import game.model.menu.RulesModel;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

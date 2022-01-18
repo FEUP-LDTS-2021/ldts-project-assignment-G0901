@@ -1,7 +1,5 @@
 package game.model.game;
 
-import game.model.Model;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.net.URISyntaxException;
@@ -10,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class TrackModel implements Model {
+public class TrackModel {
     private int distance;
     private String title;
     private String background_color;

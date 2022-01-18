@@ -1,5 +1,6 @@
 package game.view.menu;
 
+import com.googlecode.lanterna.TextColor;
 import game.gui.GUI;
 import game.model.menu.SelectTrackModel;
 import game.view.View;
@@ -20,7 +21,8 @@ public class SelectTrackView extends View<SelectTrackModel> {
 
     @Override
     public void drawElements(GUI gui) throws IOException {
-        gui.clear();
+        gui.getGraphics().setBackgroundColor(TextColor.Factory.fromString(background_color));
+        gui.getGraphics().fill(' ');
 
         drawTrackFlag(gui);
         drawArrows(gui);
@@ -42,11 +44,11 @@ public class SelectTrackView extends View<SelectTrackModel> {
         int width = gui.getGraphics().getSize().getColumns();
 
         if (!model.isFirst())
-            drawSprite(gui.getGraphics(), left_arrow, 'Y',
+            drawSprite(gui.getGraphics(), left_arrow, 'Z',
                 (int)(width * 0.05), y_pos);
 
         if (!model.isLast())
-            drawSprite(gui.getGraphics(), right_arrow, 'Y',
+            drawSprite(gui.getGraphics(), right_arrow, 'Z',
                 (int)(width * 0.95) - getSize(right_arrow), y_pos);
     }
 }

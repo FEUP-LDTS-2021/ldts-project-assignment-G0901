@@ -1,13 +1,11 @@
 package game.model.game;
 
 import com.googlecode.lanterna.TerminalSize;
-import game.model.Model;
-import game.model.Size;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class GameModel implements Model {
+public class GameModel {
     CarModel carModel;
     TrackModel trackModel;
     List<CarModel> enemies;

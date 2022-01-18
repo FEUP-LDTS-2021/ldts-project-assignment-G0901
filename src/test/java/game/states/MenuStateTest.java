@@ -5,7 +5,7 @@ import game.Application;
 import game.control.menu.MenuController;
 import game.gui.GUI;
 import game.model.menu.MenuModel;
-import game.states.MenuState;
+import game.states.menu.MenuState;
 import game.view.menu.MenuView;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

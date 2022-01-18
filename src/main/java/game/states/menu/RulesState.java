@@ -1,10 +1,11 @@
-package game.states;
+package game.states.menu;
 
 import game.Application;
-import game.control.rules.RulesController;
+import game.control.menu.RulesController;
 import game.gui.GUI;
-import game.model.rules.RulesModel;
-import game.view.rules.RulesView;
+import game.model.menu.RulesModel;
+import game.states.State;
+import game.view.menu.RulesView;
 
 import java.io.IOException;
 

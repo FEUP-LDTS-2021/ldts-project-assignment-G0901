@@ -1,7 +1,7 @@
 /*package game.model;
 
 import com.googlecode.lanterna.TerminalSize;
-import game.model.game_over.GameOverModel;
+import game.model.menu.GameOverModel;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;

@@ -1,9 +1,6 @@
 package game.model.game;
 
-import game.model.Model;
-import game.model.Position;
-
-public class CarModel implements Model {
+public class CarModel {
     int lane;
     int y;
     int height;

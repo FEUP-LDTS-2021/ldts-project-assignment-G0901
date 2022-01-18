@@ -1,10 +1,8 @@
-package game.model.game_over;
+package game.model.menu;
 
 import com.googlecode.lanterna.TerminalSize;
-import game.model.Model;
-import game.model.game.TrackModel;
 
-public class GameOverModel implements Model {
+public class GameOverModel {
     public final String[] items;
     public String title;
     public TerminalSize size;

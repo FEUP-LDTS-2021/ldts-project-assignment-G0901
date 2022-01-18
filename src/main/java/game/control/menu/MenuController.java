@@ -3,15 +3,12 @@ package game.control.menu;
 import game.Application;
 import game.control.Controller;
 import game.gui.GUI;
-import game.model.game.GameModel;
 import game.model.menu.MenuModel;
-import game.model.rules.RulesModel;
-import game.states.RulesState;
+import game.model.menu.RulesModel;
+import game.states.menu.MenuState;
+import game.states.menu.RulesState;
 import game.model.menu.SelectTrackModel;
-import game.states.GameState;
-import game.states.RulesState;
-import game.model.menu.SelectTrackModel;
-import game.states.SelectTrackState;
+import game.states.menu.SelectTrackState;
 
 
 public class MenuController extends Controller<MenuModel> {
@@ -27,9 +24,8 @@ public class MenuController extends Controller<MenuModel> {
             case DOWN:
                 getModel().nextItem();
                 break;
-            case ESC:
+            case QUIT:
                 app.setState(null);
-                break;
             case ENTER:
                if (getModel().whichSelected() == 0)
                    app.setState(new SelectTrackState(new SelectTrackModel(getModel().getSize())));

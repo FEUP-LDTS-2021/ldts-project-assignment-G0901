@@ -1,18 +1,14 @@
 package game.view;
 
 import com.googlecode.lanterna.TerminalSize;
-import com.googlecode.lanterna.TextColor;
-import com.googlecode.lanterna.graphics.TextGraphics;
 import game.gui.GUI;
 import game.model.game.CarModel;
-import game.model.Position;
 import game.view.game.CarView;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
-import java.util.List;
 
 import static org.mockito.Mockito.*;
 
