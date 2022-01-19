@@ -49,22 +49,23 @@ This project was developed by André Barbosa (up202007398@edu.fe.up.pt), [Guilhe
 
 #### Problem in Context
 
-We had to find a way of organising all the different classes on the program.
+To complete the game, we need to define it's data structures, display this data and be able to controll it according to user action.
 
 #### The Pattern
 
-We have applied the **MVC** (Model-game.view-controller) pattern. This pattern allowed us to separate all classes in 3 different groups, one for each part of the project.
+To solve this problem, we separated the program into Model, View, and Controller, as the **MVC** pattern suggests. This allows us to separate each concern into its own class.
 
 #### Implementation
 
-We don't have UML representation yet.
+ <p align="center">
+    <img width=450 src="src/mvc_design.png">
+</p>
 
 #### Consequences
 
-The use of the MVC Pattern in the current design allows the following benefits:
-
-- Have a place of code containing only objects and informations about them(Model), that can be used for any other kind of program.
-- Makes easier the Test Driven Development.
+* Facilitates Test Driven Development.
+* Accelerates the program development.
+* Separate different parts of the code into different objects.
 
 ### State
 
