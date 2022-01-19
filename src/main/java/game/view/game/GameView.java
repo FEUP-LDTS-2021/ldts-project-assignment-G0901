@@ -26,11 +26,15 @@ public class GameView extends View<GameModel> {
             CarView enemy_view = new CarView(enemy);
             enemy_view.drawElements(gui);
         }
-        gui.getGraphics().setBackgroundColor(TextColor.Factory.fromString(model.getTrackModel().getBackgroundColor()));
-        gui.getGraphics().setForegroundColor(TextColor.Factory.fromString(colors.get("B")));
-        drawScore(String.valueOf(model.getScore()), gui, 15);
+        drawInGameScore(gui);
 
         gui.refresh();
 
+    }
+
+    private void drawInGameScore(GUI gui) {
+        gui.getGraphics().setBackgroundColor(TextColor.Factory.fromString(model.getTrackModel().getBackgroundColor()));
+        gui.getGraphics().setForegroundColor(TextColor.Factory.fromString(colors.get("B")));
+        drawScore(String.valueOf(model.getScore()), gui, 15);
     }
 }
