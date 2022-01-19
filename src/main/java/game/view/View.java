@@ -1,6 +1,7 @@
 package game.view;
 
 import com.googlecode.lanterna.SGR;
+import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
 import game.gui.GUI;
@@ -60,6 +61,26 @@ public abstract class View<Model> implements GenericColors {
             count += 1;
         }
         gui.getGraphics().disableModifiers(SGR.BOLD);
+    }
+
+    protected void drawScore(String score, GUI gui, TerminalSize size) {
+        int count = 0;
+        int col = size.getColumns() / 2;
+        int row = size.getRows() / 2 + 8;
+        List<String> sprite = new ArrayList<>();
+
+        for (int i = 0; i < score.length(); i++) {
+            sprite = loadSprite("numbers/" + score.charAt(i) + ".txt");
+
+            for (int j = 0; j < sprite.size(); j++) {
+                gui.graphics.putString(col - (sprite.get(i).length() / 2 * score.length()), row + count, sprite.get(j), SGR.BOLD);
+
+                count += 1;
+            }
+            col += 11;
+            count = 0;
+        }
+
     }
 
     protected int getSize(List<String> sprite) {
