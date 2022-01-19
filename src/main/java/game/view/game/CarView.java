@@ -39,7 +39,6 @@ public class CarView extends View<CarModel> {
         i = Math.min(i, cars.size() - 1);
         i = Math.max(i, 0);
         car = cars.get(i);
-        model.setHeight(car.size());
 
         x_pos = (int)(size.getColumns() / 2 - getSize(car) / 2);
         x_pos += model.getLane() * (int)(0.1 * lane_distance + 0.8 * lane_distance);

@@ -27,7 +27,7 @@ public class SelectTrackStateTest {
         app = Mockito.mock(Application.class);
         //gui = Mockito.mock(GUI.class);
 
-        model = new SelectTrackModel(new TerminalSize(1, 1));
+        model = new SelectTrackModel();
         view = Mockito.mock(SelectTrackView.class);
         controller = Mockito.mock(SelectTrackController.class);
         gui = new GUI(new TerminalSize(1, 1));

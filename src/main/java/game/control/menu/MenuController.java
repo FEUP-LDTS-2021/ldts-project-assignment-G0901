@@ -28,9 +28,9 @@ public class MenuController extends Controller<MenuModel> {
                 app.setState(null);
             case ENTER:
                if (getModel().whichSelected() == 0)
-                   app.setState(new SelectTrackState(new SelectTrackModel(getModel().getSize())));
+                   app.setState(new SelectTrackState(new SelectTrackModel()));
                else if (getModel().whichSelected() == 1) {
-                   app.setState(new RulesState(new RulesModel(getModel().getSize())));
+                   app.setState(new RulesState(new RulesModel()));
                }
                else if (getModel().whichSelected() == 3)
                    app.setState(null);

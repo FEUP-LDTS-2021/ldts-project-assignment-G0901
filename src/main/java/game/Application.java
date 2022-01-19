@@ -23,7 +23,7 @@ public class Application {
 
     public Application() throws LineUnavailableException {
         observers = new ArrayList<>();
-        this.state = new MenuState(new MenuModel(size));
+        this.state = new MenuState(new MenuModel());
         this.gui = new GUI(size);
         music = new Music(this);
 

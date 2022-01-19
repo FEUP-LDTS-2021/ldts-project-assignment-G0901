@@ -1,7 +1,5 @@
 package game.model.game;
 
-import com.googlecode.lanterna.TerminalSize;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,19 +10,15 @@ public class GameModel {
     String track;
     int velocity = 4;
     int score;
-    TerminalSize size;
 
-    public GameModel(TerminalSize size, String track) {
-        this.size = size;
+    public GameModel(String track) {
         this.track = track;
-        carModel = new CarModel(0, (int)(size.getRows() * 0.90));
+        carModel = new CarModel(0, 70);
         trackModel = new TrackModel();
         trackModel.loadTrack(track);
         enemies = new ArrayList<CarModel>();
         score = 0;
     }
-
-    public TerminalSize getSize() { return size; }
 
     public CarModel getCarModel() {
         return carModel;

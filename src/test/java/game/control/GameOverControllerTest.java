@@ -50,7 +50,6 @@ public class GameOverControllerTest {
 
         Mockito.when(gui.getAction()).thenReturn(GUI.ACTION.ENTER);
         Mockito.when(model.whichSelected()).thenReturn(0);
-        Mockito.when(model.getSize()).thenReturn(new TerminalSize(40, 40));
         controller.step(app, gui.getAction());
         Mockito.verify(app, Mockito.times(1)).setState(any(GameState.class));
 

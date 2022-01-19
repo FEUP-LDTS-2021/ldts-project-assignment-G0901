@@ -41,8 +41,7 @@ public class GameOverView extends View<GameOverModel> {
         track_view.drawElements(gui);
         TerminalSize size = gui.getGraphics().getSize();
 
-        gui.getGraphics().setBackgroundColor(TextColor.Factory.fromString(background_color));
-        gui.getGraphics().fillRectangle(new TerminalPosition(0, 0), new TerminalSize(size.getColumns(), size.getRows()), ' ');
+        gui.fillScreen(background_color);
 
         drawMenu(title, title_color, gui, size.getRows() / 5, false);
         drawMenu(score_file, item_color, gui, size.getRows() / 2, false);
