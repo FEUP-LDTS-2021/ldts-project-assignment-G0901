@@ -7,7 +7,10 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
 import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 
+
+import java.io.IOException;
 
 import static org.junit.Assert.assertEquals;
 
@@ -29,6 +32,16 @@ public class ObserverTest {
         app.addObserver(observer);
         assertEquals(2, app.getObservers().size());
     }
+
+    @Test
+    void notifyObservers() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
+        app.addObserver(observer);
+        app.setState(null);
+
+        Mockito.verify(observer, Mockito.times(1)).update();
+
+    }
+
 
 
 }
