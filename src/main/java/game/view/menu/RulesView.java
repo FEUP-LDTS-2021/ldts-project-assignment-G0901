@@ -33,8 +33,8 @@ public class RulesView extends View<RulesModel> {
 
        drawMenu(title, title_color, gui, size.getRows() / 5, false);
        drawMenu(description, item_color, gui, size.getRows() / 2, false);
-       drawMenu(keys, item_color, gui, size.getRows() / 2 + 15, false);
-       drawMenu(proceed, item_color, gui, size.getRows() / 2 + 25, true);
+       drawMenu(keys, item_color, gui, size.getRows() / 2 + 20, false);
+       drawMenu(proceed, item_color, gui, size.getRows() / 2 + 30, true);
        gui.refresh();
    }
 }

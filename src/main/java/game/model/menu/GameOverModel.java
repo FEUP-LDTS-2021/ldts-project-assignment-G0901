@@ -33,6 +33,7 @@ public class GameOverModel {
 
     public void setScore(int score) {this.score = score;}
 
+
     public void nextItem() {
         current_item += 1;
         if (current_item > getNumberItems() - 1)
@@ -57,8 +58,4 @@ public class GameOverModel {
         return items.length;
     }
 
-    public String getItem(int i) {
-        return items[i];
-
-    }
 }
