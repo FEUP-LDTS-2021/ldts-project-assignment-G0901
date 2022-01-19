@@ -9,6 +9,7 @@ import game.states.menu.MenuState;
 import game.states.State;
 
 import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -58,10 +59,21 @@ public class Application {
     public void setState(State state) {
         this.state = state;
 
+        try {
+            notifyAllObservers();
+        }
+        catch (IOException | LineUnavailableException | UnsupportedAudioFileException e) {
+            e.printStackTrace();
+        }
     }
 
     public State getState() {
         return state;
+    }
+
+    public void notifyAllObservers() throws IOException, UnsupportedAudioFileException, LineUnavailableException {
+        for (Observer observer : observers)
+            observer.update();
     }
 
     public void addObserver(Observer observer) {
