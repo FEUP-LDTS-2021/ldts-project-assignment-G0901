@@ -33,8 +33,7 @@ public class MenuView extends View<MenuModel> {
     public void drawElements(GUI gui) throws IOException {
         TerminalSize size = model.getSize();
 
-        gui.getGraphics().setBackgroundColor(TextColor.Factory.fromString(background_color));
-        gui.getGraphics().fillRectangle(new TerminalPosition(0, 0), new TerminalSize(size.getColumns(), size.getRows()), ' ');
+        gui.fillScreen(background_color);
 
         drawMenu(title, title_color, gui, size.getRows() / 5, false);
 

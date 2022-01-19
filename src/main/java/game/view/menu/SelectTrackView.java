@@ -21,8 +21,7 @@ public class SelectTrackView extends View<SelectTrackModel> {
 
     @Override
     public void drawElements(GUI gui) throws IOException {
-        gui.getGraphics().setBackgroundColor(TextColor.Factory.fromString(background_color));
-        gui.getGraphics().fill(' ');
+        gui.fillScreen(background_color);
 
         drawTrackFlag(gui);
         drawArrows(gui);
