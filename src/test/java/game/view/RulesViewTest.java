@@ -24,7 +24,7 @@ public class RulesViewTest {
     @BeforeEach
     void setUp() {
         size = new TerminalSize(40, 40);
-        model = new RulesModel(size);
+        model = new RulesModel();
         graphics = Mockito.mock(TextGraphics.class);
         gui = Mockito.mock(GUI.class);
 

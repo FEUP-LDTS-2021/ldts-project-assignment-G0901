@@ -1,26 +1,18 @@
 package game.model.menu;
 
-import com.googlecode.lanterna.TerminalSize;
-
 public class RulesModel {
     public String title;
     public String keys;
     public String description;
     public String proceed;
-    public TerminalSize size;
     public int current_item;
 
-    public RulesModel(TerminalSize size) {
-        this.size = size;
+    public RulesModel() {
         current_item = 0;
         title = "rules/rules.txt";
         keys = "rules/keys.txt";
         description = "rules/description.txt";
         proceed = "rules/proceed.txt";
-    }
-
-    public TerminalSize getSize() {
-        return size;
     }
 
     public String getTitle () {return title;}

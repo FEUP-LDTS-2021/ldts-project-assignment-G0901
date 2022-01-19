@@ -13,7 +13,7 @@ public class MenuModelTest {
 
     @BeforeEach
     void setUp() {
-        model = new MenuModel(new TerminalSize(40,40));
+        model = new MenuModel();
         model.current_item = 0;
     }
 
@@ -62,11 +62,5 @@ public class MenuModelTest {
         String text = model.title;
 
         assertEquals(text, model.getTitle());
-    }
-
-    @Test
-    void getSize() {
-        TerminalSize size_test = model.size;
-        assertEquals(size_test, model.getSize());
     }
 }

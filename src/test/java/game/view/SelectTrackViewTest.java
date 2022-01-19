@@ -17,7 +17,7 @@ public class SelectTrackViewTest {
 
     @BeforeEach
     void setUp() {
-        model = new SelectTrackModel(new TerminalSize(1, 1));
+        model = new SelectTrackModel();
         view = new SelectTrackView(model);
 
         //gui = Mockito.mock(GUI.class);

@@ -36,7 +36,7 @@ public class MenuViewTest {
 
    @BeforeEach
    void setUp() {
-       model = new MenuModel(new TerminalSize(40, 40));
+       model = new MenuModel();
        graphics = Mockito.mock(TextGraphics.class);
        gui = Mockito.mock(GUI.class);
 

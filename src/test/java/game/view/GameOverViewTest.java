@@ -26,7 +26,7 @@ public class GameOverViewTest {
     @BeforeEach
     void setUp() {
         size = new TerminalSize(40, 40);
-        model = new GameOverModel(new TerminalSize(40, 40));
+        model = new GameOverModel("Monza");
         graphics = Mockito.mock(TextGraphics.class);
         gui = Mockito.mock(GUI.class);
 

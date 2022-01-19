@@ -12,14 +12,8 @@ public class RulesModelTest {
 
     @BeforeEach
     void setUp() {
-        model = new RulesModel(new TerminalSize(40, 40));
+        model = new RulesModel();
 
-    }
-
-    @Test
-    void getSize() {
-        TerminalSize size_test = model.size;
-        assertEquals(size_test, model.getSize());
     }
 
     @Test

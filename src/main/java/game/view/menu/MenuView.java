@@ -31,7 +31,7 @@ public class MenuView extends View<MenuModel> {
 
     @Override
     public void drawElements(GUI gui) throws IOException {
-        TerminalSize size = model.getSize();
+        TerminalSize size = gui.getGraphics().getSize();
 
         gui.fillScreen(background_color);
 
