@@ -4,8 +4,8 @@ import game.Application;
 import game.control.Controller;
 import game.gui.GUI;
 import game.model.game.GameModel;
-import game.model.menu.MenuModel;
 import game.model.menu.GameOverModel;
+import game.model.menu.MenuModel;
 import game.states.game.GameState;
 import game.states.menu.MenuState;
 

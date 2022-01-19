@@ -5,9 +5,8 @@ import game.control.Controller;
 import game.gui.GUI;
 import game.model.menu.MenuModel;
 import game.model.menu.RulesModel;
-import game.states.menu.MenuState;
-import game.states.menu.RulesState;
 import game.model.menu.SelectTrackModel;
+import game.states.menu.RulesState;
 import game.states.menu.SelectTrackState;
 
 

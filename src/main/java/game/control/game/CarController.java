@@ -4,8 +4,6 @@ import game.Application;
 import game.control.Controller;
 import game.gui.GUI;
 import game.model.game.GameModel;
-import game.model.menu.MenuModel;
-import game.states.menu.MenuState;
 
 public class CarController extends Controller<GameModel> {
     public CarController(GameModel model) {

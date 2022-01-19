@@ -1,12 +1,10 @@
 package game.view;
 
-import com.googlecode.lanterna.TerminalSize;
 import game.gui.GUI;
 import game.model.game.GameModel;
 import game.view.game.CarView;
 import game.view.game.GameView;
 import game.view.game.TrackView;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;

@@ -1,14 +1,10 @@
-# ldts-project-assignment-G0901
-ldts-project-assignment-g0901 created by GitHub Classroom
+# LDTS_G0901 - Formula Zero
 
-## To-Do list
+**Try to survive the longest on a fast paced circuit filled with dangerous obstacles.** 
+The game has a series of tracks with increasing difficulty in which the player needs to avoid the coming cars to stay alive.
 
-- [X] Set up project
-- [X] Create car (sprites included)
-- [X] Car movement
-- [X] Create track
-- [X] Create Enemies
-- [X] Create UI
-- [ ] Add new features
+The game was made with Text Graphics in Java, using [Lanterna](https://github.com/mabe02/lanterna).
 
-Ideas for new features: starting lights, curvature, coins & bonus, acceleration, slopes, ~~lives~~
+You can check out the technical report [here](docs/README.md).
+
+This project was developed in January 2022 by André Barbosa (up202007398@edu.fe.up.pt), [Guilherme Almeida](https://github.com/theguilhermealmeida) (up202008866@edu.fe.up.pt) and [José Luís Rodrigues](https://github.com/jlcrodrigues) (up202008462@edu.fe.up.pt) for LDTS 2021/22.

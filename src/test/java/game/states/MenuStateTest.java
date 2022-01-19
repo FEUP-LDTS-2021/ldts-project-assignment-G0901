@@ -1,6 +1,5 @@
 package game.states;
 
-import com.googlecode.lanterna.TerminalSize;
 import game.Application;
 import game.control.menu.MenuController;
 import game.gui.GUI;

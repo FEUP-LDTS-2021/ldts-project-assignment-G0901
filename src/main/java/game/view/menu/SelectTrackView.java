@@ -1,6 +1,5 @@
 package game.view.menu;
 
-import com.googlecode.lanterna.TextColor;
 import game.gui.GUI;
 import game.model.menu.SelectTrackModel;
 import game.view.View;

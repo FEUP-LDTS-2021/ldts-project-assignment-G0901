@@ -5,8 +5,8 @@ import game.gui.GUI;
 import game.model.menu.MenuModel;
 import game.observer.Music;
 import game.observer.Observer;
-import game.states.menu.MenuState;
 import game.states.State;
+import game.states.menu.MenuState;
 
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
@@ -26,8 +26,6 @@ public class Application {
         this.state = new MenuState(new MenuModel());
         this.gui = new GUI(size);
         music = new Music(this);
-
-
     }
 
     public static void main(String[] args) throws IOException, LineUnavailableException {

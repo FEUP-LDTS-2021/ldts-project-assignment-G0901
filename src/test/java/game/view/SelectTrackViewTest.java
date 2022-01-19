@@ -6,7 +6,6 @@ import game.model.menu.SelectTrackModel;
 import game.view.menu.SelectTrackView;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 
 import java.io.IOException;
 

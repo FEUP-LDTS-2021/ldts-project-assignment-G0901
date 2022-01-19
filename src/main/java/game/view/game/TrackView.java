@@ -8,9 +8,8 @@ import game.gui.GUI;
 import game.model.game.TrackModel;
 import game.view.View;
 
-import javax.sound.midi.Track;
-
-import static java.lang.Math.*;
+import static java.lang.Math.pow;
+import static java.lang.Math.sin;
 
 
 public class TrackView extends View<TrackModel> {

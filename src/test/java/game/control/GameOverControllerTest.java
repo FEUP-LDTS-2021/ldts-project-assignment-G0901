@@ -1,6 +1,5 @@
 package game.control;
 
-import com.googlecode.lanterna.TerminalSize;
 import game.Application;
 import game.control.menu.GameOverController;
 import game.gui.GUI;

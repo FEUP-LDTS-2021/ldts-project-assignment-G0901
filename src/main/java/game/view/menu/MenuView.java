@@ -1,12 +1,9 @@
 package game.view.menu;
 
-import com.googlecode.lanterna.TerminalPosition;
 import com.googlecode.lanterna.TerminalSize;
-import com.googlecode.lanterna.TextColor;
 import game.gui.GUI;
 import game.model.menu.MenuModel;
 import game.view.View;
-import game.view.game.TrackView;
 
 import java.io.IOException;
 import java.util.LinkedList;
@@ -19,7 +16,6 @@ public class MenuView extends View<MenuModel> {
     private List<String> title;
     private List<String> item;
     private List<List<String>> item_list = new LinkedList<>();
-    private TrackView trackView;
 
     public MenuView(MenuModel model) {
         super(model);
