@@ -48,13 +48,20 @@ This project was developed by André Barbosa (up202007398@edu.fe.up.pt), [Guilhe
     <img width=450 src="src/menu.png">
 </p>
 
+### Track Selection
+ - Tracks are stored in .txt files. This way, it's really easy to add new tracks, which allows a faster expansion of the game. To choose between the different tracks, a menu is displayed before the game starts.
+
+<p align="center">
+    <img width=450 src="src/track_selection.gif">
+</p>
+
 ## Planned Features
 
-### Acceleration
-- The track will move faster or slower according to users input.
+### High score
+ - Store scores in files so they can be displayed in-game later in order to make the game more challenging.
 
-### Obstacles
-- There will be random obstacles updated on track while the car is moving.
+### Turns
+ - Tracks will have different turns so the game is more unpredictable. We can even simulate the curvature in real world tracks.
 
 
 ## Design
