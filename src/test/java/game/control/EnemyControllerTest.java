@@ -27,7 +27,6 @@ public class EnemyControllerTest {
     void setUp() {
         game_model = mock(GameModel.class);
         enemyController = new EnemyController(game_model);
-        when(game_model.getSize()).thenReturn(new TerminalSize(180,80));
         app = mock(Application.class);
         gui = mock(GUI.class);
     }

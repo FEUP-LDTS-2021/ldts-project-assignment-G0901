@@ -74,7 +74,6 @@ public class GameControllerTest {
 
         when(car.getHeight()).thenReturn(10);
         when(car.getY()).thenReturn(10);
-        when(game_model.getSize()).thenReturn(new TerminalSize(40, 40));
     }
 
     @Test

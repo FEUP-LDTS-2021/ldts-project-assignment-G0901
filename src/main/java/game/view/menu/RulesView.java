@@ -27,7 +27,7 @@ public class RulesView extends View<RulesModel> {
 
    @Override
     public void drawElements(GUI gui) throws IOException {
-       TerminalSize size = model.getSize();
+       TerminalSize size = gui.getGraphics().getSize();
 
        gui.getGraphics().setBackgroundColor(TextColor.Factory.fromString(background_color));
        gui.getGraphics().fillRectangle(new TerminalPosition(0, 0), new TerminalSize(size.getColumns(), size.getRows()), ' ');

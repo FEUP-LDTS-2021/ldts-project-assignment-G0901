@@ -23,16 +23,16 @@ public class GameOverController extends Controller<GameOverModel> {
                 getModel().nextItem();
                 break;
             case ESC:
-                app.setState(new MenuState(new MenuModel(getModel().getSize())));
+                app.setState(new MenuState(new MenuModel()));
                 break;
             case QUIT:
                 app.setState(null);
             case ENTER:
                 if (getModel().whichSelected() == 0) {
-                    app.setState(new GameState(new GameModel(getModel().getSize(),getModel().getTrack())));
+                    app.setState(new GameState(new GameModel(getModel().getTrack())));
                 }
                 else if (getModel().whichSelected() == 1)
-                    app.setState(new MenuState(new MenuModel(getModel().getSize())));
+                    app.setState(new MenuState(new MenuModel()));
                 break;
         }
 

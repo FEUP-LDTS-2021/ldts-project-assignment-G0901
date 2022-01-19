@@ -13,7 +13,7 @@ public class SelectTrackModelTest {
 
     @BeforeEach
     void setUp() {
-        model = new SelectTrackModel(new TerminalSize(1, 1));
+        model = new SelectTrackModel();
 
     }
 

@@ -20,10 +20,9 @@ public class SelectTrackController extends Controller<SelectTrackModel> {
         if (action == GUI.ACTION.LEFT)
             getModel().previousItem();
         if (action == GUI.ACTION.ENTER)
-            app.setState(new GameState(new GameModel(getModel().getSize(),
-                    getModel().getCurrentTrack())));
+            app.setState(new GameState(new GameModel(getModel().getCurrentTrack())));
         if (action == GUI.ACTION.ESC)
-            app.setState(new MenuState(new MenuModel(getModel().getSize())));
+            app.setState(new MenuState(new MenuModel()));
         if (action == GUI.ACTION.QUIT)
             app.setState(null);
     }

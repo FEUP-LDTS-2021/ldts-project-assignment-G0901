@@ -1,12 +1,9 @@
 package game.model.menu;
 
-import com.googlecode.lanterna.TerminalSize;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class SelectTrackModel {
-    private TerminalSize size;
     private int current_track;
 
     private final List<String> tracks = new ArrayList<String>(){{
@@ -14,8 +11,7 @@ public class SelectTrackModel {
         add("Spa");
     }};
 
-    public SelectTrackModel(TerminalSize size) {
-        this.size = size;
+    public SelectTrackModel() {
         this.current_track = 0;
     }
 
@@ -37,10 +33,6 @@ public class SelectTrackModel {
 
     public String getCurrentTrack() {
         return tracks.get(current_track);
-    }
-
-    public TerminalSize getSize() {
-        return size;
     }
 
     public List<String> getTracks() {

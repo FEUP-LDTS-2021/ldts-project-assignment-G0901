@@ -14,7 +14,7 @@ public class RulesController extends Controller<RulesModel> {
         if (action == GUI.ACTION.QUIT)
             app.setState(null);
         if (action == GUI.ACTION.ENTER || action == GUI.ACTION.ESC)
-            app.setState(new MenuState(new MenuModel(getModel().getSize())));
+            app.setState(new MenuState(new MenuModel()));
     }
 
 }

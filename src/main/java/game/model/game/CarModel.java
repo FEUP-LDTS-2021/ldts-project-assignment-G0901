@@ -8,12 +8,14 @@ public class CarModel {
     public CarModel() {
         this.lane = 0;
         this.y = 70;
+        this.height = 7;
     }
 
     public CarModel(int lane, int y)
     {
         this.lane = lane;
         this.y = y;
+        this.height = 7;
     }
 
     public void moveY(int velocity) {
@@ -30,10 +32,6 @@ public class CarModel {
 
     public int getHeight() {
         return  height;
-    }
-
-    public void setHeight(int height) {
-        this.height = height;
     }
 
     public void moveLeft(){

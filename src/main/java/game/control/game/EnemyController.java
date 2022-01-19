@@ -28,11 +28,11 @@ public class EnemyController extends Controller<GameModel>  {
             addEnemy();
         }
         else {
-            if (enemies.get(enemies.size() - 1).getY() > getModel().getSize().getRows()) {
+            if (enemies.get(enemies.size() - 1).getY() > 70) {
                 addEnemy();
             }
             //remove older
-            if (enemies.get(0).getY() > getModel().getSize().getRows() * 1.5)
+            if (enemies.get(0).getY() > 100)
                 enemies.remove(0);
         }
     }
@@ -40,6 +40,6 @@ public class EnemyController extends Controller<GameModel>  {
     private void addEnemy() {
         Random random = new Random();
         int lane = random.nextInt(2 + 1) - 1;
-        getModel().addEnemy(new CarModel(lane, getModel().getSize().getRows() / 2));
+        getModel().addEnemy(new CarModel(lane, 35));
     }
 }

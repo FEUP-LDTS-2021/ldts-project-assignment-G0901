@@ -28,7 +28,7 @@ public class RulesStateTest {
         controller = Mockito.mock(RulesController.class);
         view = Mockito.mock(RulesView.class);
 
-        model = new RulesModel(new TerminalSize(40, 40));
+        model = new RulesModel();
         state = new RulesState(model);
 
         state.view = view;
