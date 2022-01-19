@@ -22,9 +22,6 @@ public abstract class View<Model> implements GenericColors {
         this.model = model;
     }
 
-    public void loadColors() {
-    }
-
     public void draw(GUI gui) throws IOException{
         drawElements(gui);
     }

@@ -6,6 +6,7 @@ import game.gui.GUI;
 import game.model.game.CarModel;
 import game.model.game.GameModel;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
@@ -23,6 +24,7 @@ public class EnemyController extends Controller<GameModel>  {
     }
 
     private void generateEnemies() {
+        if (getModel().getTrackModel().getDistance() < 100) return;
         List<CarModel> enemies = getModel().getEnemies();
         if (enemies.isEmpty()) {
             addEnemy();
@@ -38,8 +40,11 @@ public class EnemyController extends Controller<GameModel>  {
     }
 
     private void addEnemy() {
+        List<Character> colors = Arrays.asList('Y', 'R', 'G', 'W', 'U');
         Random random = new Random();
         int lane = random.nextInt(2 + 1) - 1;
-        getModel().addEnemy(new CarModel(lane, 35));
+        CarModel new_enemy = new CarModel(lane, 35);
+        new_enemy.setColor(colors.get(random.nextInt(colors.size())));
+        getModel().addEnemy(new_enemy);
     }
 }

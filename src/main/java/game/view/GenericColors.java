@@ -8,7 +8,6 @@ public interface GenericColors {
     String item_color = "#e07a5f";
     String title_color = "#e07a5f";
     String selected_color = "#3d405b";
-    String text_background_color = "#f4f1de";
 
     Map<Character, String> colors = new HashMap<>(){{
         put('B', "#000000");
@@ -16,6 +15,7 @@ public interface GenericColors {
         put('R', "#ff2800");
         put('G', "#008c45");
         put('W', "#ffffff");
+        put('U', "#2a9d8f");
         put('Z', item_color);
     }};
 }

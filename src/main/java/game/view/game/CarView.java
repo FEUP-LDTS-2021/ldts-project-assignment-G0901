@@ -25,7 +25,7 @@ public class CarView extends View<CarModel> {
     @Override
     public void drawElements(GUI gui) throws IOException {
         getPosition(gui);
-        drawSprite(gui.getGraphics(), car, 'R', x_pos, model.getY());
+        drawSprite(gui.getGraphics(), car, model.getColor(), x_pos, model.getY());
     }
 
     private void getPosition(GUI gui) {
