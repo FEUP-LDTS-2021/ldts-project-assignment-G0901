@@ -28,10 +28,24 @@ This project was developed by André Barbosa (up202007398@edu.fe.up.pt), [Guilhe
 
 
 ### Track Displaying 
- - The track is displayed simulating the progression of the car at a default speed.
+ - The track is rendered using pseudo 3d graphics. We also simulate it's movement so it appears the player is moving foward.
 
 <p align="center">
     <img width=450 src="src/track_movement.gif">
+</p>
+
+### Enemies generation
+ - During gameplay, the user will aproach different cars and needs to avoid them to stay alive. These enemies are randomly placed in the track.
+
+<p align="center">
+    <img width=450 src="src/enemies.gif">
+</p>
+ 
+### Menu
+ - When the application starts, a menu is prompted. This allows the user to navigate through different tabs.
+
+<p align="center">
+    <img width=450 src="src/menu.png">
 </p>
 
 ## Planned Features
