@@ -9,6 +9,7 @@ public class SelectTrackModel {
     private final List<String> tracks = new ArrayList<String>(){{
         add("Monza");
         add("Spa");
+        add("Bahrain");
     }};
 
     public SelectTrackModel() {
