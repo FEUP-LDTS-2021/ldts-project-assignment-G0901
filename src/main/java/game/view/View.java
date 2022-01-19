@@ -62,17 +62,16 @@ public abstract class View<Model> implements GenericColors {
         gui.getGraphics().disableModifiers(SGR.BOLD);
     }
 
-    protected void drawScore(String score, GUI gui, TerminalSize size) {
+    protected void drawScore(String score, GUI gui, int row) {
         int count = 0;
-        int col = size.getColumns() / 2;
-        int row = size.getRows() / 2 + 8;
+        int col = gui.getGraphics().getSize().getColumns() / 2;
         List<String> sprite = new ArrayList<>();
 
         for (int i = 0; i < score.length(); i++) {
             sprite = loadSprite("numbers/" + score.charAt(i) + ".txt");
 
             for (int j = 0; j < sprite.size(); j++) {
-                gui.graphics.putString(col - (sprite.get(i).length() / 2 * score.length()), row + count, sprite.get(j), SGR.BOLD);
+                gui.graphics.putString(col - (11 / 2 * score.length()), row + count, sprite.get(j), SGR.BOLD);
 
                 count += 1;
             }

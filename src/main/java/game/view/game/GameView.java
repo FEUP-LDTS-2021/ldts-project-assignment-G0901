@@ -1,5 +1,6 @@
 package game.view.game;
 
+import com.googlecode.lanterna.TextColor;
 import game.gui.GUI;
 import game.model.game.CarModel;
 import game.model.game.GameModel;
@@ -25,6 +26,10 @@ public class GameView extends View<GameModel> {
             CarView enemy_view = new CarView(enemy);
             enemy_view.drawElements(gui);
         }
+        gui.getGraphics().setBackgroundColor(TextColor.Factory.fromString(model.getTrackModel().getBackgroundColor()));
+        gui.getGraphics().setForegroundColor(TextColor.Factory.fromString(colors.get("B")));
+        drawScore(String.valueOf(model.getScore()), gui, 15);
+
         gui.refresh();
 
     }

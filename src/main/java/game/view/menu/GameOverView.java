@@ -43,9 +43,7 @@ public class GameOverView extends View<GameOverModel> {
 
         drawMenu(title, title_color, gui, size.getRows() / 5, false);
         drawMenu(score_file, item_color, gui, size.getRows() / 2, false);
-        drawScore(score, gui, size);
-//        drawMenu(number, item_color, gui, size.getRows() / 2 + 8, false);
-//        gui.graphics.putString(size.getColumns() / 2, (int) (size.getRows() * 0.60F), score);
+        drawScore(score, gui, size.getRows() / 2 + 8);
 
         for (int i = 0; i < number_of_items; i++) {
         item = item_list.get(i);
