@@ -1,20 +1,14 @@
 package game.control;
 
-import com.googlecode.lanterna.TerminalSize;
 import game.Application;
 import game.control.game.EnemyController;
 import game.gui.GUI;
-
-import game.model.game.CarModel;
 import game.model.game.GameModel;
-import game.model.game.TrackModel;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 
 import java.io.IOException;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
 
 public class EnemyControllerTest {

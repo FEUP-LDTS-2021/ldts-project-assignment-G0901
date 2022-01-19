@@ -1,8 +1,6 @@
 package game.view.menu;
 
-import com.googlecode.lanterna.TerminalPosition;
 import com.googlecode.lanterna.TerminalSize;
-import com.googlecode.lanterna.TextColor;
 import game.gui.GUI;
 import game.model.menu.RulesModel;
 import game.view.View;
@@ -22,7 +20,6 @@ public class RulesView extends View<RulesModel> {
        keys = loadSprite(model.getKeys());
        description = loadSprite(model.getDescription());
        proceed = loadSprite(model.getProceed());
-
    }
 
    @Override

@@ -1,10 +1,8 @@
 package game.model;
 
-import com.googlecode.lanterna.TerminalSize;
 import game.model.menu.MenuModel;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
 
 import static org.junit.jupiter.api.Assertions.*;
 

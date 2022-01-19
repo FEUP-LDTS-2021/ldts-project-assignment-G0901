@@ -1,6 +1,5 @@
 package game.control;
 
-import com.googlecode.lanterna.TerminalSize;
 import game.Application;
 import game.control.game.CarController;
 import game.control.game.EnemyController;
@@ -9,14 +8,14 @@ import game.control.game.TrackController;
 import game.gui.GUI;
 import game.model.game.CarModel;
 import game.model.game.GameModel;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
 import java.io.IOException;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.when;
 
 public class GameControllerTest {

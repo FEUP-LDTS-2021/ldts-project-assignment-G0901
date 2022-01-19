@@ -1,15 +1,12 @@
 package game.observer;
 
 import game.Application;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
-
-
 import java.io.IOException;
 
 import static org.junit.Assert.assertEquals;

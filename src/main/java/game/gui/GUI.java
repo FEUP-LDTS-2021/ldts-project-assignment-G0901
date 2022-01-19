@@ -1,6 +1,5 @@
 package game.gui;
 
-import com.googlecode.lanterna.TerminalPosition;
 import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
@@ -106,8 +105,6 @@ public class GUI {
     public void fillScreen(String color) throws IOException {
         graphics.setBackgroundColor(TextColor.Factory.fromString(color));
         graphics.fill(' ');
-        //graphics.fillRectangle(new TerminalPosition(0, 0), size, ' ');
-        //screen.refresh();
     }
 
     public void clear() throws IOException {

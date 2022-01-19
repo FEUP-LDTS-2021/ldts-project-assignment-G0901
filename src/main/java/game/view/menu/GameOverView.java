@@ -1,8 +1,6 @@
 package game.view.menu;
 
-import com.googlecode.lanterna.TerminalPosition;
 import com.googlecode.lanterna.TerminalSize;
-import com.googlecode.lanterna.TextColor;
 import game.gui.GUI;
 import game.model.game.TrackModel;
 import game.model.menu.GameOverModel;

@@ -7,7 +7,6 @@ import game.model.game.CarModel;
 import game.model.game.GameModel;
 import game.states.game.GameState;
 import game.view.game.GameView;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
