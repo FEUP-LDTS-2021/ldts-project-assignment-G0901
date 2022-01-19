@@ -1,7 +1,0 @@
-Spa
-#ACCCD8
-#E4EAE4
-#dde3dd
-#9f3c3c
-#d0be61
-#343436

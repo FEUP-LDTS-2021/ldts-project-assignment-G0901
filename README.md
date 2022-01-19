@@ -4,11 +4,11 @@ ldts-project-assignment-g0901 created by GitHub Classroom
 ## To-Do list
 
 - [X] Set up project
-- [X] Create car (sprites included)
-- [X] Car movement
-- [X] Create track
-- [X] Create Enemies
-- [X] Create UI
+- [ ] Create car (sprites included)
+- [ ] Car movement
+- [ ] Create track
+- [ ] Create Enemies
+- [ ] Create UI
 - [ ] Add new features
 
-Ideas for new features: starting lights, curvature, coins & bonus, acceleration, slopes, ~~lives~~
+Ideas for new features: starting lights, curvature, coins & bonus, acceleration, slopes, lives

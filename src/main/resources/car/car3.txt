@@ -1,6 +1,0 @@
-   ###################
-          #####
-BBBBBB  #########  BBBBBB
-BBBBBB#############BBBBBB
-BBBBBB#############BBBBBB
-BBBBBB     ###     BBBBBB
