@@ -12,9 +12,17 @@ import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 
-public class GameOverView extends GenericTabView {
+public class GameOverView extends View<GameOverModel> {
     private String score;
+
+    private List<String> item;
+    private List<String> title;
     private List<String> score_file;
+    private List<List<String>> item_list = new LinkedList<>();
+
+    private int number_of_items;
+    private int row;
+
 
     public GameOverView(GameOverModel model) {
         super(model);
@@ -48,7 +56,12 @@ public class GameOverView extends GenericTabView {
         gui.refresh();
     }
 
-    @Override
+    public void loadItemsSprites(List<List<String>> itemsList, String[] items) {
+        for (int i = 0; i < items.length; i++) {
+            itemsList.add(loadSprite(items[i]));
+        }
+    }
+
     public int calculateRow(TerminalSize size, int i) {
         return (int) (size.getRows() * 0.75F + (size.getRows() / 10) * i);
     }

@@ -5,7 +5,6 @@ import game.control.menu.MenuController;
 import game.gui.GUI;
 import game.model.menu.MenuModel;
 import game.states.State;
-import game.view.menu.GenericTabView;
 import game.view.menu.MenuView;
 
 import java.io.IOException;

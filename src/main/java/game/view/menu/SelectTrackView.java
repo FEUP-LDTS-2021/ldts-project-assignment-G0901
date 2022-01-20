@@ -7,7 +7,7 @@ import game.view.View;
 import java.io.IOException;
 import java.util.List;
 
-public class SelectTrackView extends GenericTabView {
+public class SelectTrackView extends View<SelectTrackModel> {
     private List<String> current_track;
     private List<String> left_arrow;
     private List<String> right_arrow;
