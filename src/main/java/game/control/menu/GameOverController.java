@@ -28,10 +28,10 @@ public class GameOverController extends Controller<GameOverModel> {
             case QUIT:
                 app.setState(null);
             case ENTER:
-                if (getModel().whichSelected() == 0) {
+                if (getModel().getCurrentItem() == 0) {
                     app.setState(new GameState(new GameModel(getModel().getTrack())));
                 }
-                else if (getModel().whichSelected() == 1)
+                else if (getModel().getCurrentItem() == 1)
                     app.setState(new MenuState(new MenuModel()));
                 break;
         }

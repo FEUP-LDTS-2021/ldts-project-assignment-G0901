@@ -26,12 +26,12 @@ public class MenuController extends Controller<MenuModel> {
             case QUIT:
                 app.setState(null);
             case ENTER:
-               if (getModel().whichSelected() == 0)
+               if (getModel().getCurrentItem() == 0)
                    app.setState(new SelectTrackState(new SelectTrackModel()));
-               else if (getModel().whichSelected() == 1) {
+               else if (getModel().getCurrentItem() == 1) {
                    app.setState(new RulesState(new RulesModel()));
                }
-               else if (getModel().whichSelected() == 3)
+               else if (getModel().getCurrentItem() == 3)
                    app.setState(null);
                 break;
         }

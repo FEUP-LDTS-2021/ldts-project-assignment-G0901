@@ -8,7 +8,7 @@ import game.view.View;
 import java.io.IOException;
 import java.util.List;
 
-public class RulesView extends View<RulesModel> {
+public class RulesView extends GenericTabView {
     private List<String> title;
     private List<String> keys;
     private List<String> description;
