@@ -13,6 +13,7 @@ import org.mockito.Mockito;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
 
 public class EnemyControllerTest {
@@ -56,7 +57,7 @@ public class EnemyControllerTest {
 
     @Test
     void testGenerateDelay() {
-        when(track_model.getDistance()).thenReturn(0);
+        when(track_model.getDistance()).thenReturn(100);
 
         controller.step(app, GUI.ACTION.ENTER);
 
@@ -66,7 +67,7 @@ public class EnemyControllerTest {
     @Test
     void testGeneratePosition() {
         CarModel enemy = Mockito.mock(CarModel.class);
-        when(enemy.getY()).thenReturn(30);
+        when(enemy.getY()).thenReturn(70);
         when(game_model.getEnemies()).thenReturn(List.of(enemy));
 
         controller.step(app, GUI.ACTION.ENTER);
@@ -77,12 +78,12 @@ public class EnemyControllerTest {
     @Test
     void testRemoval() {
         CarModel enemy = Mockito.mock(CarModel.class);
-        when(enemy.getY()).thenReturn(300);
+        when(enemy.getY()).thenReturn(100);
         List<CarModel> enemies = new ArrayList<>() {{add(enemy);}};
         when(game_model.getEnemies()).thenReturn(enemies);
 
         controller.step(app, GUI.ACTION.ENTER);
 
-        verify(game_model, Mockito.times(1)).addEnemy(any(CarModel.class));
+        assertEquals(0, enemies.size());
     }
 }
