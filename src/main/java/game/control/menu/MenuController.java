@@ -25,6 +25,7 @@ public class MenuController extends Controller<MenuModel> {
                 break;
             case QUIT:
                 app.setState(null);
+                break;
             case ENTER:
                if (getModel().getCurrentItem() == 0)
                    app.setState(new SelectTrackState(new SelectTrackModel()));

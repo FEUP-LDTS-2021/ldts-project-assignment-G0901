@@ -6,6 +6,7 @@ import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
 import game.gui.GUI;
 import game.model.menu.MenuModel;
+import game.view.menu.MenuView;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -28,8 +29,6 @@ public class MenuViewTest {
        model = new MenuModel();
        graphics = Mockito.mock(TextGraphics.class);
        gui = Mockito.mock(GUI.class);
-
-       gui.graphics = graphics;
 
        when(gui.getGraphics()).thenReturn(graphics);
        when(gui.getGraphics().getSize()).thenReturn(new TerminalSize(40, 40));

@@ -12,6 +12,7 @@ public class CarView extends View<CarModel> {
     private List<List<String>> cars;
     private List<String> car;
     private int x_pos;
+    private double perspective;
 
     public CarView(CarModel model) {
         super(model);
@@ -30,7 +31,7 @@ public class CarView extends View<CarModel> {
 
     private void getPosition(GUI gui) {
         int i;
-        double perspective, lane_distance;
+        double lane_distance;
         TerminalSize size = gui.getGraphics().getSize();
 
         perspective = (double)(model.getY() - size.getRows() / 2) / (size.getRows() / 2);
@@ -44,5 +45,9 @@ public class CarView extends View<CarModel> {
 
         x_pos = size.getColumns() / 2 - getSize(car) / 2;
         x_pos += model.getLane() * (int)(0.1 * lane_distance + 0.8 * lane_distance);
+    }
+
+    public double getPerspective() {
+        return perspective;
     }
 }

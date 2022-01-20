@@ -1,18 +1,13 @@
-/*package game.control;
+package game.control;
 
-import com.googlecode.lanterna.TerminalSize;
 import game.Application;
 import game.control.menu.MenuController;
 import game.gui.GUI;
-import game.model.GameModelTest;
-import game.model.game.GameModel;
 import game.model.menu.MenuModel;
-import game.states.game.GameState;
-import game.states.menu.MenuState;
 import game.states.menu.RulesState;
+import game.states.menu.SelectTrackState;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
 import org.mockito.Mockito;
 
 import java.io.IOException;
@@ -36,36 +31,59 @@ public class MenuControllerTest {
     }
 
     @Test
-    void step() throws IOException {
+    void stepUp() throws IOException {
         Mockito.when(gui.getAction()).thenReturn(GUI.ACTION.UP);
         controller.step(app, gui.getAction());
         Mockito.verify(model, Mockito.times(1)).previousItem();
+    }
 
-
+    @Test
+    void stepDown() throws IOException {
         Mockito.when(gui.getAction()).thenReturn(GUI.ACTION.DOWN);
+
         controller.step(app, gui.getAction());
+
         Mockito.verify(model, Mockito.times(1)).nextItem();
+    }
 
-
-        Mockito.when(gui.getAction()).thenReturn(GUI.ACTION.ESC);
-        controller.step(app, gui.getAction());
-        Mockito.verify(app, Mockito.times(1)).setState(null);
-
-
-        Mockito.when(gui.getAction()).thenReturn(GUI.ACTION.ENTER);
-        Mockito.when(model.whichSelected()).thenReturn(0);
-        Mockito.when(model.getSize()).thenReturn(new TerminalSize(40, 40));
+    @Test
+    void stepQuit() throws IOException {
+        Mockito.when(gui.getAction()).thenReturn(GUI.ACTION.QUIT);
 
         controller.step(app, gui.getAction());
-        Mockito.verify(app, Mockito.times(1)).setState(any(GameState.class));
 
-
-        Mockito.when(model.whichSelected()).thenReturn(1);
-        controller.step(app, gui.getAction());
-        Mockito.verify(app, Mockito.times(1)).setState(any(RulesState.class));
-
-        Mockito.when(model.whichSelected()).thenReturn(3);
         Mockito.verify(app, Mockito.times(1)).setState(null);
 
     }
-}*/
+
+    @Test
+    void stepEnter0() throws IOException {
+        Mockito.when(gui.getAction()).thenReturn(GUI.ACTION.ENTER);
+        Mockito.when(model.getCurrentItem()).thenReturn(0);
+
+        controller.step(app, gui.getAction());
+
+        Mockito.verify(app, Mockito.times(1)).setState(any(SelectTrackState.class));
+    }
+
+    @Test
+    void stepEnter1() throws IOException {
+        Mockito.when(gui.getAction()).thenReturn(GUI.ACTION.ENTER);
+        Mockito.when(model.getCurrentItem()).thenReturn(1);
+
+        controller.step(app, gui.getAction());
+
+        Mockito.verify(app, Mockito.times(1)).setState(any(RulesState.class));
+
+    }
+
+    @Test
+    void stepEnter3() throws IOException {
+        Mockito.when(gui.getAction()).thenReturn(GUI.ACTION.ENTER);
+        Mockito.when(model.getCurrentItem()).thenReturn(3);
+
+        controller.step(app, gui.getAction());
+
+        Mockito.verify(app, Mockito.times(1)).setState(null);
+    }
+}

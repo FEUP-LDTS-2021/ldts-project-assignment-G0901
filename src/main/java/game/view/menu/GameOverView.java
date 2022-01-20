@@ -47,4 +47,9 @@ public class GameOverView extends GenericTabView {
 
         gui.refresh();
     }
+
+    @Override
+    public int calculateRow(TerminalSize size, int i) {
+        return (int) (size.getRows() * 0.75F + (size.getRows() / 10) * i);
+    }
 }

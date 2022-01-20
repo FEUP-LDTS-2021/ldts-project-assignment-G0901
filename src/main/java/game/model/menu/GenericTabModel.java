@@ -47,6 +47,10 @@ public abstract class GenericTabModel {
         return items[i];
     }
 
+    public void setItems(String[] items) {
+        this.items = items;
+    }
+
     public void nextItem() {
         current_item = Math.min(current_item + 1, items.length - 1);
     }

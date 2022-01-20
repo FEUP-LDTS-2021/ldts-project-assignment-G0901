@@ -18,6 +18,10 @@ public class EnemyController extends Controller<GameModel>  {
 
     public void step(Application application, GUI.ACTION action){
         generateEnemies();
+        moveEnemies();
+    }
+
+    private void moveEnemies() {
         for (CarModel enemy: getModel().getEnemies()) {
             enemy.moveY(getModel().getVelocity());
         }

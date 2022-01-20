@@ -27,6 +27,7 @@ public class GameOverController extends Controller<GameOverModel> {
                 break;
             case QUIT:
                 app.setState(null);
+                break;
             case ENTER:
                 if (getModel().getCurrentItem() == 0) {
                     app.setState(new GameState(new GameModel(getModel().getTrack())));
