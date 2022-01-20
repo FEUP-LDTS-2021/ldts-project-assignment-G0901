@@ -8,7 +8,7 @@ public class GameModel {
     TrackModel trackModel;
     List<CarModel> enemies;
     String track;
-    int velocity = 4;
+    int velocity;
     int score;
 
     public GameModel(String track) {
@@ -18,6 +18,7 @@ public class GameModel {
         trackModel.loadTrack(track);
         enemies = new ArrayList<CarModel>();
         score = 0;
+        velocity = trackModel.getVelocity();
     }
 
     public CarModel getCarModel() {
