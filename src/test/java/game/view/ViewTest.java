@@ -59,11 +59,9 @@ public class ViewTest {
 
     @Test
     void testDrawScore() {
-        Mockito.when(view.loadSprite(anyString())).thenReturn(test_list);
+        view.drawScore("1", gui, 5);
 
-        view.drawScore("1234", gui, 5);
-
-        Mockito.verify(graphics, Mockito.times(12)).putString(anyInt(), anyInt(), anyString(), any(SGR.class));
+        Mockito.verify(graphics, Mockito.times(11)).putString(anyInt(), anyInt(), anyString(), any(SGR.class));
     }
 
     @Test

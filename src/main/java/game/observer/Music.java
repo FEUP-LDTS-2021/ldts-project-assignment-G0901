@@ -13,6 +13,7 @@ public class Music extends Observer {
     Clip clip;
     URL menu_song;
     URL game_song;
+    public AudioInputStream ais;
 
     public Music(Application app) throws LineUnavailableException {
         this.app = app;
@@ -28,16 +29,16 @@ public class Music extends Observer {
         clip.close();
 
         if (app.getState() instanceof GameState) {
-            AudioInputStream ais = AudioSystem.getAudioInputStream(game_song);
+            ais = AudioSystem.getAudioInputStream(game_song);
             clip = AudioSystem.getClip();
             clip.open(ais);
             clip.start();
 
         }
         else if (app.getState() instanceof MenuState) {
-            AudioInputStream ais2 = AudioSystem.getAudioInputStream(menu_song);
+            ais = AudioSystem.getAudioInputStream(menu_song);
             clip = AudioSystem.getClip();
-            clip.open(ais2);
+            clip.open(ais);
             clip.start();
             clip.loop(Clip.LOOP_CONTINUOUSLY);
 

@@ -19,7 +19,7 @@ public class Application {
     private State state;
     private GUI gui;
     private Music music;
-    public List<Observer> observers;
+    private List<Observer> observers;
 
     public Application() throws LineUnavailableException {
         observers = new ArrayList<>();
@@ -70,11 +70,11 @@ public class Application {
     }
 
     public void notifyAllObservers() throws IOException, UnsupportedAudioFileException, LineUnavailableException {
-        for (Observer observer : observers)
+        for (Observer observer : getObservers())
             observer.update();
     }
 
-    public void addObserver(Observer observer) {observers.add(observer);}
+    public void addObserver(Observer observer) {getObservers().add(observer);}
 
     public List<Observer> getObservers() {
         return observers;
