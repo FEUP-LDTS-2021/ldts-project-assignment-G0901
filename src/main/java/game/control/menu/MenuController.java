@@ -3,9 +3,11 @@ package game.control.menu;
 import game.Application;
 import game.control.Controller;
 import game.gui.GUI;
+import game.model.menu.AboutModel;
 import game.model.menu.MenuModel;
 import game.model.menu.RulesModel;
 import game.model.menu.SelectTrackModel;
+import game.states.menu.AboutState;
 import game.states.menu.RulesState;
 import game.states.menu.SelectTrackState;
 
@@ -30,6 +32,9 @@ public class MenuController extends Controller<MenuModel> {
                    app.setState(new SelectTrackState(new SelectTrackModel()));
                else if (getModel().whichSelected() == 1) {
                    app.setState(new RulesState(new RulesModel()));
+               }
+               else if(getModel().whichSelected() == 2) {
+                   app.setState(new AboutState(new AboutModel()));
                }
                else if (getModel().whichSelected() == 3)
                    app.setState(null);

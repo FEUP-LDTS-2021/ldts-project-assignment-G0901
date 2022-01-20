@@ -48,6 +48,7 @@ public abstract class View<Model> implements GenericColors {
     protected void drawMenu(List<String> sprite, String color, GUI gui, int row, boolean selected)
     {
         int column = gui.getGraphics().getSize().getColumns() / 2 - sprite.get(0).length() / 2;
+
         int count = 0;
         gui.getGraphics().enableModifiers(SGR.BOLD);
         gui.graphics.setForegroundColor(TextColor.Factory.fromString(color));
