@@ -26,13 +26,23 @@ public class CarModelTest {
     }
 
     @Test
-     void testMovement() {
+     void testMovementRight() {
         car.moveRight();
+
         assertEquals(1, car.getLane());
+    }
+
+    @Test
+    void testMovementLeft() {
         car.moveLeft();
-        car.moveLeft();
+
         assertEquals(-1, car.getLane());
+    }
+
+    @Test
+    void testMovementY() {
         enemy.moveY(velocity);
+
         assertEquals(21,enemy.getY());
     }
 

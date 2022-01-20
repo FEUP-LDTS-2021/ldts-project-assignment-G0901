@@ -1,4 +1,4 @@
-/*package game.model;
+package game.model;
 
 import com.googlecode.lanterna.TerminalSize;
 import game.model.menu.GameOverModel;
@@ -14,7 +14,7 @@ public class GameOverModelTest {
 
     @BeforeEach
     void setUp() {
-        model = new GameOverModel(new TerminalSize(40, 40));
+        model = new GameOverModel("test");
         model.current_item = 0;
     }
 
@@ -31,6 +31,7 @@ public class GameOverModelTest {
     @Test
     void previousItem() {
         model.previousItem();
+
         assertEquals(model.getNumberItems() - 1, model.current_item);
     }
 
@@ -70,4 +71,4 @@ public class GameOverModelTest {
         TerminalSize size_test = model.size;
         assertEquals(size_test, model.getSize());
     }
-}*/
+}
