@@ -66,7 +66,7 @@ public class GameController extends Controller<GameModel> {
 
     private Boolean checkScore(CarModel player, CarModel enemy) {
         return (enemy.getY() > player.getY() + player.getHeight() &&
-                enemy.getY() <= player.getY() + player.getHeight() + 1);
+                enemy.getY() <= player.getY() + player.getHeight() + getModel().getVelocity());
     }
 
 }

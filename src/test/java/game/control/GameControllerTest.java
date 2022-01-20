@@ -171,6 +171,6 @@ public class GameControllerTest {
 
         controller.step(app, GUI.ACTION.RIGHT);
 
-        Mockito.verify(game_model, Mockito.times(1)).setScore(anyInt());
+        Mockito.verify(game_model, Mockito.times(game_model.getVelocity())).setScore(anyInt());
     }
 }
