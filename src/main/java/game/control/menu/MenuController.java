@@ -34,10 +34,10 @@ public class MenuController extends Controller<MenuModel> {
                else if (getModel().getCurrentItem() == 1) {
                    app.setState(new RulesState(new RulesModel()));
                }
-               else if(getModel().whichSelected() == 2) {
+               else if(getModel().getCurrentItem() == 2) {
                    app.setState(new AboutState(new AboutModel()));
                }
-               else if (getModel().whichSelected() == 3)
+               else if (getModel().getCurrentItem() == 3)
                    app.setState(null);
                break;
         }
