@@ -17,6 +17,7 @@ public class TrackModel {
     private String kerb_color1;
     private String kerb_color2;
     private String road_color;
+    private Integer velocity;
 
     public TrackModel()
     {
@@ -44,6 +45,7 @@ public class TrackModel {
             kerb_color1 = scanner.nextLine();
             kerb_color2 = scanner.nextLine();
             road_color = scanner.nextLine();
+            velocity = Integer.valueOf(scanner.nextLine());
 
             scanner.close();
         } catch (FileNotFoundException | URISyntaxException e) {
@@ -77,6 +79,8 @@ public class TrackModel {
         return road_color;
     }
 
+    public Integer getVelocity() {return velocity;}
+
     public void setBackgroundColor (String background_color) {
         this.background_color = background_color;
     }
@@ -85,7 +89,6 @@ public class TrackModel {
         this.terrain_color1 = terrain_color1;
         this.terrain_color2 = terrain_color2;
     }
-
     public void setKerbColor (String kerb_color1, String kerb_color2) {
         this.kerb_color1 = kerb_color1;
         this.kerb_color2 = kerb_color2;
