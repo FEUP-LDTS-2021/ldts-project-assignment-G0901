@@ -4,6 +4,7 @@ import game.Application;
 import game.control.menu.MenuController;
 import game.gui.GUI;
 import game.model.menu.MenuModel;
+import game.states.menu.AboutState;
 import game.states.menu.RulesState;
 import game.states.menu.SelectTrackState;
 import org.junit.jupiter.api.BeforeEach;
@@ -74,6 +75,17 @@ public class MenuControllerTest {
         controller.step(app, gui.getAction());
 
         Mockito.verify(app, Mockito.times(1)).setState(any(RulesState.class));
+
+    }
+
+    @Test
+    void stepEnter2() throws IOException {
+        Mockito.when(gui.getAction()).thenReturn(GUI.ACTION.ENTER);
+        Mockito.when(model.getCurrentItem()).thenReturn(2);
+
+        controller.step(app, gui.getAction());
+
+        Mockito.verify(app, Mockito.times(1)).setState(any(AboutState.class));
 
     }
 
