@@ -54,7 +54,16 @@ public class GUITest {
     }
 
     @Test
-    void getActionLeft() throws IOException {
+    void getActionNone() throws IOException {
+        Mockito.when(screen.pollInput()).thenReturn(null);
+
+        GUI.ACTION action = gui.getAction();
+
+        assertEquals(GUI.ACTION.NONE , action);
+    }
+
+    @Test
+    void getActionRight() throws IOException {
         Mockito.when(screen.pollInput()).thenReturn(new KeyStroke(KeyType.ArrowRight));
 
         GUI.ACTION action = gui.getAction();
@@ -63,7 +72,7 @@ public class GUITest {
     }
 
     @Test
-    void getActionRight() throws IOException {
+    void getActionLeft() throws IOException {
         Mockito.when(screen.pollInput()).thenReturn(new KeyStroke(KeyType.ArrowLeft));
 
         GUI.ACTION action = gui.getAction();
