@@ -29,7 +29,7 @@ public class SelectTrackView extends View<SelectTrackModel> {
     }
 
     private void drawTrackFlag(GUI gui) throws IOException {
-        current_track = loadSprite("Track/" + model.getCurrentTrack() + "_flag.txt");
+        current_track = loadSprite("Track/" + model.getSelected() + "_flag.txt");
 
         int x_pos = gui.getGraphics().getSize().getColumns() / 2 - getSize(current_track) / 2;
         int y_pos = gui.getGraphics().getSize().getRows() / 2 - current_track.size() / 2;

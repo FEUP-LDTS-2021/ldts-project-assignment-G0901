@@ -28,8 +28,6 @@ public class RulesViewTest {
         graphics = Mockito.mock(TextGraphics.class);
         gui = Mockito.mock(GUI.class);
 
-        gui.graphics = graphics;
-
         when(gui.getGraphics()).thenReturn(graphics);
         when(gui.getGraphics().getSize()).thenReturn(new TerminalSize(40, 40));
 
@@ -41,8 +39,7 @@ public class RulesViewTest {
     public void drawElements() throws IOException {
         view.draw(gui);
 
-        verify(graphics, times(1)).fillRectangle(any(TerminalPosition.class), any(TerminalSize.class), anyChar());
+        Mockito.verify(gui, times(1)).fillScreen(anyString());
         verify(gui, times(1)).refresh();
-
     }
 }

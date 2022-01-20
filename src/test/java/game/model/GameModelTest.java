@@ -1,19 +1,16 @@
-/*package game.model;
+package game.model;
 
-import com.googlecode.lanterna.TerminalSize;
 import game.model.game.CarModel;
 import game.model.game.GameModel;
 import game.model.game.TrackModel;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.mock;
 
 public class GameModelTest {
-    private GameModel game_by_size;
-    private GameModel game_by_elements;
+    private GameModel game;
     private CarModel car;
     private TrackModel track;
     private CarModel enemy;
@@ -23,18 +20,15 @@ public class GameModelTest {
         car = mock(CarModel.class);
         track = mock(TrackModel.class);
         enemy = mock(CarModel.class);
-        game_by_size = new GameModel(new TerminalSize(180,80), "Monza");
-        game_by_elements = new GameModel(car,track);
+        game = new GameModel("Monza");
+        game.setTrackModel(track);
     }
 
     @Test
-    void testSetGet(){
-        game_by_size.setCarModel(car);
-        game_by_size.setTrackModel(track);
-        assertEquals(car,game_by_size.getCarModel());
-        assertEquals(track,game_by_size.getTrackModel());
+    void testMoveTrack(){
+        game.moveTrack();
 
+        Mockito.verify(track, Mockito.times(1)).move(game.getVelocity());
     }
 
 }
-*/

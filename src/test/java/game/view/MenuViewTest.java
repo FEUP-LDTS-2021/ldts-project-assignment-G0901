@@ -30,8 +30,6 @@ public class MenuViewTest {
        graphics = Mockito.mock(TextGraphics.class);
        gui = Mockito.mock(GUI.class);
 
-       gui.graphics = graphics;
-
        when(gui.getGraphics()).thenReturn(graphics);
        when(gui.getGraphics().getSize()).thenReturn(new TerminalSize(40, 40));
 

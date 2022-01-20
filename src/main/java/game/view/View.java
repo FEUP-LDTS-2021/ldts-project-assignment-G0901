@@ -51,7 +51,7 @@ public abstract class View<Model> implements GenericColors {
 
         int count = 0;
         gui.getGraphics().enableModifiers(SGR.BOLD);
-        gui.graphics.setForegroundColor(TextColor.Factory.fromString(color));
+        gui.getGraphics().setForegroundColor(TextColor.Factory.fromString(color));
         for (int i = 0; i < sprite.size(); i++)
         {
             if (selected)
@@ -72,7 +72,7 @@ public abstract class View<Model> implements GenericColors {
             sprite = loadSprite("numbers/" + score.charAt(i) + ".txt");
 
             for (int j = 0; j < sprite.size(); j++) {
-                gui.graphics.putString(col - (11 / 2 * score.length()), row + count, sprite.get(j), SGR.BOLD);
+                gui.getGraphics().putString(col - (11 / 2 * score.length()), row + count, sprite.get(j), SGR.BOLD);
 
                 count += 1;
             }

@@ -1,6 +1,7 @@
 package game.states;
 
 import com.googlecode.lanterna.TerminalSize;
+import com.googlecode.lanterna.graphics.TextGraphics;
 import game.Application;
 import game.control.menu.SelectTrackController;
 import game.gui.GUI;
@@ -23,24 +24,30 @@ public class SelectTrackStateTest {
 
     @BeforeEach
     void setUp() {
-        //model = Mockito.mock(SelectTrackModel.class);
+        gui = Mockito.mock(GUI.class);
+        TextGraphics graphics = Mockito.mock(TextGraphics.class);
+        Mockito.when(graphics.getSize()).thenReturn(new TerminalSize(1, 1));
+        Mockito.when(gui.getGraphics()).thenReturn(graphics);
+
         app = Mockito.mock(Application.class);
-        //gui = Mockito.mock(GUI.class);
+
+        controller = Mockito.mock(SelectTrackController.class);
+        view = Mockito.mock(SelectTrackView.class);
 
         model = new SelectTrackModel();
-        view = Mockito.mock(SelectTrackView.class);
-        controller = Mockito.mock(SelectTrackController.class);
-        gui = new GUI(new TerminalSize(1, 1));
 
         state = new SelectTrackState(model);
+
+        state.view = view;
+        state.controller = controller;
     }
 
     @Test
     void testStep() throws IOException {
         state.step(app, gui);
 
-        //Mockito.verify(gui, Mockito.times(1)).getAction();
-        //Mockito.verify(controller, Mockito.times(1)).step(app, gui.getAction());
-        //Mockito.verify(view, Mockito.times(1)).draw(gui);
+        Mockito.verify(gui, Mockito.times(1)).getAction();
+        Mockito.verify(controller, Mockito.times(1)).step(app, gui.getAction());
+        Mockito.verify(view, Mockito.times(1)).draw(gui);
     }
 }

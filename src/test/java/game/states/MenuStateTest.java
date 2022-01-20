@@ -25,10 +25,12 @@ public class MenuStateTest {
     void setUp() {
         gui = Mockito.mock(GUI.class);
         app = Mockito.mock(Application.class);
+
         controller = Mockito.mock(MenuController.class);
         view = Mockito.mock(MenuView.class);
 
         model = new MenuModel();
+
         state = new MenuState(model);
 
         state.view = view;
@@ -40,6 +42,7 @@ public class MenuStateTest {
     public void step() throws IOException {
         state.step(app, gui);
 
+        Mockito.verify(gui, Mockito.times(1)).getAction();
         Mockito.verify(controller, Mockito.times(1)).step(app, gui.getAction());
         Mockito.verify(view, Mockito.times(1)).draw(gui);
     }

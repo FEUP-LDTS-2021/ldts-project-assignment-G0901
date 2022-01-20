@@ -19,43 +19,72 @@ public class GameOverControllerTest {
     private GameOverModel model;
     private Application app;
     private GUI gui;
-    private GameState game_state;
 
     @BeforeEach
     void setUp() {
-        model = Mockito.mock(GameOverModel.class);
         app = Mockito.mock(Application.class);
         gui = Mockito.mock(GUI.class);
-        game_state = Mockito.mock(GameState.class);
+
+        model = Mockito.mock(GameOverModel.class);
 
         controller = new GameOverController(model);
     }
 
     @Test
-    void step() throws IOException {
+    void stepUp() throws IOException {
         Mockito.when(gui.getAction()).thenReturn(GUI.ACTION.UP);
+
         controller.step(app, gui.getAction());
+
         Mockito.verify(model, Mockito.times(1)).previousItem();
-
-
-        Mockito.when(gui.getAction()).thenReturn(GUI.ACTION.DOWN);
-        controller.step(app, gui.getAction());
-        Mockito.verify(model, Mockito.times(1)).nextItem();
-
-
-        Mockito.when(gui.getAction()).thenReturn(GUI.ACTION.ESC);
-        controller.step(app, gui.getAction());
-        Mockito.verify(app, Mockito.times(1)).setState(null);
-
-        Mockito.when(gui.getAction()).thenReturn(GUI.ACTION.ENTER);
-        Mockito.when(model.whichSelected()).thenReturn(0);
-        controller.step(app, gui.getAction());
-        Mockito.verify(app, Mockito.times(1)).setState(any(GameState.class));
-
-        Mockito.when(model.whichSelected()).thenReturn(1);
-        controller.step(app, gui.getAction());
-        Mockito.verify(app, Mockito.times(1)).setState(any(MenuState.class));
-
     }
 
+    @Test
+    void stepDown() throws IOException {
+        Mockito.when(gui.getAction()).thenReturn(GUI.ACTION.DOWN);
+
+        controller.step(app, gui.getAction());
+
+        Mockito.verify(model, Mockito.times(1)).nextItem();
+    }
+
+    @Test
+    void stepEsc() throws IOException {
+        Mockito.when(gui.getAction()).thenReturn(GUI.ACTION.ESC);
+
+        controller.step(app, gui.getAction());
+
+        Mockito.verify(app, Mockito.times(1)).setState(any(MenuState.class));
+    }
+
+
+    @Test
+    void stepQuit() throws IOException {
+        Mockito.when(gui.getAction()).thenReturn(GUI.ACTION.QUIT);
+
+        controller.step(app, gui.getAction());
+
+        Mockito.verify(app, Mockito.times(1)).setState(null);
+    }
+
+    @Test
+    void stepEnter0() throws IOException {
+        Mockito.when(model.getTrack()).thenReturn("Monza");
+        Mockito.when(gui.getAction()).thenReturn(GUI.ACTION.ENTER);
+        Mockito.when(model.getCurrentItem()).thenReturn(0);
+
+        controller.step(app, gui.getAction());
+
+        Mockito.verify(app, Mockito.times(1)).setState(any(GameState.class));
+    }
+
+    @Test
+    void stepEnter1() throws IOException {
+        Mockito.when(gui.getAction()).thenReturn(GUI.ACTION.ENTER);
+        Mockito.when(model.getCurrentItem()).thenReturn(1);
+
+        controller.step(app, gui.getAction());
+
+        Mockito.verify(app, Mockito.times(1)).setState(any(MenuState.class));
+    }
 }

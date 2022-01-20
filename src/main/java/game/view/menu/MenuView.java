@@ -10,11 +10,12 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class MenuView extends View<MenuModel> {
+    private  int row;
     private int number_of_items;
-    private int row;
 
     private List<String> title;
     private List<String> item;
+
     private List<List<String>> item_list = new LinkedList<>();
 
     public MenuView(MenuModel model) {
@@ -23,7 +24,6 @@ public class MenuView extends View<MenuModel> {
         title = loadSprite(model.getTitle());
         loadItemsSprites(item_list, model.getItems());
     }
-
 
     @Override
     public void drawElements(GUI gui) throws IOException {
@@ -44,8 +44,8 @@ public class MenuView extends View<MenuModel> {
         gui.refresh();
     }
 
-    private int calculateRow(TerminalSize size, int i) {
-       return size.getRows() / 2 + ((size.getRows() / 2) / number_of_items * i);
+    protected int calculateRow(TerminalSize size, int i) {
+        return size.getRows() / 2 + ((size.getRows() / 2) / number_of_items * i);
     }
 
     public void loadItemsSprites(List<List<String>> itemsList, String[] items) {
@@ -54,4 +54,3 @@ public class MenuView extends View<MenuModel> {
         }
     }
 }
-

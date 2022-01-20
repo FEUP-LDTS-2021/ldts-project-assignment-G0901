@@ -12,6 +12,7 @@ import org.mockito.Mockito;
 
 import java.io.IOException;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyChar;
 import static org.mockito.Mockito.*;
@@ -26,14 +27,12 @@ public class GameOverViewTest {
     @BeforeEach
     void setUp() {
         size = new TerminalSize(40, 40);
-        model = new GameOverModel("Monza");
         graphics = Mockito.mock(TextGraphics.class);
         gui = Mockito.mock(GUI.class);
-
-        gui.graphics = graphics;
-
         when(gui.getGraphics()).thenReturn(graphics);
-        when(gui.getGraphics().getSize()).thenReturn(new TerminalSize(40, 40));
+        when(gui.getGraphics().getSize()).thenReturn(size);
+
+        model = new GameOverModel("Monza");
 
         view = new GameOverView(model);
 
@@ -43,7 +42,14 @@ public class GameOverViewTest {
     public void drawElements() throws IOException {
         view.draw(gui);
 
-        verify(graphics, times(size.getColumns() * size.getRows() + 1)).fillRectangle(any(TerminalPosition.class), any(TerminalSize.class), anyChar());
+        verify(gui, times(1)).fillScreen(anyString());
         verify(gui, times(1)).refresh();
+    }
+
+    @Test
+    public void testRow() {
+        int row = view.calculateRow(size, 1);
+
+        assertEquals(34, row);
     }
 }

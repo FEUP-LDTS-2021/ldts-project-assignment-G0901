@@ -22,11 +22,16 @@ import java.net.URL;
 
 public class GUI {
     public enum ACTION {NONE, QUIT, LEFT, RIGHT, UP, DOWN, ESC, ENTER};
-    public static TerminalSize size;
-    public static final String background_colour = "#7CFC00";
+    private static TerminalSize size;
+    private static final String background_colour = "#7CFC00";
 
-    public Screen screen;
-    public TextGraphics graphics;
+    private Screen screen;
+    private TextGraphics graphics;
+
+    public GUI (Screen screen) {
+        this.screen = screen;
+        this.graphics = screen.newTextGraphics();
+    }
 
     public GUI (TerminalSize size) {
         this.size = size;
@@ -71,7 +76,7 @@ public class GUI {
     }
 
     public ACTION getAction() throws IOException {
-        KeyStroke key_stroke = screen.pollInput();
+        KeyStroke key_stroke = getScreen().pollInput();
 
         if (key_stroke == null) return ACTION.NONE;
 
@@ -103,16 +108,16 @@ public class GUI {
     }
 
     public void fillScreen(String color) throws IOException {
-        graphics.setBackgroundColor(TextColor.Factory.fromString(color));
-        graphics.fill(' ');
+        getGraphics().setBackgroundColor(TextColor.Factory.fromString(color));
+        getGraphics().fill(' ');
     }
 
     public void clear() throws IOException {
-        screen.clear();
+        getScreen().clear();
     }
 
     public void refresh() throws IOException{
-        screen.refresh();
+        getScreen().refresh();
     }
 
     public Screen getScreen(){

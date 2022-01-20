@@ -10,6 +10,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
@@ -26,29 +27,39 @@ public class SelectTrackControllerTest {
     }
 
     @Test
-    void testNavigation() {
+    void stepRight() {
         controller.step(app, GUI.ACTION.RIGHT);
-        controller.step(app, GUI.ACTION.LEFT);
 
         verify(model, times(1)).nextItem();
+    }
+
+    @Test
+    void stepLeft() {
+        controller.step(app, GUI.ACTION.LEFT);
+
         verify(model, times(1)).previousItem();
     }
 
     @Test
     void testSelection() {
-        GameState game_state = Mockito.mock(GameState.class);
-//TODO
-        //controller.step(app, GUI.ACTION.ENTER);
+        Mockito.when(model.getSelected()).thenReturn("Monza");
 
-        //verify(app, times(1)).setState(game_state);
+        controller.step(app, GUI.ACTION.ENTER);
+
+        Mockito.verify(app, Mockito.times(1)).setState(any(GameState.class));
     }
 
     @Test
     void testEscape() {
-        MenuState menu_state = Mockito.mock(MenuState.class);
-//TODO
-        //controller.step(app, GUI.ACTION.ESC);
+        controller.step(app, GUI.ACTION.ESC);
 
-        //verify(app, times(1)).setState(menu_state);
+        verify(app, times(1)).setState(any(MenuState.class));
+    }
+
+    @Test
+    void testQuit() {
+        controller.step(app, GUI.ACTION.QUIT);
+
+        verify(app, times(1)).setState(null);
     }
 }
