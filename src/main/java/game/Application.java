@@ -18,8 +18,8 @@ public class Application {
     private TerminalSize size = new TerminalSize(180,80);
     private State state;
     private GUI gui;
-    Music music;
-    List<Observer> observers;
+    private Music music;
+    public List<Observer> observers;
 
     public Application() throws LineUnavailableException {
         observers = new ArrayList<>();
@@ -74,9 +74,7 @@ public class Application {
             observer.update();
     }
 
-    public void addObserver(Observer observer) {
-        observers.add(observer);
-    }
+    public void addObserver(Observer observer) {observers.add(observer);}
 
     public List<Observer> getObservers() {
         return observers;
