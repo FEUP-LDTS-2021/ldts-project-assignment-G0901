@@ -33,6 +33,8 @@ public class Music extends Observer {
             clip = AudioSystem.getClip();
             clip.open(ais);
             clip.start();
+            clip.loop(Clip.LOOP_CONTINUOUSLY);
+
 
         }
         else if (app.getState() instanceof MenuState) {
