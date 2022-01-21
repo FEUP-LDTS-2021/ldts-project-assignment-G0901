@@ -35,10 +35,17 @@ This project was developed in January 2022 by André Barbosa (up202007398@edu.fe
 </p>
 
 ### Enemies generation
- - During gameplay, the user will aproach different cars and needs to avoid them to stay alive. These enemies are randomly placed in the track.
+ - During gameplay, the user will approach different cars and needs to avoid them to stay alive. These enemies are randomly placed in the track.
 
 <p align="center">
     <img width=450 src="src/enemies.gif">
+</p>
+
+###Score
+- The scoring system considers the number of enemies you avoid. For each avoided car you gain 10 points.
+
+<p align="center">
+    <img width=450 src="src/score.gif">
 </p>
  
 ### Menu
@@ -143,7 +150,7 @@ To make the game more fun and interesting we wanted to add music. Our idea was t
 
 #### The pattern
 
-With the Observer pattern it's possible for the subject to notify all the observers whenever something important happens, in our case when the application's state changes. A subject can also 'cut relations' with a subject to stop receiving notifications at all, although we do not make use of this functionality. <br />
+With the **Observer** pattern it's possible for the subject to notify all the observers whenever something important happens, in our case when the application's state changes. A subject can also 'cut relations' with a subject to stop receiving notifications at all, although we do not make use of this functionality. <br />
 We ended up making use of only the observer Music.
 
 #### Implementation
