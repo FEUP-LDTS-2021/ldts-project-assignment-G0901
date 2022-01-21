@@ -1,9 +1,9 @@
-# LDTS_G0901 - Racing Game
+# LDTS_G0901 - Formula Zero
 
 **Try to survive the longest on a fast paced circuit filled with dangerous obstacles.** 
 The game has a series of tracks with increasing difficulty in which the player needs to avoid the coming cars to stay alive.
 
-This project was developed by André Barbosa (up202007398@edu.fe.up.pt), [Guilherme Almeida](https://github.com/theguilhermealmeida) (up202008866@edu.fe.up.pt) and [José Luís Rodrigues](https://github.com/jlcrodrigues) (up202008462@edu.fe.up.pt) for LDTS 2021/22.
+This project was developed in January 2022 by André Barbosa (up202007398@edu.fe.up.pt), [Guilherme Almeida](https://github.com/theguilhermealmeida) (up202008866@edu.fe.up.pt) and [José Luís Rodrigues](https://github.com/jlcrodrigues) (up202008462@edu.fe.up.pt) for LDTS 2021/22.
 
 ## Table of Contents
  * [Implemented Features](#implemented-features)
@@ -28,19 +28,40 @@ This project was developed by André Barbosa (up202007398@edu.fe.up.pt), [Guilhe
 
 
 ### Track Displaying 
- - The track is displayed simulating the progression of the car at a default speed.
+ - The track is rendered using pseudo 3d graphics. We also simulate it's movement so it appears the player is moving foward.
 
 <p align="center">
     <img width=450 src="src/track_movement.gif">
 </p>
 
+### Enemies generation
+ - During gameplay, the user will aproach different cars and needs to avoid them to stay alive. These enemies are randomly placed in the track.
+
+<p align="center">
+    <img width=450 src="src/enemies.gif">
+</p>
+ 
+### Menu
+ - When the application starts, a menu is prompted. This allows the user to navigate through different tabs.
+
+<p align="center">
+    <img width=450 src="src/menu.png">
+</p>
+
+### Track Selection
+ - Tracks are stored in .txt files. This way, it's really easy to add new tracks, which allows a faster expansion of the game. To choose between the different tracks, a menu is displayed before the game starts.
+
+<p align="center">
+    <img width=450 src="src/track_selection.gif">
+</p>
+
 ## Planned Features
 
-### Acceleration
-- The track will move faster or slower according to users input.
+### High score
+ - Store scores in files so they can be displayed in-game later in order to make the game more challenging.
 
-### Obstacles
-- There will be random obstacles updated on track while the car is moving.
+### Turns
+ - Tracks will have different turns so the game is more unpredictable. We can even simulate the curvature in real world tracks.
 
 
 ## Design
@@ -49,32 +70,50 @@ This project was developed by André Barbosa (up202007398@edu.fe.up.pt), [Guilhe
 
 #### Problem in Context
 
-We had to find a way of organising all the different classes on the program.
+To complete the game, we need to define it's data structures, display this data and be able to controll it according to user action.
 
 #### The Pattern
 
-We have applied the **MVC** (Model-game.view-controller) pattern. This pattern allowed us to separate all classes in 3 different groups, one for each part of the project.
+To solve this problem, we separated the program into Model, View, and Controller, as the **MVC** pattern suggests. This allows us to separate each concern into its own class.
 
 #### Implementation
 
-We don't have UML representation yet.
+ <p align="center">
+    <img width=450 src="src/mvc_design.png">
+</p>
 
 #### Consequences
 
-The use of the MVC Pattern in the current design allows the following benefits:
-
-- Have a place of code containing only objects and informations about them(Model), that can be used for any other kind of program.
-- Makes easier the Test Driven Development.
+* Facilitates Test Driven Development.
+* Accelerates the program development.
+* Separate different parts of the code into different objects.
 
 ### State
 
 #### Problem in Context
 
+The games needs to iterate through the different menu tabs and the game itself. Before the game starts, the track selection is prompted and after the game is over it changes to a different Game Over tab.
+This way, we need a way to manage which image is being displayed and how the game can behave accordingly.
+
+<p align="center">
+    <img width=450 src="src/states_design.png">
+</p>
+
 #### The Pattern
+
+The **State** pattern allows us to separate the state specific behaviour into different classes. This way, the main Application has a reference to the current state but doesn't have to worry about each state's implementation.
 
 #### Implementation
 
+<p align="center">
+    <img width=450 src="src/states_uml.png">
+</p>
+
 #### Consequences
+
+ * Easily add new states without changing the existing ones.
+ * No need for flags or conditionals with numerous branches.
+ * Allows a strict separations of specific code into different classes.
 
 ### Factory
 
@@ -95,6 +134,29 @@ The use of the MVC Pattern in the current design allows the following benefits:
 #### Implementation
 
 #### Consequences
+
+### Observer
+
+#### Problem in context
+
+To make the game more fun and interesting we wanted to add music. Our idea was to add a theme soundtrack in the Menu tab and a more fast paced music when racing. To accomplish this we add to think of a simple way to play the right music according to the state we're in.
+
+#### The pattern
+
+With the Observer pattern it's possible for the subject to notify all the observers whenever something important happens, in our case when the application's state changes. A subject can also 'cut relations' with a subject to stop receiving notifications at all, although we do not make use of this functionality. <br />
+We ended up making use of only the observer Music.
+
+#### Implementation
+
+<p align="center">
+    <img width=450 src="src/observer_uml.png">
+</p>
+
+#### Consequences
+
+* Facilitates adding new musics to the other states.
+* Makes sure that no other class has to deal with music related code.
+* It's possible to add/remove observers if we need to.
 
 ## Code Smells and Refactors
 

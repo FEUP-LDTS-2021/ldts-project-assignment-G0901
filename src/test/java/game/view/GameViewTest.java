@@ -1,12 +1,12 @@
 package game.view;
 
 import com.googlecode.lanterna.TerminalSize;
+import com.googlecode.lanterna.graphics.TextGraphics;
 import game.gui.GUI;
 import game.model.game.GameModel;
 import game.view.game.CarView;
 import game.view.game.GameView;
 import game.view.game.TrackView;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -22,9 +22,13 @@ public class GameViewTest {
 
     @BeforeEach
     void setUp() {
+        TextGraphics graphics = Mockito.mock(TextGraphics.class);
+        Mockito.when(graphics.getSize()).thenReturn(new TerminalSize(100, 100));
+        gui = Mockito.mock(GUI.class);
+        Mockito.when(gui.getGraphics()).thenReturn(graphics);
+
         trackView = Mockito.mock(TrackView.class);
         carView = Mockito.mock(CarView.class);
-        gui = Mockito.mock(GUI.class);
 
         model = new GameModel("Monza");
         view = new GameView(model);

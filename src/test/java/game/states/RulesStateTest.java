@@ -1,6 +1,5 @@
 package game.states;
 
-import com.googlecode.lanterna.TerminalSize;
 import game.Application;
 import game.control.menu.RulesController;
 import game.gui.GUI;
@@ -39,6 +38,7 @@ public class RulesStateTest {
     public void step() throws IOException {
         state.step(app, gui);
 
+        Mockito.verify(gui, Mockito.times(1)).getAction();
         Mockito.verify(controller, Mockito.times(1)).step(app, gui.getAction());
         Mockito.verify(view, Mockito.times(1)).draw(gui);
     }

@@ -26,21 +26,28 @@ public class CarView extends View<CarModel> {
     @Override
     public void drawElements(GUI gui) throws IOException {
         getPosition(gui);
-        drawSprite(gui.getGraphics(), car, 'R', x_pos, model.getY());
+        drawSprite(gui.getGraphics(), car, model.getColor(), x_pos, model.getY());
     }
 
     private void getPosition(GUI gui) {
-        TerminalSize size = new TerminalSize(gui.getGraphics().getSize().getColumns(),gui.getGraphics().getSize().getRows());
+        int i;
+        double lane_distance;
+        TerminalSize size = gui.getGraphics().getSize();
 
         perspective = (double)(model.getY() - size.getRows() / 2) / (size.getRows() / 2);
-        double lane_distance = size.getColumns() * 0.3 * perspective;
+        lane_distance = size.getColumns() * 0.3 * perspective;
 
-        int i = (int)(perspective * cars.size());
+        //choose the car sprite
+        i = (int)(perspective * cars.size());
         i = Math.min(i, cars.size() - 1);
         i = Math.max(i, 0);
         car = cars.get(i);
 
-        x_pos = (int)(size.getColumns() / 2 - getSize(car) / 2);
+        x_pos = size.getColumns() / 2 - getSize(car) / 2;
         x_pos += model.getLane() * (int)(0.1 * lane_distance + 0.8 * lane_distance);
+    }
+
+    public double getPerspective() {
+        return perspective;
     }
 }

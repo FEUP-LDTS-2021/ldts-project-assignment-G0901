@@ -48,7 +48,7 @@ public class GameController extends Controller<GameModel> {
         }
     }
 
-    public Boolean checkCollision(CarModel player, CarModel enemy) {
+    private Boolean checkCollision(CarModel player, CarModel enemy) {
         if (player.getLane() == enemy.getLane()) {
             return (player.getY() <= enemy.getY() + enemy.getHeight() &&
                     enemy.getY() <= player.getY() + player.getHeight());
@@ -56,7 +56,7 @@ public class GameController extends Controller<GameModel> {
         return false;
     }
 
-    public void handleScore() {
+    private void handleScore() {
         CarModel player = getModel().getCarModel();
         for (CarModel enemy : getModel().getEnemies()) {
             if (checkScore(player, enemy))
@@ -64,8 +64,9 @@ public class GameController extends Controller<GameModel> {
         }
     }
 
-    public Boolean checkScore(CarModel player, CarModel enemy) {
-        return enemy.getY() > player.getY() + player.getHeight() && enemy.getY() < 90;
+    private Boolean checkScore(CarModel player, CarModel enemy) {
+        return (enemy.getY() > player.getY() + player.getHeight() &&
+                enemy.getY() <= player.getY() + player.getHeight() + getModel().getVelocity());
     }
 
 }

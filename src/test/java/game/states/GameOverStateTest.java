@@ -1,10 +1,10 @@
-/*package game.states;
+package game.states;
 
-import com.googlecode.lanterna.TerminalSize;
 import game.Application;
 import game.control.menu.GameOverController;
 import game.gui.GUI;
 import game.model.menu.GameOverModel;
+import game.states.menu.GameOverState;
 import game.view.menu.GameOverView;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -24,10 +24,11 @@ public class GameOverStateTest {
     void setUp() {
         gui = Mockito.mock(GUI.class);
         app = Mockito.mock(Application.class);
+
         controller = Mockito.mock(GameOverController.class);
         view = Mockito.mock(GameOverView.class);
+        model = new GameOverModel("Monza");
 
-        model = new GameOverModel(new TerminalSize(40, 40));
         state = new GameOverState(model);
 
         state.view = view;
@@ -38,8 +39,8 @@ public class GameOverStateTest {
     public void step() throws IOException {
         state.step(app, gui);
 
+        Mockito.verify(gui, Mockito.times(1)).getAction();
         Mockito.verify(controller, Mockito.times(1)).step(app, gui.getAction());
         Mockito.verify(view, Mockito.times(1)).draw(gui);
-
     }
-}*/
+}

@@ -3,11 +3,12 @@ package game.control.menu;
 import game.Application;
 import game.control.Controller;
 import game.gui.GUI;
+import game.model.menu.AboutModel;
 import game.model.menu.MenuModel;
 import game.model.menu.RulesModel;
-import game.states.menu.MenuState;
-import game.states.menu.RulesState;
 import game.model.menu.SelectTrackModel;
+import game.states.menu.AboutState;
+import game.states.menu.RulesState;
 import game.states.menu.SelectTrackState;
 
 
@@ -26,15 +27,19 @@ public class MenuController extends Controller<MenuModel> {
                 break;
             case QUIT:
                 app.setState(null);
+                break;
             case ENTER:
-               if (getModel().whichSelected() == 0)
+               if (getModel().getCurrentItem() == 0)
                    app.setState(new SelectTrackState(new SelectTrackModel()));
-               else if (getModel().whichSelected() == 1) {
+               else if (getModel().getCurrentItem() == 1) {
                    app.setState(new RulesState(new RulesModel()));
                }
-               else if (getModel().whichSelected() == 3)
+               else if(getModel().getCurrentItem() == 2) {
+                   app.setState(new AboutState(new AboutModel()));
+               }
+               else if (getModel().getCurrentItem() == 3)
                    app.setState(null);
-                break;
+               break;
         }
     }
 }

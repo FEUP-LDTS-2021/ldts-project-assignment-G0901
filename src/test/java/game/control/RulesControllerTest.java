@@ -22,19 +22,38 @@ public class RulesControllerTest {
 
     @BeforeEach
     void setUp() {
-        model = Mockito.mock(RulesModel.class);
         app = Mockito.mock(Application.class);
         gui = Mockito.mock(GUI.class);
+        model = Mockito.mock(RulesModel.class);
         menu_state = Mockito.mock(MenuState.class);
 
         controller = new RulesController(model);
-
     }
 
     @Test
-    void step() throws IOException {
+    void stepEnter() throws IOException {
         Mockito.when(gui.getAction()).thenReturn(GUI.ACTION.ENTER);
+
         controller.step(app, gui.getAction());
+
         Mockito.verify(app, Mockito.times(1)).setState(any(MenuState.class));
+    }
+
+    @Test
+    void stepEsc() throws IOException {
+        Mockito.when(gui.getAction()).thenReturn(GUI.ACTION.ESC);
+
+        controller.step(app, gui.getAction());
+
+        Mockito.verify(app, Mockito.times(1)).setState(any(MenuState.class));
+    }
+
+    @Test
+    void stepQuit() throws IOException {
+        Mockito.when(gui.getAction()).thenReturn(GUI.ACTION.QUIT);
+
+        controller.step(app, gui.getAction());
+
+        Mockito.verify(app, Mockito.times(1)).setState(null);
     }
 }

@@ -1,43 +1,68 @@
-/*package game.control;
+package game.control;
 
 import game.Application;
 import game.control.game.CarController;
-import game.model.game.CarModel;
 import game.gui.GUI;
-
+import game.model.game.CarModel;
 import game.model.game.GameModel;
-import game.model.game.TrackModel;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
 
 public class CarControllerTest {
-    private CarController carController;
+    private CarController car_controller;
     private CarModel car_model;
     private GameModel game_model;
-    private TrackModel track_model;
     private Application app;
     private GUI gui;
 
     @BeforeEach
     void setUp() {
-        car_model = mock(CarModel.class);
-        track_model = mock(TrackModel.class);
-        game_model = new GameModel(car_model,track_model);
-        carController = new CarController(game_model);
         app = mock(Application.class);
         gui = mock(GUI.class);
+
+        car_model = mock(CarModel.class);
+        game_model = mock(GameModel.class);
+        when(game_model.getCarModel()).thenReturn(car_model);
+
+        car_controller = new CarController(game_model);
     }
 
     @Test
-    void step()  {
-        carController.step(app, GUI.ACTION.LEFT);
+    void moveLeft()  {
+        when(car_model.getLane()).thenReturn(0);
+
+        car_controller.step(app, GUI.ACTION.LEFT);
+
         verify(car_model,times(1)).moveLeft();
-        carController.step(app, GUI.ACTION.RIGHT);
+    }
+
+    @Test
+    void moveLeftLimit() {
+        when(car_model.getLane()).thenReturn(-1);
+
+        car_controller.step(app, GUI.ACTION.LEFT);
+
+        verify(car_model,times(0)).moveLeft();
+
+    }
+
+    @Test
+    void moveRight()  {
+        when(car_model.getLane()).thenReturn(0);
+
+        car_controller.step(app, GUI.ACTION.RIGHT);
+
         verify(car_model,times(1)).moveRight();
     }
 
-}*/
+    @Test
+    void moveRightLimit() {
+        when(car_model.getLane()).thenReturn(1);
+
+        car_controller.step(app, GUI.ACTION.RIGHT);
+
+        verify(car_model,times(0)).moveRight();
+    }
+}

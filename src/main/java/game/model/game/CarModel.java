@@ -1,14 +1,16 @@
 package game.model.game;
 
 public class CarModel {
-    int lane;
-    int y;
-    int height;
+    private int lane;
+    private int y;
+    private int height;
+    private Character color;
 
     public CarModel() {
         this.lane = 0;
         this.y = 70;
         this.height = 7;
+        this.color = 'R';
     }
 
     public CarModel(int lane, int y)
@@ -16,6 +18,7 @@ public class CarModel {
         this.lane = lane;
         this.y = y;
         this.height = 7;
+        this.color = 'R';
     }
 
     public void moveY(int velocity) {
@@ -34,11 +37,21 @@ public class CarModel {
         return  height;
     }
 
+
+
     public void moveLeft(){
         lane -= 1;
     }
 
     public void moveRight(){
         lane += 1;
+    }
+
+    public Character getColor() {
+        return color;
+    }
+
+    public void setColor(Character color) {
+        this.color = color;
     }
 }
