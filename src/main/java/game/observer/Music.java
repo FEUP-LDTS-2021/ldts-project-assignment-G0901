@@ -9,11 +9,11 @@ import java.io.IOException;
 import java.net.URL;
 
 public class Music extends Observer {
-    Application app;
-    Clip clip;
-    URL menu_song;
-    URL game_song;
-    public AudioInputStream ais;
+    private Application app;
+    private Clip clip;
+    private URL menu_song;
+    private URL game_song;
+    private AudioInputStream ais;
 
     public Music(Application app) throws LineUnavailableException {
         this.app = app;
@@ -21,6 +21,13 @@ public class Music extends Observer {
         game_song = getClass().getResource("/sound/race_song.wav");
         clip = AudioSystem.getClip();
         app.addObserver(this);
+    }
+
+    public Music(Application app, Clip clip) {
+        this.app = app;
+        this.clip = clip;
+        menu_song = getClass().getResource("/sound/f1_theme_retro.wav");
+        game_song = getClass().getResource("/sound/race_song.wav");
     }
 
     @Override
