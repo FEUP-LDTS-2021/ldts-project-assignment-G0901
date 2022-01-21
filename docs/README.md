@@ -155,7 +155,7 @@ We ended up making use of only the observer Music.
 #### Consequences
 
 * Facilitates adding new musics to the other states.
-* Makes sure that no other class has no deal with music related code.
+* Makes sure that no other class has to deal with music related code.
 * It's possible to add/remove observers if we need to.
 
 ## Code Smells and Refactors
