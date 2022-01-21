@@ -167,6 +167,19 @@ We ended up making use of only the observer Music.
 
 ## Code Smells and Refactors
 
+### Bloaters
+
+#### Long Parameter List
+
+Some methods in our code base have a long list of parameters. We can see this in [View.drawSprite()](../src/main/java/game/view/View.java) and [View.drawMenu()](../src/main/java/game/view/View.java). It happens here because of the different displaying options these methods are trying to provide.  
+A way to solve this problem would be to replace some of these parameters with an object. For instance, creating a custom Sprite class would help mitigate the problem as the information used to draw a sprite could be grouped there. Another way to improve would be replacing some of the parameters with a method call. A case in point is the screen parameter that could be replaced by a call to the gui.
+
+### Object-Orientation Abusers
+
+#### Switch Statements
+
+After the Controller receives an action from View it needs to decide what to do for all the different action types. This results in long switch statements in places like [MenuController.step()](../src/main/java/game/control/menu/MenuController.java) or [GUI.getAction()](../src/main/java/game/gui/GUI.java). This way, every time we add a condition all the switch statement code has to be modified.
+
 ## Testing
 
 ## Self Evaluation
