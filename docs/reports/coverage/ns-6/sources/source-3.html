@@ -1,0 +1,261 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > TrackModel</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/highlight-idea.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">game.model.game</a>
+</div>
+
+<h1>Coverage Summary for Class: TrackModel (game.model.game)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">TrackModel</td>
+<td class="coverageStat">
+  <span class="percent">
+    69,2%
+  </span>
+  <span class="absValue">
+    (9/13)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    81,8%
+  </span>
+  <span class="absValue">
+    (36/44)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">TrackModel$MockitoMock$318595703</td>
+  </tr>
+  <tr>
+    <td class="name">TrackModel$MockitoMock$318595703$auxiliary$9GPHy9jB</td>
+  </tr>
+  <tr>
+    <td class="name">TrackModel$MockitoMock$318595703$auxiliary$aWoiHnbk</td>
+  </tr>
+  <tr>
+    <td class="name">TrackModel$MockitoMock$318595703$auxiliary$b4xX8y2E</td>
+  </tr>
+  <tr>
+    <td class="name">TrackModel$MockitoMock$318595703$auxiliary$BgRVRczL</td>
+  </tr>
+  <tr>
+    <td class="name">TrackModel$MockitoMock$318595703$auxiliary$Cf7T39Bj</td>
+  </tr>
+  <tr>
+    <td class="name">TrackModel$MockitoMock$318595703$auxiliary$cLDmzNVW</td>
+  </tr>
+  <tr>
+    <td class="name">TrackModel$MockitoMock$318595703$auxiliary$GxE3ZEnA</td>
+  </tr>
+  <tr>
+    <td class="name">TrackModel$MockitoMock$318595703$auxiliary$kmVEOySc</td>
+  </tr>
+  <tr>
+    <td class="name">TrackModel$MockitoMock$318595703$auxiliary$N0m80KTk</td>
+  </tr>
+  <tr>
+    <td class="name">TrackModel$MockitoMock$318595703$auxiliary$NxTOChBo</td>
+  </tr>
+  <tr>
+    <td class="name">TrackModel$MockitoMock$318595703$auxiliary$oODa0vHB</td>
+  </tr>
+  <tr>
+    <td class="name">TrackModel$MockitoMock$318595703$auxiliary$Qv6KhfCT</td>
+  </tr>
+  <tr>
+    <td class="name">TrackModel$MockitoMock$318595703$auxiliary$Tj5j2FJ7</td>
+  </tr>
+  <tr>
+    <td class="name">TrackModel$MockitoMock$318595703$auxiliary$zmkLjHu4</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    69,2%
+  </span>
+  <span class="absValue">
+    (9/13)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    81,8%
+  </span>
+  <span class="absValue">
+    (36/44)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;package game.model.game;
+<i class="no-highlight">2</i>&nbsp;
+<i class="no-highlight">3</i>&nbsp;import java.io.File;
+<i class="no-highlight">4</i>&nbsp;import java.io.FileNotFoundException;
+<i class="no-highlight">5</i>&nbsp;import java.net.URISyntaxException;
+<i class="no-highlight">6</i>&nbsp;import java.net.URL;
+<i class="no-highlight">7</i>&nbsp;import java.util.ArrayList;
+<i class="no-highlight">8</i>&nbsp;import java.util.List;
+<i class="no-highlight">9</i>&nbsp;import java.util.Scanner;
+<i class="no-highlight">10</i>&nbsp;
+<i class="no-highlight">11</i>&nbsp;public class TrackModel {
+<i class="no-highlight">12</i>&nbsp;    private int distance;
+<i class="no-highlight">13</i>&nbsp;    private String title;
+<i class="no-highlight">14</i>&nbsp;    private String background_color;
+<i class="no-highlight">15</i>&nbsp;    private String terrain_color1;
+<i class="no-highlight">16</i>&nbsp;    private String terrain_color2;
+<i class="no-highlight">17</i>&nbsp;    private String kerb_color1;
+<i class="no-highlight">18</i>&nbsp;    private String kerb_color2;
+<i class="no-highlight">19</i>&nbsp;    private String road_color;
+<i class="no-highlight">20</i>&nbsp;    private Integer velocity;
+<i class="no-highlight">21</i>&nbsp;
+<i class="no-highlight">22</i>&nbsp;    public TrackModel()
+<b class="fc"><i class="no-highlight">23</i>&nbsp;    {</b>
+<b class="fc"><i class="no-highlight">24</i>&nbsp;        distance = 0;</b>
+<b class="fc"><i class="no-highlight">25</i>&nbsp;        title = &quot;Track&quot;;</b>
+<b class="fc"><i class="no-highlight">26</i>&nbsp;        background_color = &quot;#03fce8&quot;;</b>
+<b class="fc"><i class="no-highlight">27</i>&nbsp;        terrain_color1 = &quot;#04de0f&quot;;</b>
+<b class="fc"><i class="no-highlight">28</i>&nbsp;        terrain_color2 = &quot;#05ad0e&quot;;</b>
+<b class="fc"><i class="no-highlight">29</i>&nbsp;        kerb_color1 = &quot;#e80505&quot;;</b>
+<b class="fc"><i class="no-highlight">30</i>&nbsp;        kerb_color2 = &quot;#ffffff&quot;;</b>
+<b class="fc"><i class="no-highlight">31</i>&nbsp;        road_color = &quot;#8f8f8f&quot;;</b>
+<i class="no-highlight">32</i>&nbsp;    }
+<i class="no-highlight">33</i>&nbsp;
+<i class="no-highlight">34</i>&nbsp;    public void loadTrack(String file_path) {
+<b class="fc"><i class="no-highlight">35</i>&nbsp;        file_path = &quot;Track/&quot; + file_path + &quot;.txt&quot;;</b>
+<b class="fc"><i class="no-highlight">36</i>&nbsp;        URL resource = getClass().getClassLoader().getResource(file_path);</b>
+<b class="fc"><i class="no-highlight">37</i>&nbsp;        Scanner scanner = null;</b>
+<i class="no-highlight">38</i>&nbsp;        try {
+<b class="fc"><i class="no-highlight">39</i>&nbsp;            scanner = new Scanner(new File(resource.toURI()));</b>
+<i class="no-highlight">40</i>&nbsp;
+<b class="fc"><i class="no-highlight">41</i>&nbsp;            title = scanner.nextLine();</b>
+<b class="fc"><i class="no-highlight">42</i>&nbsp;            background_color = scanner.nextLine();</b>
+<b class="fc"><i class="no-highlight">43</i>&nbsp;            terrain_color1 = scanner.nextLine();</b>
+<b class="fc"><i class="no-highlight">44</i>&nbsp;            terrain_color2 = scanner.nextLine();</b>
+<b class="fc"><i class="no-highlight">45</i>&nbsp;            kerb_color1 = scanner.nextLine();</b>
+<b class="fc"><i class="no-highlight">46</i>&nbsp;            kerb_color2 = scanner.nextLine();</b>
+<b class="fc"><i class="no-highlight">47</i>&nbsp;            road_color = scanner.nextLine();</b>
+<b class="fc"><i class="no-highlight">48</i>&nbsp;            velocity = Integer.valueOf(scanner.nextLine());</b>
+<i class="no-highlight">49</i>&nbsp;
+<b class="fc"><i class="no-highlight">50</i>&nbsp;            scanner.close();</b>
+<b class="nc"><i class="no-highlight">51</i>&nbsp;        } catch (FileNotFoundException | URISyntaxException e) {</b>
+<b class="nc"><i class="no-highlight">52</i>&nbsp;            e.printStackTrace();</b>
+<b class="fc"><i class="no-highlight">53</i>&nbsp;        }</b>
+<i class="no-highlight">54</i>&nbsp;    }
+<i class="no-highlight">55</i>&nbsp;
+<i class="no-highlight">56</i>&nbsp;    public int getDistance() {
+<b class="fc"><i class="no-highlight">57</i>&nbsp;        return distance;</b>
+<i class="no-highlight">58</i>&nbsp;    }
+<i class="no-highlight">59</i>&nbsp;
+<i class="no-highlight">60</i>&nbsp;    public String getBackgroundColor() {
+<b class="fc"><i class="no-highlight">61</i>&nbsp;        return background_color;</b>
+<i class="no-highlight">62</i>&nbsp;    }
+<i class="no-highlight">63</i>&nbsp;
+<i class="no-highlight">64</i>&nbsp;    public List&lt;String&gt; getTerrainColor() {
+<b class="fc"><i class="no-highlight">65</i>&nbsp;        List&lt;String&gt; colors = new ArrayList&lt;String&gt;();</b>
+<b class="fc"><i class="no-highlight">66</i>&nbsp;        colors.add(terrain_color1);</b>
+<b class="fc"><i class="no-highlight">67</i>&nbsp;        colors.add(terrain_color2);</b>
+<b class="fc"><i class="no-highlight">68</i>&nbsp;        return colors;</b>
+<i class="no-highlight">69</i>&nbsp;    }
+<i class="no-highlight">70</i>&nbsp;
+<i class="no-highlight">71</i>&nbsp;    public List&lt;String&gt; getKerbColor() {
+<b class="fc"><i class="no-highlight">72</i>&nbsp;        List&lt;String&gt; colors = new ArrayList&lt;String&gt;();</b>
+<b class="fc"><i class="no-highlight">73</i>&nbsp;        colors.add(kerb_color1);</b>
+<b class="fc"><i class="no-highlight">74</i>&nbsp;        colors.add(kerb_color2);</b>
+<b class="fc"><i class="no-highlight">75</i>&nbsp;        return colors;</b>
+<i class="no-highlight">76</i>&nbsp;    }
+<i class="no-highlight">77</i>&nbsp;
+<i class="no-highlight">78</i>&nbsp;    public String getRoadColor() {
+<b class="fc"><i class="no-highlight">79</i>&nbsp;        return road_color;</b>
+<i class="no-highlight">80</i>&nbsp;    }
+<i class="no-highlight">81</i>&nbsp;
+<b class="fc"><i class="no-highlight">82</i>&nbsp;    public Integer getVelocity() {return velocity;}</b>
+<i class="no-highlight">83</i>&nbsp;
+<i class="no-highlight">84</i>&nbsp;    public void setBackgroundColor (String background_color) {
+<b class="nc"><i class="no-highlight">85</i>&nbsp;        this.background_color = background_color;</b>
+<i class="no-highlight">86</i>&nbsp;    }
+<i class="no-highlight">87</i>&nbsp;
+<i class="no-highlight">88</i>&nbsp;    public void setTerrainColor (String terrain_color1, String terrain_color2){
+<b class="nc"><i class="no-highlight">89</i>&nbsp;        this.terrain_color1 = terrain_color1;</b>
+<b class="nc"><i class="no-highlight">90</i>&nbsp;        this.terrain_color2 = terrain_color2;</b>
+<i class="no-highlight">91</i>&nbsp;    }
+<i class="no-highlight">92</i>&nbsp;    public void setKerbColor (String kerb_color1, String kerb_color2) {
+<b class="nc"><i class="no-highlight">93</i>&nbsp;        this.kerb_color1 = kerb_color1;</b>
+<b class="nc"><i class="no-highlight">94</i>&nbsp;        this.kerb_color2 = kerb_color2;</b>
+<i class="no-highlight">95</i>&nbsp;    }
+<i class="no-highlight">96</i>&nbsp;
+<i class="no-highlight">97</i>&nbsp;    public void setRoadColor (String road_color) {
+<b class="nc"><i class="no-highlight">98</i>&nbsp;        this.road_color = road_color;</b>
+<i class="no-highlight">99</i>&nbsp;    }
+<i class="no-highlight">100</i>&nbsp;
+<i class="no-highlight">101</i>&nbsp;    public void move(int amount) {
+<b class="fc"><i class="no-highlight">102</i>&nbsp;        this.distance += amount;</b>
+<i class="no-highlight">103</i>&nbsp;    }
+<i class="no-highlight">104</i>&nbsp;}
+</div>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+        var codeBlock = document.getElementById('sourceCode');
+
+        if (codeBlock) {
+            hljs.highlightBlock(codeBlock);
+        }
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-01-21 22:23</div>
+</div>
+</body>
+</html>
