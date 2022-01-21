@@ -13,6 +13,7 @@ This project was developed in January 2022 by André Barbosa (up202007398@edu.fe
     * [State](#state)
     * [Factory](#factory)
     * [Template](#template)
+    * [Music](#music)
  * [Code Smells and Refactors](#code-smells-and-refactors)
  * [Testing](#testing)
  * [Self Evaluation](#self-evaluation)
@@ -142,7 +143,7 @@ The **State** pattern allows us to separate the state specific behaviour into di
 
 #### Consequences
 
-### Observer
+### Music
 
 #### Problem in context
 
