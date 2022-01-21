@@ -41,8 +41,8 @@ This project was developed in January 2022 by André Barbosa (up202007398@edu.fe
     <img width=450 src="src/enemies.gif">
 </p>
 
-###Score
-- The scoring system considers the number of enemies you avoid. For each avoided car you gain 10 points.
+### Score
+ - The scoring system considers the number of enemies you avoid. For each avoided car you gain 10 points.
 
 <p align="center">
     <img width=450 src="src/score.gif">
