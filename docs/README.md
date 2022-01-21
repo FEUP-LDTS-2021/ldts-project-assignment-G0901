@@ -182,6 +182,25 @@ After the Controller receives an action from View it needs to decide what to do 
 
 ## Testing
 
+### Coverage
+
+<p align="center">
+    <img width=450 src="src/coverage.png">
+</p>
+
+<p align="center">
+   <a href="reports/coverage/index.html">Coverage Report</a>
+</p>
+
+### Mutation Testing
+
+<p align="center">
+   <img width=450 src="src/pitest.png">
+</p>
+<p align="center">
+   <a href="reports/pitest/index.html">Pitest Mutation Report</a>
+</p>
+
 ## Self Evaluation
 
 - André Barbosa: 10%
