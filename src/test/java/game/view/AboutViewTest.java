@@ -29,8 +29,6 @@ public class AboutViewTest {
         graphics = Mockito.mock(TextGraphics.class);
         gui = Mockito.mock(GUI.class);
 
-        gui.graphics = graphics;
-
         when(gui.getGraphics()).thenReturn(graphics);
         when(gui.getGraphics().getSize()).thenReturn(size);
 

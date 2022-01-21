@@ -31,8 +31,17 @@ public class RulesControllerTest {
     }
 
     @Test
-    void step() throws IOException {
+    void stepEnter() throws IOException {
         Mockito.when(gui.getAction()).thenReturn(GUI.ACTION.ENTER);
+
+        controller.step(app, gui.getAction());
+
+        Mockito.verify(app, Mockito.times(1)).setState(any(MenuState.class));
+    }
+
+    @Test
+    void stepEsc() throws IOException {
+        Mockito.when(gui.getAction()).thenReturn(GUI.ACTION.ESC);
 
         controller.step(app, gui.getAction());
 

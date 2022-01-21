@@ -28,7 +28,7 @@ public class EnemyController extends Controller<GameModel>  {
     }
 
     private void generateEnemies() {
-        if (getModel().getTrackModel().getDistance() < 100) return;
+        if (getModel().getTrackModel().getDistance() <= 100) return;
         List<CarModel> enemies = getModel().getEnemies();
         if (enemies.isEmpty()) {
             addEnemy();
@@ -38,7 +38,7 @@ public class EnemyController extends Controller<GameModel>  {
                 addEnemy();
             }
             //remove older
-            if (enemies.get(0).getY() > 100)
+            if (enemies.get(0).getY() >= 100)
                 enemies.remove(0);
         }
     }

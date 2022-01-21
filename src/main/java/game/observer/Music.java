@@ -9,10 +9,11 @@ import java.io.IOException;
 import java.net.URL;
 
 public class Music extends Observer {
-    Application app;
-    Clip clip;
-    URL menu_song;
-    URL game_song;
+    private Application app;
+    private Clip clip;
+    private URL menu_song;
+    private URL game_song;
+    private AudioInputStream ais;
 
     public Music(Application app) throws LineUnavailableException {
         this.app = app;
@@ -22,22 +23,31 @@ public class Music extends Observer {
         app.addObserver(this);
     }
 
+    public Music(Application app, Clip clip) {
+        this.app = app;
+        this.clip = clip;
+        menu_song = getClass().getResource("/sound/f1_theme_retro.wav");
+        game_song = getClass().getResource("/sound/race_song.wav");
+    }
+
     @Override
     public void update() throws UnsupportedAudioFileException, IOException, LineUnavailableException {
         clip.stop();
         clip.close();
 
         if (app.getState() instanceof GameState) {
-            AudioInputStream ais = AudioSystem.getAudioInputStream(game_song);
+            ais = AudioSystem.getAudioInputStream(game_song);
             clip = AudioSystem.getClip();
             clip.open(ais);
             clip.start();
+            clip.loop(Clip.LOOP_CONTINUOUSLY);
+
 
         }
         else if (app.getState() instanceof MenuState) {
-            AudioInputStream ais2 = AudioSystem.getAudioInputStream(menu_song);
+            ais = AudioSystem.getAudioInputStream(menu_song);
             clip = AudioSystem.getClip();
-            clip.open(ais2);
+            clip.open(ais);
             clip.start();
             clip.loop(Clip.LOOP_CONTINUOUSLY);
 

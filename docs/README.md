@@ -135,6 +135,29 @@ The **State** pattern allows us to separate the state specific behaviour into di
 
 #### Consequences
 
+### Observer
+
+#### Problem in context
+
+To make the game more fun and interesting we wanted to add music. Our idea was to add a theme soundtrack in the Menu tab and a more fast paced music when racing. To accomplish this we add to think of a simple way to play the right music according to the state we're in.
+
+#### The pattern
+
+With the Observer pattern it's possible for the subject to notify all the observers whenever something important happens, in our case when the application's state changes. A subject can also 'cut relations' with a subject to stop receiving notifications at all, although we do not make use of this functionality. <br />
+We ended up making use of only the observer Music.
+
+#### Implementation
+
+<p align="center">
+    <img width=450 src="src/observer_uml.png">
+</p>
+
+#### Consequences
+
+* Facilitates adding new musics to the other states.
+* Makes sure that no other class has no deal with music related code.
+* It's possible to add/remove observers if we need to.
+
 ## Code Smells and Refactors
 
 ## Testing
