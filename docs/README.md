@@ -13,7 +13,6 @@ This project was developed in January 2022 by André Barbosa (up202007398@edu.fe
     * [State](#state)
     * [Factory](#factory)
     * [Template](#template)
-    * [Music](#music)
  * [Code Smells and Refactors](#code-smells-and-refactors)
  * [Testing](#testing)
  * [Self Evaluation](#self-evaluation)
@@ -143,7 +142,7 @@ The **State** pattern allows us to separate the state specific behaviour into di
 
 #### Consequences
 
-### Music
+### Observer
 
 #### Problem in context
 
@@ -180,6 +179,7 @@ A way to solve this problem would be to replace some of these parameters with an
 #### Switch Statements
 
 After the Controller receives an action from View it needs to decide what to do for all the different action types. This results in long switch statements in places like [MenuController.step()](../src/main/java/game/control/menu/MenuController.java) or [GUI.getAction()](../src/main/java/game/gui/GUI.java). This way, every time we add a condition all the switch statement code has to be modified.
+Instead of a switch statement it would be possible to replace the actions enum with a class and the actions with subclasses. We could then move all action specific logic to the different subclasses thus replacing the control flow code with polymorphism. By doing this, it would be easier to add new actions and the code readability would improve.
 
 ## Testing
 
