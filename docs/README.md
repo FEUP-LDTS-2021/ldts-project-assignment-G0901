@@ -187,7 +187,7 @@ It could be argued that the **Command Pattern** would be a good solution for thi
 #### Consequences
 
 * Allows the separation of the classes that receive input from the ones that interpret it.
-* Keeps the codebase more simple.
+* Keeps the codebase simple.
 * It is not as easy to undo operations.
 
 ## Code Smells and Refactors
