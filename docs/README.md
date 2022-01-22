@@ -141,15 +141,18 @@ The game has several different states that need to be displayed for the user. Th
 
 #### The Pattern
 
-Using the Template Method we created an abstract class View and several View sub classses for each of the states and objects. The abstract class contains the main methods that print all the different tabs, plus an abstract method that can be overridden by the sub classes. <br /> Let's say we want do display the GameOver tab. First we call the View class passing a game over model as a parameter. Then the GameOverView class overrides the drawElements() method and starts to call the functions of the abstract class in the right order and with the right parameters.
+Using the Template Method we created an abstract class View and several View sub classses for each of the states and objects. The abstract class contains the main methods that print all the different tabs, plus an abstract method that can be overridden by the sub classes. <br /> Let's say we want do display the GameOver tab. First we call the View class passing a game over model as a parameter. Then the GameOverView class overrides the drawElements() method and starts to call the right  functions of the abstract class in the right order and with the right parameters.
 
 #### Implementation
+
+<p align="center">
+    <img width=450 src="src/template_uml.png">
+</p>
 
 #### Consequences
 
 * We can eliminate duplicated code.
 * Very easy to add/remove new tabs.
-*
 
 ### Observer
 
