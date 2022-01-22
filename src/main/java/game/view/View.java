@@ -29,7 +29,7 @@ public abstract class View<Model> implements GenericColors {
     public abstract void drawElements(GUI gui) throws IOException;
 
     protected void drawSprite(TextGraphics screen, List<String> sprite, Character color, int x, int y) {
-        screen.setBackgroundColor(TextColor.Factory.fromString("#FFFF00"));
+
         for (int i = 0; i < sprite.size(); i++)
         {
             for (int j = 0; j < sprite.get(i).length(); j++) {

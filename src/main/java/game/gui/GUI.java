@@ -23,7 +23,6 @@ import java.net.URL;
 public class GUI {
     public enum ACTION {NONE, QUIT, LEFT, RIGHT, UP, DOWN, ESC, ENTER};
     private static TerminalSize size;
-    private static final String background_colour = "#7CFC00";
 
     private Screen screen;
     private TextGraphics graphics;
@@ -112,7 +111,7 @@ public class GUI {
         getGraphics().fill(' ');
     }
 
-    public void clear() throws IOException {
+    public void clear() {
         getScreen().clear();
     }
 
