@@ -11,9 +11,8 @@ This project was developed in January 2022 by André Barbosa (up202007398@edu.fe
  * [Design](#design)
     * [Architecture](#architecture)
     * [State](#state)
-    * [Factory](#factory)
     * [Template](#template)
-    * [Observer](#observer)
+    * [Music](#music)
  * [Code Smells and Refactors](#code-smells-and-refactors)
  * [Testing](#testing)
  * [Self Evaluation](#self-evaluation)
@@ -123,21 +122,11 @@ The **State** pattern allows us to separate the state specific behaviour into di
  * No need for flags or conditionals with numerous branches.
  * Allows a strict separations of specific code into different classes.
 
-### Factory
-
-#### Problem in Context
-
-#### The Pattern
-
-#### Implementation
-
-#### Consequences
-
 ### Template
 
 #### Problem in Context
 
-The game has several states that need to be displayed for the user. The base code that's used to display them is the same, but each tab has its own characteristics. So we had to find a way to get rid of methods that did exactly the same thing, without jeopardizing the structure of the algorithm.
+The game has several states that need to be displayed to the user. The base code that's used to display them is the same, but each tab has its own characteristics. So we had to find a way to get rid of methods that did exactly the same thing, without jeopardizing the structure of the algorithm.
 
 #### The Pattern
 
@@ -154,7 +143,7 @@ Using the **Template Method** we created an abstract class View and several View
 * We can eliminate duplicated code.
 * Very easy to add/remove new tabs.
 
-### Observer
+### Music
 
 #### Problem in context
 
