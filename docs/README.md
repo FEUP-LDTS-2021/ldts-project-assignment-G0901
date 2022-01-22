@@ -146,7 +146,7 @@ Using the Template Method we created an abstract class View and several View sub
 #### Implementation
 
 <p align="center">
-    <img width=450 src="src/template_uml.png">
+    <img width=450 src="src/template.png">
 </p>
 
 #### Consequences
