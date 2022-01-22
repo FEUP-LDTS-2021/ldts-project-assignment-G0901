@@ -158,7 +158,7 @@ Using the **Template Method** we created an abstract class View and several View
 
 #### Problem in context
 
-To make the game more fun and interesting we wanted to add music. Our idea was to add a theme soundtrack in the Menu tab and a more fast paced music when racing. To accomplish this we add to think of a simple way to play the right music according to the state we're in.
+To make the game more fun and interesting we wanted to add music. Our idea was to add a theme soundtrack in the Menu tab and a more fast paced music when racing. To accomplish this we had to think of a simple way to play the right music according to the state we're in.
 
 #### The pattern
 
