@@ -14,7 +14,8 @@ This project was developed in January 2022 by André Barbosa (up202007398@edu.fe
     * [Template](#template)
     * [Music](#music)
     * [Actions](#actions)
- * [Code Smells and Refactors](#code-smells-and-refactors)
+ * [Code Smells](#code-smells)
+ * [Refactorings](#refactorings)
  * [Testing](#testing)
  * [Self Evaluation](#self-evaluation)
 
