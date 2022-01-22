@@ -137,11 +137,11 @@ The **State** pattern allows us to separate the state specific behaviour into di
 
 #### Problem in Context
 
-The game has several different states that need to be displayed for the user. The base code that's used to display them is the same, but each tab has it's own characteristics. So we had to find a way to get rid of methods that did exactly the same thing, without jeopardizing the structure of the algorithm.
+The game has several states that need to be displayed for the user. The base code that's used to display them is the same, but each tab has its own characteristics. So we had to find a way to get rid of methods that did exactly the same thing, without jeopardizing the structure of the algorithm.
 
 #### The Pattern
 
-Using the Template Method we created an abstract class View and several View sub classses for each of the states and objects. The abstract class contains the main methods that print all the different tabs, plus an abstract method that can be overridden by the sub classes. <br /> Let's say we want do display the GameOver tab. First we call the View class passing a game over model as a parameter. Then the GameOverView class overrides the drawElements() method and starts to call the right  functions of the abstract class in the right order and with the right parameters.
+Using the **Template Method** we created an abstract class View and several View subclasses for each of the states and objects. The abstract class contains the main methods that print all the different tabs, plus an abstract method that can be overridden by the subclasses. <br /> Let's say we want display the GameOver tab. First we call the View class passing a game over model as a parameter. Then the GameOverView class overrides the drawElements() method and starts to call the right functions of the abstract class in the right order and with the right parameters.
 
 #### Implementation
 
@@ -203,6 +203,13 @@ A way to solve this problem would be to replace some of these parameters with an
 
 After the Controller receives an action from View it needs to decide what to do for all the different action types. This results in long switch statements in places like [MenuController.step()](../src/main/java/game/control/menu/MenuController.java) or [GUI.getAction()](../src/main/java/game/gui/GUI.java). This way, every time we add a condition all the switch statement code has to be modified.
 Instead of a switch statement it would be possible to replace the actions enum with a class and the actions with subclasses. We could then move all action specific logic to the different subclasses thus replacing the control flow code with polymorphism. By doing this, it would be easier to add new actions and the code readability would improve.
+
+### Dispensables
+
+#### Speculative Generality
+
+The [TrackModel](../src/main/java/game/model/game/TrackModel.java) class contains same setters (setBackgroundColors, setTerrainColor, setKerbColor, setRoadColor) that were created in case we needed to change the track colours. These methods can come in handy for future features, but they're never used in our code. We could use the refactoring method **Inline Method** to solve this problem. 
+
 
 ## Testing
 
