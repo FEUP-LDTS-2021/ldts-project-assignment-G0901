@@ -14,7 +14,8 @@ This project was developed in January 2022 by André Barbosa (up202007398@edu.fe
     * [Template](#template)
     * [Music](#music)
     * [Actions](#actions)
- * [Code Smells and Refactors](#code-smells-and-refactors)
+ * [Code Smells](#code-smells)
+ * [Refactorings](#refactorings)
  * [Testing](#testing)
  * [Self Evaluation](#self-evaluation)
 
@@ -190,7 +191,7 @@ It could be argued that the **Command Pattern** would be a good solution for thi
 * Keeps the codebase simple.
 * It is not as easy to undo operations.
 
-## Code Smells and Refactors
+## Code Smells
 
 ### Bloaters
 
@@ -211,6 +212,14 @@ Instead of a switch statement it would be possible to replace the actions enum w
 #### Speculative Generality
 
 The [TrackModel](../src/main/java/game/model/game/TrackModel.java) class contains same setters ([setBackgroundColors()](../src/main/java/game/model/game/TrackModel.java#L84), [setTerrainColor()](../src/main/java/game/model/game/TrackModel.java#L88), [setKerbColor()](../src/main/java/game/model/game/TrackModel.java#L92), [setRoadColor](../src/main/java/game/model/game/TrackModel.java#L97)) that were created in case we needed to change the track colours. These methods can come in handy for future features, but they're never used in our code. We could use the refactoring method **Inline Method** to solve this problem. 
+
+## Refactorings
+
+Throughout the project we had to do some refactorings to make the code cleaner and more efficient. Below we listed a few we remember we used.
+
+* **Replace Magic Number with Symbolic Constant** - after adding the initial code, we had to clean some magic numbers and replace them with constants.
+* **Pull Up Method** - we realized that the majority of the menu model sub-classes were using methods that in the end had the same functionality. So we grouped them together in the [GenericTabModel](../src/main/java/game/model/menu/GenericTabModel.java) class. Also, when creating the enemies model we noticed that it was very similar to the car model. So, we ended up sticking only with the [CarModel](../src/main/java/game/model/game/CarModel.java) class.
+* **Extract Interface** - we created an inteface called [GenericColors](../src/main/java/game/view/GenericColors.java) and added all the colors we used on the program. We did this because we had the same constant color variables in different classes.
 
 
 ## Testing
