@@ -130,7 +130,7 @@ The game has several states that need to be displayed to the user. The base code
 
 #### The Pattern
 
-Using the **Template Method** we created an abstract class View and several View subclasses for each of the states and objects. The abstract class contains the main methods that print all the different tabs, plus an abstract method that can be overridden by the subclasses. <br /> Let's say we want display the GameOver tab. First we call the View class passing a game over model as a parameter. Then the GameOverView class overrides the drawElements() method and starts to call the right functions of the abstract class in the right order and with the right parameters.
+Using the **Template Method** we created an abstract class [View](../src/main/java/game/view/View.java) and several View subclasses for each of the states and objects. The abstract class contains the main methods that print all the different tabs, plus an abstract [method](../src/main/java/game/view/View.java#L29) that can be overridden by the subclasses. <br /> Let's say we want display the GameOver tab. First we call the View class passing a game over model as a parameter. Then the [GameOverView](../src/main/java/game/view/menu/GameOverView.java) class overrides the drawElements() method and starts to call the right functions of the abstract class in the right order and with the right parameters.
 
 #### Implementation
 
@@ -152,8 +152,8 @@ To make the game more fun and interesting we wanted to add music. Our idea was t
 #### The pattern
 
 With the **Observer** pattern it's possible for the subject to notify all the observers whenever something important happens, in our case when the application's state changes. A subject can also 'cut relations' with a subject to stop receiving notifications at all, although we do not make use of this functionality. <br /> 
-In practice: setState(State state) is called -> changes states and calls notifyObservers() -> it iterates trough the observers list and calls the function update() of each observer. <br />
-We ended up making use of only the observer Music.
+In practice: [setState(State state)](../src/main/java/game/Application.java#L57) is called -> changes states and calls [notifyObservers()](../src/main/java/game/Application.java#L72) -> it iterates through the observers list and calls the function [update()](../src/main/java/game/observer/Observer.java#L12) of each observer. <br />
+We ended up making use of only the observer [Music](../src/main/java/game/observer/Music.java).
 
 #### Implementation
 
@@ -197,7 +197,7 @@ Instead of a switch statement it would be possible to replace the actions enum w
 
 #### Speculative Generality
 
-The [TrackModel](../src/main/java/game/model/game/TrackModel.java) class contains same setters (setBackgroundColors, setTerrainColor, setKerbColor, setRoadColor) that were created in case we needed to change the track colours. These methods can come in handy for future features, but they're never used in our code. We could use the refactoring method **Inline Method** to solve this problem. 
+The [TrackModel](../src/main/java/game/model/game/TrackModel.java) class contains same setters ([setBackgroundColors()](../src/main/java/game/model/game/TrackModel.java#L84), [setTerrainColor()](../src/main/java/game/model/game/TrackModel.java#L88), [setKerbColor()](../src/main/java/game/model/game/TrackModel.java#L92), [setRoadColor](../src/main/java/game/model/game/TrackModel.java#L97)) that were created in case we needed to change the track colours. These methods can come in handy for future features, but they're never used in our code. We could use the refactoring method **Inline Method** to solve this problem. 
 
 
 ## Testing
