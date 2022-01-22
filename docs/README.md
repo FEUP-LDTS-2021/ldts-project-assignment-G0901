@@ -13,6 +13,7 @@ This project was developed in January 2022 by André Barbosa (up202007398@edu.fe
     * [State](#state)
     * [Template](#template)
     * [Music](#music)
+    * [Actions](#actions)
  * [Code Smells and Refactors](#code-smells-and-refactors)
  * [Testing](#testing)
  * [Self Evaluation](#self-evaluation)
@@ -167,15 +168,27 @@ We ended up making use of only the observer Music.
 * Makes sure that no other class has to deal with music related code.
 * It's possible to add/remove observers if we need to.
 
-### Command (sort of)
+### Actions
 
 #### Problem in context
 
+The user inputs are received by the View whose job is to pass these requests to the controller. It is important to make this connection so we can separate the game logic from the rendering code.  
+
 #### The pattern
+
+It could be argued that the **Command Pattern** would be a good solution for this problem. This pattern suggests the creation of a separate command class that contains all the information about the request. However, as we didn't need to reverse the operations and due to the simplicity of the requests we chose not to create this class. Instead we created an enum [ACTION](../src/main/java/game/gui/GUI.java#L24) that contains all the different actions that occur from user input.
 
 #### Implementation
 
+<p align="center">
+    <img width=450 src="src/command_uml.png">
+</p>
+
 #### Consequences
+
+* Allows the separation of the classes that receive input from the ones that interpret it.
+* Keeps the codebase more simple.
+* It is not as easy to undo operations.
 
 ## Code Smells and Refactors
 
