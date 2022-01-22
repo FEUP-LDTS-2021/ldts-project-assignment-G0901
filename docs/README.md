@@ -13,6 +13,7 @@ This project was developed in January 2022 by André Barbosa (up202007398@edu.fe
     * [State](#state)
     * [Factory](#factory)
     * [Template](#template)
+    * [Observer](#observer)
  * [Code Smells and Refactors](#code-smells-and-refactors)
  * [Testing](#testing)
  * [Self Evaluation](#self-evaluation)
@@ -136,11 +137,19 @@ The **State** pattern allows us to separate the state specific behaviour into di
 
 #### Problem in Context
 
+The game has several different states that need to be displayed for the user. The base code that's used to display them is the same, but each tab has it's own characteristics. So we had to find a way to get rid of methods that did exactly the same thing, without jeopardizing the structure of the algorithm.
+
 #### The Pattern
+
+Using the Template Method we created an abstract class View and several View sub classses for each of the states and objects. The abstract class contains the main methods that print all the different tabs, plus an abstract method that can be overridden by the sub classes. <br /> Let's say we want do display the GameOver tab. First we call the View class passing a game over model as a parameter. Then the GameOverView class overrides the drawElements() method and starts to call the functions of the abstract class in the right order and with the right parameters.
 
 #### Implementation
 
 #### Consequences
+
+* We can eliminate duplicated code.
+* Very easy to add/remove new tabs.
+*
 
 ### Observer
 
@@ -150,7 +159,8 @@ To make the game more fun and interesting we wanted to add music. Our idea was t
 
 #### The pattern
 
-With the **Observer** pattern it's possible for the subject to notify all the observers whenever something important happens, in our case when the application's state changes. A subject can also 'cut relations' with a subject to stop receiving notifications at all, although we do not make use of this functionality. <br />
+With the **Observer** pattern it's possible for the subject to notify all the observers whenever something important happens, in our case when the application's state changes. A subject can also 'cut relations' with a subject to stop receiving notifications at all, although we do not make use of this functionality. <br /> 
+In practice: setState(State state) is called -> changes states and calls notifyObservers() -> it iterates trough the observers list and calls the function update() of each observer. <br />
 We ended up making use of only the observer Music.
 
 #### Implementation
@@ -164,6 +174,16 @@ We ended up making use of only the observer Music.
 * Facilitates adding new musics to the other states.
 * Makes sure that no other class has to deal with music related code.
 * It's possible to add/remove observers if we need to.
+
+### Command (sort of)
+
+#### Problem in context
+
+#### The pattern
+
+#### Implementation
+
+#### Consequences
 
 ## Code Smells and Refactors
 
