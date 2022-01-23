@@ -101,7 +101,7 @@ To solve this problem, we separated the program into Model, View, and Controller
 
 #### Problem in Context
 
-The games needs to iterate through the different menu tabs and the game itself. Before the game starts, the track selection is prompted and after the game is over it changes to a different Game Over tab.
+The game needs to iterate through the different menu tabs and the game itself. Before the game starts, the track selection is prompted and after the game is over it changes to a different Game Over tab.
 This way, we need a way to manage which image is being displayed and how the game can behave accordingly.
 
 <p align="center">
@@ -153,7 +153,7 @@ To make the game more fun and interesting we wanted to add music. Our idea was t
 
 #### The pattern
 
-With the **Observer** pattern it's possible for the subject to notify all the observers whenever something important happens, in our case when the application's state changes. A subject can also 'cut relations' with a subject to stop receiving notifications at all, although we do not make use of this functionality. <br /> 
+With the **Observer** pattern it's possible for the subject to notify all the observers whenever something important happens, in our case when the application's state changes. An observer can also 'cut relations' with a subject to stop receiving notifications at all, although we do not make use of this functionality. <br /> 
 In practice: [setState(State state)](../src/main/java/game/Application.java#L57) is called -> changes states and calls [notifyObservers()](../src/main/java/game/Application.java#L72) -> it iterates through the observers list and calls the function [update()](../src/main/java/game/observer/Observer.java#L12) of each observer. <br />
 We ended up making use of only the observer [Music](../src/main/java/game/observer/Music.java).
 
