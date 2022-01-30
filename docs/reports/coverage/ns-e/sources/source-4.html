@@ -1,0 +1,179 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > RulesView</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/highlight-idea.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">game.view.menu</a>
+</div>
+
+<h1>Coverage Summary for Class: RulesView (game.view.menu)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">RulesView</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (12/12)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">RulesView$MockitoMock$1686914579</td>
+  </tr>
+  <tr>
+    <td class="name">RulesView$MockitoMock$1686914579$auxiliary$abznLEXG</td>
+  </tr>
+  <tr>
+    <td class="name">RulesView$MockitoMock$1686914579$auxiliary$byGUW1uB</td>
+  </tr>
+  <tr>
+    <td class="name">RulesView$MockitoMock$1686914579$auxiliary$fWGGzDH0</td>
+  </tr>
+  <tr>
+    <td class="name">RulesView$MockitoMock$1686914579$auxiliary$J5DQ6tor</td>
+  </tr>
+  <tr>
+    <td class="name">RulesView$MockitoMock$1686914579$auxiliary$Jy0UpN76</td>
+  </tr>
+  <tr>
+    <td class="name">RulesView$MockitoMock$1686914579$auxiliary$QliTTdKY</td>
+  </tr>
+  <tr>
+    <td class="name">RulesView$MockitoMock$1686914579$auxiliary$tiQOfCXN</td>
+  </tr>
+  <tr>
+    <td class="name">RulesView$MockitoMock$1686914579$auxiliary$VCGlMSx4</td>
+  </tr>
+  <tr>
+    <td class="name">RulesView$MockitoMock$1686914579$auxiliary$yFnhqygK</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (12/12)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;package game.view.menu;
+<i class="no-highlight">2</i>&nbsp;
+<i class="no-highlight">3</i>&nbsp;import com.googlecode.lanterna.TerminalSize;
+<i class="no-highlight">4</i>&nbsp;import game.gui.GUI;
+<i class="no-highlight">5</i>&nbsp;import game.model.menu.RulesModel;
+<i class="no-highlight">6</i>&nbsp;import game.view.View;
+<i class="no-highlight">7</i>&nbsp;
+<i class="no-highlight">8</i>&nbsp;import java.io.IOException;
+<i class="no-highlight">9</i>&nbsp;import java.util.List;
+<i class="no-highlight">10</i>&nbsp;
+<i class="no-highlight">11</i>&nbsp;public class RulesView extends View&lt;RulesModel&gt; {
+<i class="no-highlight">12</i>&nbsp;    private List&lt;String&gt; title;
+<i class="no-highlight">13</i>&nbsp;    private List&lt;String&gt; keys;
+<i class="no-highlight">14</i>&nbsp;    private List&lt;String&gt; description;
+<i class="no-highlight">15</i>&nbsp;    private List&lt;String&gt; proceed;
+<i class="no-highlight">16</i>&nbsp;
+<i class="no-highlight">17</i>&nbsp;    public RulesView(RulesModel model) {
+<b class="fc"><i class="no-highlight">18</i>&nbsp;       super(model);</b>
+<b class="fc"><i class="no-highlight">19</i>&nbsp;       title = loadSprite(model.getTitle());</b>
+<b class="fc"><i class="no-highlight">20</i>&nbsp;       keys = loadSprite(model.getKeys());</b>
+<b class="fc"><i class="no-highlight">21</i>&nbsp;       description = loadSprite(model.getDescription());</b>
+<b class="fc"><i class="no-highlight">22</i>&nbsp;       proceed = loadSprite(model.getProceed());</b>
+<i class="no-highlight">23</i>&nbsp;   }
+<i class="no-highlight">24</i>&nbsp;
+<i class="no-highlight">25</i>&nbsp;   @Override
+<i class="no-highlight">26</i>&nbsp;    public void drawElements(GUI gui) throws IOException {
+<b class="fc"><i class="no-highlight">27</i>&nbsp;       TerminalSize size = gui.getGraphics().getSize();</b>
+<i class="no-highlight">28</i>&nbsp;
+<b class="fc"><i class="no-highlight">29</i>&nbsp;       gui.fillScreen(background_color);</b>
+<i class="no-highlight">30</i>&nbsp;
+<b class="fc"><i class="no-highlight">31</i>&nbsp;       drawMenu(title, title_color, gui, size.getRows() / 5, false);</b>
+<b class="fc"><i class="no-highlight">32</i>&nbsp;       drawMenu(description, item_color, gui, size.getRows() / 2, false);</b>
+<b class="fc"><i class="no-highlight">33</i>&nbsp;       drawMenu(keys, item_color, gui, size.getRows() / 2 + 20, false);</b>
+<b class="fc"><i class="no-highlight">34</i>&nbsp;       drawMenu(proceed, item_color, gui, size.getRows() / 2 + 30, true);</b>
+<b class="fc"><i class="no-highlight">35</i>&nbsp;       gui.refresh();</b>
+<i class="no-highlight">36</i>&nbsp;   }
+<i class="no-highlight">37</i>&nbsp;}
+</div>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+        var codeBlock = document.getElementById('sourceCode');
+
+        if (codeBlock) {
+            hljs.highlightBlock(codeBlock);
+        }
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-01-21 22:23</div>
+</div>
+</body>
+</html>

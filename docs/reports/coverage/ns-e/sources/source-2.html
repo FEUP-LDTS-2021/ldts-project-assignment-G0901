@@ -1,0 +1,216 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > GameOverView</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/highlight-idea.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">game.view.menu</a>
+</div>
+
+<h1>Coverage Summary for Class: GameOverView (game.view.menu)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">GameOverView</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (4/4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (22/22)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">GameOverView$MockitoMock$836410744</td>
+  </tr>
+  <tr>
+    <td class="name">GameOverView$MockitoMock$836410744$auxiliary$52jaB7Dm</td>
+  </tr>
+  <tr>
+    <td class="name">GameOverView$MockitoMock$836410744$auxiliary$AHbF0sSM</td>
+  </tr>
+  <tr>
+    <td class="name">GameOverView$MockitoMock$836410744$auxiliary$Aj7hhjsg</td>
+  </tr>
+  <tr>
+    <td class="name">GameOverView$MockitoMock$836410744$auxiliary$dJ5VbSx1</td>
+  </tr>
+  <tr>
+    <td class="name">GameOverView$MockitoMock$836410744$auxiliary$dRU0xpn3</td>
+  </tr>
+  <tr>
+    <td class="name">GameOverView$MockitoMock$836410744$auxiliary$IGBf09Od</td>
+  </tr>
+  <tr>
+    <td class="name">GameOverView$MockitoMock$836410744$auxiliary$lVMXfTLC</td>
+  </tr>
+  <tr>
+    <td class="name">GameOverView$MockitoMock$836410744$auxiliary$m6R3R0Co</td>
+  </tr>
+  <tr>
+    <td class="name">GameOverView$MockitoMock$836410744$auxiliary$P2fNHsL9</td>
+  </tr>
+  <tr>
+    <td class="name">GameOverView$MockitoMock$836410744$auxiliary$Pf8DvwCc</td>
+  </tr>
+  <tr>
+    <td class="name">GameOverView$MockitoMock$836410744$auxiliary$w8iDcXxm</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (4/4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (22/22)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;package game.view.menu;
+<i class="no-highlight">2</i>&nbsp;
+<i class="no-highlight">3</i>&nbsp;import com.googlecode.lanterna.TerminalSize;
+<i class="no-highlight">4</i>&nbsp;import game.gui.GUI;
+<i class="no-highlight">5</i>&nbsp;import game.model.game.TrackModel;
+<i class="no-highlight">6</i>&nbsp;import game.model.menu.GameOverModel;
+<i class="no-highlight">7</i>&nbsp;import game.model.menu.GenericTabModel;
+<i class="no-highlight">8</i>&nbsp;import game.view.View;
+<i class="no-highlight">9</i>&nbsp;import game.view.game.TrackView;
+<i class="no-highlight">10</i>&nbsp;
+<i class="no-highlight">11</i>&nbsp;import java.io.IOException;
+<i class="no-highlight">12</i>&nbsp;import java.util.LinkedList;
+<i class="no-highlight">13</i>&nbsp;import java.util.List;
+<i class="no-highlight">14</i>&nbsp;
+<i class="no-highlight">15</i>&nbsp;public class GameOverView extends View&lt;GameOverModel&gt; {
+<i class="no-highlight">16</i>&nbsp;    private String score;
+<i class="no-highlight">17</i>&nbsp;
+<i class="no-highlight">18</i>&nbsp;    private List&lt;String&gt; item;
+<i class="no-highlight">19</i>&nbsp;    private List&lt;String&gt; title;
+<i class="no-highlight">20</i>&nbsp;    private List&lt;String&gt; score_file;
+<b class="fc"><i class="no-highlight">21</i>&nbsp;    private List&lt;List&lt;String&gt;&gt; item_list = new LinkedList&lt;&gt;();</b>
+<i class="no-highlight">22</i>&nbsp;
+<i class="no-highlight">23</i>&nbsp;    private int number_of_items;
+<i class="no-highlight">24</i>&nbsp;    private int row;
+<i class="no-highlight">25</i>&nbsp;
+<i class="no-highlight">26</i>&nbsp;
+<i class="no-highlight">27</i>&nbsp;    public GameOverView(GameOverModel model) {
+<b class="fc"><i class="no-highlight">28</i>&nbsp;        super(model);</b>
+<b class="fc"><i class="no-highlight">29</i>&nbsp;        number_of_items = model.getNumberItems();</b>
+<b class="fc"><i class="no-highlight">30</i>&nbsp;        title = loadSprite(model.getTitle());</b>
+<b class="fc"><i class="no-highlight">31</i>&nbsp;        loadItemsSprites(item_list, model.getItems());</b>
+<b class="fc"><i class="no-highlight">32</i>&nbsp;        score_file = loadSprite(model.getScore_string());</b>
+<b class="fc"><i class="no-highlight">33</i>&nbsp;        score = String.valueOf(model.getScore());</b>
+<i class="no-highlight">34</i>&nbsp;    ;}
+<i class="no-highlight">35</i>&nbsp;
+<i class="no-highlight">36</i>&nbsp;
+<i class="no-highlight">37</i>&nbsp;    @Override
+<i class="no-highlight">38</i>&nbsp;    public void drawElements(GUI gui) throws IOException {
+<b class="fc"><i class="no-highlight">39</i>&nbsp;        TerminalSize size = gui.getGraphics().getSize();</b>
+<i class="no-highlight">40</i>&nbsp;
+<b class="fc"><i class="no-highlight">41</i>&nbsp;        gui.fillScreen(background_color);</b>
+<i class="no-highlight">42</i>&nbsp;
+<b class="fc"><i class="no-highlight">43</i>&nbsp;        drawMenu(this.title, title_color, gui, size.getRows() / 5, false);</b>
+<b class="fc"><i class="no-highlight">44</i>&nbsp;        drawMenu(score_file, item_color, gui, size.getRows() / 2, false);</b>
+<b class="fc"><i class="no-highlight">45</i>&nbsp;        drawScore(score, gui, size.getRows() / 2 + 8);</b>
+<i class="no-highlight">46</i>&nbsp;
+<b class="fc"><i class="no-highlight">47</i>&nbsp;        for (int i = 0; i &lt; number_of_items; i++) {</b>
+<b class="fc"><i class="no-highlight">48</i>&nbsp;            item = item_list.get(i);</b>
+<b class="fc"><i class="no-highlight">49</i>&nbsp;            row = calculateRow(size, i);</b>
+<i class="no-highlight">50</i>&nbsp;
+<b class="fc"><i class="no-highlight">51</i>&nbsp;            if (model.isSelected(i))</b>
+<b class="fc"><i class="no-highlight">52</i>&nbsp;                drawMenu(item, selected_color, gui, row, true);</b>
+<b class="fc"><i class="no-highlight">53</i>&nbsp;            else drawMenu(item, item_color, gui, row, false);</b>
+<i class="no-highlight">54</i>&nbsp;        }
+<i class="no-highlight">55</i>&nbsp;
+<b class="fc"><i class="no-highlight">56</i>&nbsp;        gui.refresh();</b>
+<i class="no-highlight">57</i>&nbsp;    }
+<i class="no-highlight">58</i>&nbsp;
+<i class="no-highlight">59</i>&nbsp;    public void loadItemsSprites(List&lt;List&lt;String&gt;&gt; itemsList, String[] items) {
+<b class="fc"><i class="no-highlight">60</i>&nbsp;        for (int i = 0; i &lt; items.length; i++) {</b>
+<b class="fc"><i class="no-highlight">61</i>&nbsp;            itemsList.add(loadSprite(items[i]));</b>
+<i class="no-highlight">62</i>&nbsp;        }
+<i class="no-highlight">63</i>&nbsp;    }
+<i class="no-highlight">64</i>&nbsp;
+<i class="no-highlight">65</i>&nbsp;    public int calculateRow(TerminalSize size, int i) {
+<b class="fc"><i class="no-highlight">66</i>&nbsp;        return (int) (size.getRows() * 0.75F + (size.getRows() / 10) * i);</b>
+<i class="no-highlight">67</i>&nbsp;    }
+<i class="no-highlight">68</i>&nbsp;}
+</div>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+        var codeBlock = document.getElementById('sourceCode');
+
+        if (codeBlock) {
+            hljs.highlightBlock(codeBlock);
+        }
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-01-21 22:23</div>
+</div>
+</body>
+</html>
