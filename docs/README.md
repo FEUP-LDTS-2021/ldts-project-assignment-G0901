@@ -6,6 +6,7 @@ The game has a series of tracks with increasing difficulty in which the player n
 This project was developed in January 2022 by André Barbosa (up202007398@edu.fe.up.pt), [Guilherme Almeida](https://github.com/theguilhermealmeida) (up202008866@edu.fe.up.pt) and [José Luís Rodrigues](https://github.com/jlcrodrigues) (up202008462@edu.fe.up.pt) for LDTS 2021/22.
 
 ## Table of Contents
+ * [Gameplay demo](#gameplay-demo)
  * [Implemented Features](#implemented-features)
  * [Planned Features](#planned-features)
  * [Design](#design)
@@ -18,6 +19,11 @@ This project was developed in January 2022 by André Barbosa (up202007398@edu.fe
  * [Refactorings](#refactorings)
  * [Testing](#testing)
  * [Self Evaluation](#self-evaluation)
+
+## Gameplay demo
+<p align="center">
+    <img width=450 src="src/demo.gif">
+</p>
 
 ## Implemented Features
 
@@ -71,6 +77,9 @@ This project was developed in January 2022 by André Barbosa (up202007398@edu.fe
 
 ### Turns
  - Tracks will have different turns so the game is more unpredictable. We can even simulate the curvature in real world tracks.
+
+### Pause menu
+ - Add a pause menu so the player can stop a game without exiting to the main menu.
 
 
 ## Design
