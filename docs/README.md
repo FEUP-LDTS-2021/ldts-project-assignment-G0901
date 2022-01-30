@@ -254,6 +254,6 @@ Throughout the project we had to do some refactorings to make the code cleaner a
 
 ## Self Evaluation
 
-- André Barbosa: 10%
-- José Luís Rodrigues: 45%
-- Guilherme Almeida: 45%
+- André Barbosa: 30%
+- José Luís Rodrigues: 35%
+- Guilherme Almeida: 35%
