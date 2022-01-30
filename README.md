@@ -8,3 +8,9 @@ The game was made with Text Graphics in Java, using [Lanterna](https://github.co
 You can check out the technical report [here](docs/README.md).
 
 This project was developed in January 2022 by André Barbosa (up202007398@edu.fe.up.pt), [Guilherme Almeida](https://github.com/theguilhermealmeida) (up202008866@edu.fe.up.pt) and [José Luís Rodrigues](https://github.com/jlcrodrigues) (up202008462@edu.fe.up.pt) for LDTS 2021/22.
+
+## Gameplay demo
+
+<p align="center">
+    <img width=450 src = "docs/src/demo.gif">
+</p>
