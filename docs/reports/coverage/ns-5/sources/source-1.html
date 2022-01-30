@@ -1,0 +1,311 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > GUI</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/highlight-idea.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">game.gui</a>
+</div>
+
+<h1>Coverage Summary for Class: GUI (game.gui)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">GUI</td>
+<td class="coverageStat">
+  <span class="percent">
+    77,8%
+  </span>
+  <span class="absValue">
+    (7/9)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    44,2%
+  </span>
+  <span class="absValue">
+    (23/52)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">GUI$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">GUI$ACTION</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">GUI$MockitoMock$1155241840</td>
+  </tr>
+  <tr>
+    <td class="name">GUI$MockitoMock$1155241840$auxiliary$4RemmGjL</td>
+  </tr>
+  <tr>
+    <td class="name">GUI$MockitoMock$1155241840$auxiliary$6rBJHo5D</td>
+  </tr>
+  <tr>
+    <td class="name">GUI$MockitoMock$1155241840$auxiliary$8fiOShpC</td>
+  </tr>
+  <tr>
+    <td class="name">GUI$MockitoMock$1155241840$auxiliary$8mGCxqYw</td>
+  </tr>
+  <tr>
+    <td class="name">GUI$MockitoMock$1155241840$auxiliary$AoyQQnxL</td>
+  </tr>
+  <tr>
+    <td class="name">GUI$MockitoMock$1155241840$auxiliary$AvDIMgcs</td>
+  </tr>
+  <tr>
+    <td class="name">GUI$MockitoMock$1155241840$auxiliary$EMK1tjTI</td>
+  </tr>
+  <tr>
+    <td class="name">GUI$MockitoMock$1155241840$auxiliary$T3vFVmB3</td>
+  </tr>
+  <tr>
+    <td class="name">GUI$MockitoMock$1155241840$auxiliary$ZwyemrqM</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    66,7%
+  </span>
+  <span class="absValue">
+    (8/12)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    43,6%
+  </span>
+  <span class="absValue">
+    (24/55)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;package game.gui;
+<i class="no-highlight">2</i>&nbsp;
+<i class="no-highlight">3</i>&nbsp;import com.googlecode.lanterna.TerminalSize;
+<i class="no-highlight">4</i>&nbsp;import com.googlecode.lanterna.TextColor;
+<i class="no-highlight">5</i>&nbsp;import com.googlecode.lanterna.graphics.TextGraphics;
+<i class="no-highlight">6</i>&nbsp;import com.googlecode.lanterna.input.KeyStroke;
+<i class="no-highlight">7</i>&nbsp;import com.googlecode.lanterna.input.KeyType;
+<i class="no-highlight">8</i>&nbsp;import com.googlecode.lanterna.screen.Screen;
+<i class="no-highlight">9</i>&nbsp;import com.googlecode.lanterna.screen.TerminalScreen;
+<i class="no-highlight">10</i>&nbsp;import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
+<i class="no-highlight">11</i>&nbsp;import com.googlecode.lanterna.terminal.Terminal;
+<i class="no-highlight">12</i>&nbsp;import com.googlecode.lanterna.terminal.swing.AWTTerminalFontConfiguration;
+<i class="no-highlight">13</i>&nbsp;import com.googlecode.lanterna.terminal.swing.AWTTerminalFrame;
+<i class="no-highlight">14</i>&nbsp;
+<i class="no-highlight">15</i>&nbsp;import java.awt.*;
+<i class="no-highlight">16</i>&nbsp;import java.awt.event.WindowAdapter;
+<i class="no-highlight">17</i>&nbsp;import java.awt.event.WindowEvent;
+<i class="no-highlight">18</i>&nbsp;import java.io.File;
+<i class="no-highlight">19</i>&nbsp;import java.io.IOException;
+<i class="no-highlight">20</i>&nbsp;import java.net.URISyntaxException;
+<i class="no-highlight">21</i>&nbsp;import java.net.URL;
+<i class="no-highlight">22</i>&nbsp;
+<i class="no-highlight">23</i>&nbsp;public class GUI {
+<b class="fc"><i class="no-highlight">24</i>&nbsp;    public enum ACTION {NONE, QUIT, LEFT, RIGHT, UP, DOWN, ESC, ENTER};</b>
+<i class="no-highlight">25</i>&nbsp;    private static TerminalSize size;
+<i class="no-highlight">26</i>&nbsp;    private static final String background_colour = &quot;#7CFC00&quot;;
+<i class="no-highlight">27</i>&nbsp;
+<i class="no-highlight">28</i>&nbsp;    private Screen screen;
+<i class="no-highlight">29</i>&nbsp;    private TextGraphics graphics;
+<i class="no-highlight">30</i>&nbsp;
+<b class="fc"><i class="no-highlight">31</i>&nbsp;    public GUI (Screen screen) {</b>
+<b class="fc"><i class="no-highlight">32</i>&nbsp;        this.screen = screen;</b>
+<b class="fc"><i class="no-highlight">33</i>&nbsp;        this.graphics = screen.newTextGraphics();</b>
+<i class="no-highlight">34</i>&nbsp;    }
+<i class="no-highlight">35</i>&nbsp;
+<b class="nc"><i class="no-highlight">36</i>&nbsp;    public GUI (TerminalSize size) {</b>
+<b class="nc"><i class="no-highlight">37</i>&nbsp;        this.size = size;</b>
+<b class="nc"><i class="no-highlight">38</i>&nbsp;        initScreen();</b>
+<i class="no-highlight">39</i>&nbsp;    }
+<i class="no-highlight">40</i>&nbsp;
+<i class="no-highlight">41</i>&nbsp;    public void initScreen() {
+<i class="no-highlight">42</i>&nbsp;        try {
+<b class="nc"><i class="no-highlight">43</i>&nbsp;            URL resource = getClass().getClassLoader().getResource(&quot;ticketing.ttf&quot;);</b>
+<b class="nc"><i class="no-highlight">44</i>&nbsp;            File fontFile = new File(resource.toURI());</b>
+<b class="nc"><i class="no-highlight">45</i>&nbsp;            Font font = Font.createFont(Font.TRUETYPE_FONT, fontFile);</b>
+<i class="no-highlight">46</i>&nbsp;
+<b class="nc"><i class="no-highlight">47</i>&nbsp;            GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();</b>
+<b class="nc"><i class="no-highlight">48</i>&nbsp;            ge.registerFont(font);</b>
+<i class="no-highlight">49</i>&nbsp;
+<b class="nc"><i class="no-highlight">50</i>&nbsp;            DefaultTerminalFactory factory = new DefaultTerminalFactory().setInitialTerminalSize(size);</b>
+<i class="no-highlight">51</i>&nbsp;
+<b class="nc"><i class="no-highlight">52</i>&nbsp;            Font loadedFont = font.deriveFont(Font.PLAIN, 8);</b>
+<b class="nc"><i class="no-highlight">53</i>&nbsp;            AWTTerminalFontConfiguration fontConfig = AWTTerminalFontConfiguration.newInstance(loadedFont);</b>
+<b class="nc"><i class="no-highlight">54</i>&nbsp;            factory.setTerminalEmulatorFontConfiguration(fontConfig);</b>
+<b class="nc"><i class="no-highlight">55</i>&nbsp;            factory.setForceAWTOverSwing(true);</b>
+<i class="no-highlight">56</i>&nbsp;
+<b class="nc"><i class="no-highlight">57</i>&nbsp;            Terminal terminal = factory.createTerminal();</b>
+<i class="no-highlight">58</i>&nbsp;
+<b class="nc"><i class="no-highlight">59</i>&nbsp;            ((AWTTerminalFrame)terminal).addWindowListener(new WindowAdapter() {</b>
+<i class="no-highlight">60</i>&nbsp;                @Override
+<i class="no-highlight">61</i>&nbsp;                public void windowClosing(WindowEvent e) {
+<b class="nc"><i class="no-highlight">62</i>&nbsp;                    e.getWindow().dispose();</b>
+<i class="no-highlight">63</i>&nbsp;                }
+<i class="no-highlight">64</i>&nbsp;            });
+<i class="no-highlight">65</i>&nbsp;
+<b class="nc"><i class="no-highlight">66</i>&nbsp;            screen = new TerminalScreen(terminal);</b>
+<b class="nc"><i class="no-highlight">67</i>&nbsp;            screen.setCursorPosition(null);</b>
+<b class="nc"><i class="no-highlight">68</i>&nbsp;            screen.startScreen();</b>
+<b class="nc"><i class="no-highlight">69</i>&nbsp;            screen.doResizeIfNecessary();</b>
+<b class="nc"><i class="no-highlight">70</i>&nbsp;            graphics = screen.newTextGraphics();</b>
+<i class="no-highlight">71</i>&nbsp;
+<i class="no-highlight">72</i>&nbsp;
+<b class="nc"><i class="no-highlight">73</i>&nbsp;        } catch (IOException | FontFormatException | URISyntaxException e) {</b>
+<b class="nc"><i class="no-highlight">74</i>&nbsp;            e.printStackTrace();</b>
+<b class="nc"><i class="no-highlight">75</i>&nbsp;        }</b>
+<i class="no-highlight">76</i>&nbsp;    }
+<i class="no-highlight">77</i>&nbsp;
+<i class="no-highlight">78</i>&nbsp;    public ACTION getAction() throws IOException {
+<b class="fc"><i class="no-highlight">79</i>&nbsp;        KeyStroke key_stroke = getScreen().pollInput();</b>
+<i class="no-highlight">80</i>&nbsp;
+<b class="fc"><i class="no-highlight">81</i>&nbsp;        if (key_stroke == null) return ACTION.NONE;</b>
+<i class="no-highlight">82</i>&nbsp;
+<b class="fc"><i class="no-highlight">83</i>&nbsp;        if (key_stroke.getKeyType() == KeyType.EOF) return ACTION.QUIT;</b>
+<i class="no-highlight">84</i>&nbsp;
+<b class="fc"><i class="no-highlight">85</i>&nbsp;        if (key_stroke.getKeyType() == KeyType.ArrowRight ||</b>
+<b class="fc"><i class="no-highlight">86</i>&nbsp;                (key_stroke.getKeyType() == KeyType.Character &amp;&amp;</b>
+<b class="nc"><i class="no-highlight">87</i>&nbsp;                        key_stroke.getCharacter() == &#39;d&#39;)) return ACTION.RIGHT;</b>
+<i class="no-highlight">88</i>&nbsp;
+<b class="fc"><i class="no-highlight">89</i>&nbsp;        if (key_stroke.getKeyType() == KeyType.ArrowLeft ||</b>
+<b class="fc"><i class="no-highlight">90</i>&nbsp;                (key_stroke.getKeyType() == KeyType.Character &amp;&amp;</b>
+<b class="nc"><i class="no-highlight">91</i>&nbsp;                        key_stroke.getCharacter() == &#39;a&#39;)) return ACTION.LEFT;</b>
+<i class="no-highlight">92</i>&nbsp;
+<b class="fc"><i class="no-highlight">93</i>&nbsp;        if (key_stroke.getKeyType() == KeyType.ArrowUp ||</b>
+<b class="fc"><i class="no-highlight">94</i>&nbsp;                (key_stroke.getKeyType() == KeyType.Character &amp;&amp;</b>
+<b class="nc"><i class="no-highlight">95</i>&nbsp;                        key_stroke.getCharacter() == &#39;w&#39;)) return ACTION.UP;</b>
+<i class="no-highlight">96</i>&nbsp;
+<b class="fc"><i class="no-highlight">97</i>&nbsp;        if (key_stroke.getKeyType() == KeyType.ArrowDown ||</b>
+<b class="fc"><i class="no-highlight">98</i>&nbsp;                (key_stroke.getKeyType() == KeyType.Character &amp;&amp;</b>
+<b class="nc"><i class="no-highlight">99</i>&nbsp;                        key_stroke.getCharacter() == &#39;s&#39;)) return ACTION.DOWN;</b>
+<i class="no-highlight">100</i>&nbsp;
+<b class="fc"><i class="no-highlight">101</i>&nbsp;        if (key_stroke.getKeyType() == KeyType.Escape ||</b>
+<b class="fc"><i class="no-highlight">102</i>&nbsp;                (key_stroke.getKeyType() == KeyType.Character &amp;&amp;</b>
+<b class="nc"><i class="no-highlight">103</i>&nbsp;                        key_stroke.getCharacter() == &#39;q&#39;)) return ACTION.ESC;</b>
+<i class="no-highlight">104</i>&nbsp;
+<b class="fc"><i class="no-highlight">105</i>&nbsp;        if (key_stroke.getKeyType() == KeyType.Enter) return ACTION.ENTER;</b>
+<i class="no-highlight">106</i>&nbsp;
+<b class="nc"><i class="no-highlight">107</i>&nbsp;        return ACTION.NONE;</b>
+<i class="no-highlight">108</i>&nbsp;    }
+<i class="no-highlight">109</i>&nbsp;
+<i class="no-highlight">110</i>&nbsp;    public void fillScreen(String color) throws IOException {
+<b class="fc"><i class="no-highlight">111</i>&nbsp;        getGraphics().setBackgroundColor(TextColor.Factory.fromString(color));</b>
+<b class="fc"><i class="no-highlight">112</i>&nbsp;        getGraphics().fill(&#39; &#39;);</b>
+<i class="no-highlight">113</i>&nbsp;    }
+<i class="no-highlight">114</i>&nbsp;
+<i class="no-highlight">115</i>&nbsp;    public void clear() throws IOException {
+<b class="fc"><i class="no-highlight">116</i>&nbsp;        getScreen().clear();</b>
+<i class="no-highlight">117</i>&nbsp;    }
+<i class="no-highlight">118</i>&nbsp;
+<i class="no-highlight">119</i>&nbsp;    public void refresh() throws IOException{
+<b class="fc"><i class="no-highlight">120</i>&nbsp;        getScreen().refresh();</b>
+<i class="no-highlight">121</i>&nbsp;    }
+<i class="no-highlight">122</i>&nbsp;
+<i class="no-highlight">123</i>&nbsp;    public Screen getScreen(){
+<b class="fc"><i class="no-highlight">124</i>&nbsp;        return screen;</b>
+<i class="no-highlight">125</i>&nbsp;    }
+<i class="no-highlight">126</i>&nbsp;
+<i class="no-highlight">127</i>&nbsp;    public TextGraphics getGraphics(){
+<b class="fc"><i class="no-highlight">128</i>&nbsp;        return graphics;</b>
+<i class="no-highlight">129</i>&nbsp;    }
+<i class="no-highlight">130</i>&nbsp;
+<i class="no-highlight">131</i>&nbsp;}
+</div>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+        var codeBlock = document.getElementById('sourceCode');
+
+        if (codeBlock) {
+            hljs.highlightBlock(codeBlock);
+        }
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-01-21 22:23</div>
+</div>
+</body>
+</html>

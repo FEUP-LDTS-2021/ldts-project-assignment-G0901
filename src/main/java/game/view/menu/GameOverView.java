@@ -2,11 +2,8 @@ package game.view.menu;
 
 import com.googlecode.lanterna.TerminalSize;
 import game.gui.GUI;
-import game.model.game.TrackModel;
 import game.model.menu.GameOverModel;
-import game.model.menu.GenericTabModel;
 import game.view.View;
-import game.view.game.TrackView;
 
 import java.io.IOException;
 import java.util.LinkedList;

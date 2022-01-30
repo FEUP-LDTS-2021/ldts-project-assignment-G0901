@@ -1,0 +1,219 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > Application</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/highlight-idea.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">game</a>
+</div>
+
+<h1>Coverage Summary for Class: Application (game)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Application</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/8)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/30)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">Application$MockitoMock$276614315</td>
+  </tr>
+  <tr>
+    <td class="name">Application$MockitoMock$276614315$auxiliary$3LdShpkx</td>
+  </tr>
+  <tr>
+    <td class="name">Application$MockitoMock$276614315$auxiliary$4IPnqiTZ</td>
+  </tr>
+  <tr>
+    <td class="name">Application$MockitoMock$276614315$auxiliary$9WxiqpTF</td>
+  </tr>
+  <tr>
+    <td class="name">Application$MockitoMock$276614315$auxiliary$h2ImzZNd</td>
+  </tr>
+  <tr>
+    <td class="name">Application$MockitoMock$276614315$auxiliary$lvnhHHXE</td>
+  </tr>
+  <tr>
+    <td class="name">Application$MockitoMock$276614315$auxiliary$nELDua92</td>
+  </tr>
+  <tr>
+    <td class="name">Application$MockitoMock$276614315$auxiliary$siLBuZ3y</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/8)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/30)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;package game;
+<i class="no-highlight">2</i>&nbsp;
+<i class="no-highlight">3</i>&nbsp;import com.googlecode.lanterna.TerminalSize;
+<i class="no-highlight">4</i>&nbsp;import game.gui.GUI;
+<i class="no-highlight">5</i>&nbsp;import game.model.menu.MenuModel;
+<i class="no-highlight">6</i>&nbsp;import game.observer.Music;
+<i class="no-highlight">7</i>&nbsp;import game.observer.Observer;
+<i class="no-highlight">8</i>&nbsp;import game.states.State;
+<i class="no-highlight">9</i>&nbsp;import game.states.menu.MenuState;
+<i class="no-highlight">10</i>&nbsp;
+<i class="no-highlight">11</i>&nbsp;import javax.sound.sampled.LineUnavailableException;
+<i class="no-highlight">12</i>&nbsp;import javax.sound.sampled.UnsupportedAudioFileException;
+<i class="no-highlight">13</i>&nbsp;import java.io.IOException;
+<i class="no-highlight">14</i>&nbsp;import java.util.ArrayList;
+<i class="no-highlight">15</i>&nbsp;import java.util.List;
+<i class="no-highlight">16</i>&nbsp;
+<i class="no-highlight">17</i>&nbsp;public class Application {
+<b class="nc"><i class="no-highlight">18</i>&nbsp;    private TerminalSize size = new TerminalSize(180,80);</b>
+<i class="no-highlight">19</i>&nbsp;    private State state;
+<i class="no-highlight">20</i>&nbsp;    private GUI gui;
+<i class="no-highlight">21</i>&nbsp;    private Music music;
+<i class="no-highlight">22</i>&nbsp;    private List&lt;Observer&gt; observers;
+<i class="no-highlight">23</i>&nbsp;
+<b class="nc"><i class="no-highlight">24</i>&nbsp;    public Application() throws LineUnavailableException {</b>
+<b class="nc"><i class="no-highlight">25</i>&nbsp;        observers = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i class="no-highlight">26</i>&nbsp;        this.state = new MenuState(new MenuModel());</b>
+<b class="nc"><i class="no-highlight">27</i>&nbsp;        this.gui = new GUI(size);</b>
+<b class="nc"><i class="no-highlight">28</i>&nbsp;        music = new Music(this);</b>
+<i class="no-highlight">29</i>&nbsp;    }
+<i class="no-highlight">30</i>&nbsp;
+<i class="no-highlight">31</i>&nbsp;    public static void main(String[] args) throws IOException, LineUnavailableException {
+<b class="nc"><i class="no-highlight">32</i>&nbsp;        new Application().run();</b>
+<i class="no-highlight">33</i>&nbsp;    }
+<i class="no-highlight">34</i>&nbsp;
+<i class="no-highlight">35</i>&nbsp;    private void run() throws IOException {
+<b class="nc"><i class="no-highlight">36</i>&nbsp;        setState(state);</b>
+<b class="nc"><i class="no-highlight">37</i>&nbsp;        int FPS = 1;</b>
+<b class="nc"><i class="no-highlight">38</i>&nbsp;        int frameTime = 60 / FPS;</b>
+<i class="no-highlight">39</i>&nbsp;
+<b class="nc"><i class="no-highlight">40</i>&nbsp;        while (this.state != null)  {</b>
+<b class="nc"><i class="no-highlight">41</i>&nbsp;            long startTime = System.currentTimeMillis();</b>
+<i class="no-highlight">42</i>&nbsp;
+<b class="nc"><i class="no-highlight">43</i>&nbsp;            state.step(this, gui);</b>
+<i class="no-highlight">44</i>&nbsp;
+<b class="nc"><i class="no-highlight">45</i>&nbsp;            long elapsedTime = System.currentTimeMillis() - startTime;</b>
+<b class="nc"><i class="no-highlight">46</i>&nbsp;            long sleepTime = frameTime - elapsedTime;</b>
+<i class="no-highlight">47</i>&nbsp;
+<i class="no-highlight">48</i>&nbsp;            try {
+<b class="nc"><i class="no-highlight">49</i>&nbsp;                if (sleepTime &gt; 0) Thread.sleep(sleepTime);</b>
+<b class="nc"><i class="no-highlight">50</i>&nbsp;            } catch (InterruptedException e) {}</b>
+<b class="nc"><i class="no-highlight">51</i>&nbsp;        }</b>
+<i class="no-highlight">52</i>&nbsp;
+<b class="nc"><i class="no-highlight">53</i>&nbsp;        gui.getScreen().stopScreen();</b>
+<b class="nc"><i class="no-highlight">54</i>&nbsp;        System.exit(0);</b>
+<i class="no-highlight">55</i>&nbsp;    }
+<i class="no-highlight">56</i>&nbsp;
+<i class="no-highlight">57</i>&nbsp;    public void setState(State state) {
+<b class="nc"><i class="no-highlight">58</i>&nbsp;        this.state = state;</b>
+<i class="no-highlight">59</i>&nbsp;
+<i class="no-highlight">60</i>&nbsp;        try {
+<b class="nc"><i class="no-highlight">61</i>&nbsp;            notifyAllObservers();</b>
+<i class="no-highlight">62</i>&nbsp;        }
+<b class="nc"><i class="no-highlight">63</i>&nbsp;        catch (IOException | LineUnavailableException | UnsupportedAudioFileException e) {</b>
+<b class="nc"><i class="no-highlight">64</i>&nbsp;            e.printStackTrace();</b>
+<b class="nc"><i class="no-highlight">65</i>&nbsp;        }</b>
+<i class="no-highlight">66</i>&nbsp;    }
+<i class="no-highlight">67</i>&nbsp;
+<i class="no-highlight">68</i>&nbsp;    public State getState() {
+<b class="nc"><i class="no-highlight">69</i>&nbsp;        return state;</b>
+<i class="no-highlight">70</i>&nbsp;    }
+<i class="no-highlight">71</i>&nbsp;
+<i class="no-highlight">72</i>&nbsp;    public void notifyAllObservers() throws IOException, UnsupportedAudioFileException, LineUnavailableException {
+<b class="nc"><i class="no-highlight">73</i>&nbsp;        for (Observer observer : getObservers())</b>
+<b class="nc"><i class="no-highlight">74</i>&nbsp;            observer.update();</b>
+<i class="no-highlight">75</i>&nbsp;    }
+<i class="no-highlight">76</i>&nbsp;
+<b class="nc"><i class="no-highlight">77</i>&nbsp;    public void addObserver(Observer observer) {getObservers().add(observer);}</b>
+<i class="no-highlight">78</i>&nbsp;
+<i class="no-highlight">79</i>&nbsp;    public List&lt;Observer&gt; getObservers() {
+<b class="nc"><i class="no-highlight">80</i>&nbsp;        return observers;</b>
+<i class="no-highlight">81</i>&nbsp;    }
+<i class="no-highlight">82</i>&nbsp;
+<i class="no-highlight">83</i>&nbsp;}
+</div>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+        var codeBlock = document.getElementById('sourceCode');
+
+        if (codeBlock) {
+            hljs.highlightBlock(codeBlock);
+        }
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-01-21 22:23</div>
+</div>
+</body>
+</html>
